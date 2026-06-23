@@ -53,7 +53,11 @@
     window.lazySizesConfig = window.lazySizesConfig || {};
     lazySizesConfig.loadMode = 1;
     window.lazySizesConfig.init = false;
-    lazySizes.init();
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof lazySizes !== 'undefined') {
+            lazySizes.init();
+        }
+    });
 
     window.rtl_slick = {{ enable_iso_rtl }};
     window.mobile_menu = '{{ settings.mobile_menu }}';
