@@ -1,4 +1,5 @@
-{{ 'base.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'base.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- if settings.banner_animation == 'effect_fade_up' or settings.animations_hover_elements == '3d-lift' or settings.animations_hover_elements == 'vertical-lift' -%}
 	{{ 'fade-up-animation.css' | asset_url | stylesheet_tag }}
@@ -8,7 +9,8 @@
 	{{ 'layout_rtl.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
-{{ 'animated.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'animated.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'animated.css' | asset_url | stylesheet_tag }}</noscript>
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-banner.css' | asset_url | stylesheet_tag }}
