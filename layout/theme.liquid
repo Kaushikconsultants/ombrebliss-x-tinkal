@@ -29,11 +29,35 @@
         .adaptive_height img { display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; object-fit: contain; }
       </style>
 
-      <!-- Google Tag Manager, GA4 & Gokwik Delayed Loader -->
+      <!-- Google Tag Manager, GA4, Gokwik & Fast Bundle Delayed Loader & Interceptor -->
       <script>
         (function() {
+          var originalAppendChild = Node.prototype.appendChild;
+          var originalInsertBefore = Node.prototype.insertBefore;
+          var delayedScripts = [];
+          var isFired = false;
           var initialized = false;
-          function initThirdParties() {
+
+          function fireDelayedScripts() {
+            if (isFired) return;
+            isFired = true;
+            
+            // 1. Fire GTM / GA4
+            initGTM();
+
+            // 2. Fire intercepted DOM scripts (Fast Bundle, Gokwik, Kwikpass)
+            delayedScripts.forEach(function(item) {
+              try {
+                if (item.method === 'append') {
+                  originalAppendChild.call(item.parent, item.el);
+                } else {
+                  originalInsertBefore.call(item.parent, item.el, item.ref);
+                }
+              } catch(e) { console.error("Error running delayed script:", e); }
+            });
+          }
+
+          function initGTM() {
             if (initialized) return;
             initialized = true;
 
@@ -41,7 +65,7 @@
             var gtagScript = document.createElement('script');
             gtagScript.async = true;
             gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-S5K3CHPZ2L";
-            document.head.appendChild(gtagScript);
+            originalAppendChild.call(document.head, gtagScript);
 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -61,17 +85,42 @@
               var gokwikScript = document.createElement('script');
               gokwikScript.src = "https://{% if settings.envType == 'production' %}pdp{% else %}sandbox.pdp{% endif %}.gokwik.co/merchant-integration/build/merchant.integration.js?v4";
               gokwikScript.defer = true;
-              document.head.appendChild(gokwikScript);
+              originalAppendChild.call(document.head, gokwikScript);
             {% endif %}
           }
 
-          // Trigger Gokwik & GTM after DOMContentLoaded / window load, or on user scroll/interaction
-          window.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initThirdParties, 1500); // 1.5s delay to clear critical rendering path
+          // Intercept dynamic script injections from app embed engines
+          Node.prototype.appendChild = function(el) {
+            if (el && el.tagName === 'SCRIPT' && el.src) {
+              var s = el.src.toLowerCase();
+              if (s.indexOf('fast-bundle') > -1 || s.indexOf('gokwik') > -1 || s.indexOf('kwikpass') > -1 || s.indexOf('fastbundle') > -1) {
+                el.setAttribute('defer', 'defer');
+                delayedScripts.push({ parent: this, el: el, method: 'append' });
+                return el;
+              }
+            }
+            return originalAppendChild.apply(this, arguments);
+          };
+
+          Node.prototype.insertBefore = function(el, ref) {
+            if (el && el.tagName === 'SCRIPT' && el.src) {
+              var s = el.src.toLowerCase();
+              if (s.indexOf('fast-bundle') > -1 || s.indexOf('gokwik') > -1 || s.indexOf('kwikpass') > -1 || s.indexOf('fastbundle') > -1) {
+                el.setAttribute('defer', 'defer');
+                delayedScripts.push({ parent: this, el: el, ref: ref, method: 'insert' });
+                return el;
+              }
+            }
+            return originalInsertBefore.apply(this, arguments);
+          };
+
+          // Trigger loader on load or user interaction
+          window.addEventListener('load', function() {
+            setTimeout(fireDelayedScripts, 1500); // 1.5s delay to clear critical rendering path
           });
           
           ['mousedown', 'mousemove', 'scroll', 'touchstart'].forEach(function(event) {
-            window.addEventListener(event, initThirdParties, { once: true, passive: true });
+            window.addEventListener(event, fireDelayedScripts, { once: true, passive: true });
           });
         })();
       </script>

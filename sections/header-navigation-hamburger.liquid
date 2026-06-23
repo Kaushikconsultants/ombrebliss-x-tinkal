@@ -1,4 +1,5 @@
-{{ 'component-megamenu.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-megamenu.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-megamenu.css' | asset_url | stylesheet_tag }}</noscript>
 
 <style>
     {%- if header_icons -%}
@@ -545,22 +546,26 @@ if (typeof HamburgerMenuOptimizer === 'undefined') {
         }
 
         init() {
-            this.appendPrependMenuMobile();
+            window.requestAnimationFrame(() => {
+                this.appendPrependMenuMobile();
+            });
             window.addEventListener('resize', () => this.handleResize(), { passive: true });
         }
 
         appendPrependMenuMobile() {
-            const headerLanguageCurrencyPC = document.querySelector('.wrapper-language-currency');
-            const headerLanguageCurrencyMB = document.querySelector('.nav-currency-language');
-            const headerSidebarLanguageCurrency = document.querySelector('.halo-language-currency-sidebar .halo-sidebar-wrapper');
+            window.requestAnimationFrame(() => {
+                const headerLanguageCurrencyPC = document.querySelector('.wrapper-language-currency');
+                const headerLanguageCurrencyMB = document.querySelector('.nav-currency-language');
+                const headerSidebarLanguageCurrency = document.querySelector('.halo-language-currency-sidebar .halo-sidebar-wrapper');
 
-            if (!headerLanguageCurrencyPC || !headerLanguageCurrencyMB || !headerSidebarLanguageCurrency) return;
+                if (!headerLanguageCurrencyPC || !headerLanguageCurrencyMB || !headerSidebarLanguageCurrency) return;
 
-            if (window.innerWidth < 1025) {
-                headerLanguageCurrencyMB.appendChild(headerLanguageCurrencyPC);
-            } else {
-                headerSidebarLanguageCurrency.appendChild(headerLanguageCurrencyPC);
-            }
+                if (window.innerWidth < 1025) {
+                    headerLanguageCurrencyMB.appendChild(headerLanguageCurrencyPC);
+                } else {
+                    headerSidebarLanguageCurrency.appendChild(headerLanguageCurrencyPC);
+                }
+            });
         }
 
         handleResize() {
@@ -571,7 +576,9 @@ if (typeof HamburgerMenuOptimizer === 'undefined') {
 
             clearTimeout(this.resizeTimeout);
             this.resizeTimeout = setTimeout(() => {
-                this.appendPrependMenuMobile();
+                window.requestAnimationFrame(() => {
+                    this.appendPrependMenuMobile();
+                });
                 this.lastWindowWidth = currentWidth;
             }, 150);
         }

@@ -14,7 +14,8 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-banner.css' | asset_url | stylesheet_tag }}
-{{ 'component-quick-cart.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-quick-cart.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-quick-cart.css' | asset_url | stylesheet_tag }}</noscript>
 <link rel="stylesheet" href="{{ 'vendor.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'vendor.css' | asset_url | stylesheet_tag }}</noscript>
 
