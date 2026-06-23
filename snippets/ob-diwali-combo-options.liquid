@@ -1,0 +1,62 @@
+{% comment %} Ombre Bliss – Diwali Combo (Any 3) selectors {% endcomment %}
+{% assign eligible_scents = "
+Nawab Oud,
+Angel,
+Vanilla Kiss,
+Royale Tobacco,
+Smoky Rum,
+Ombre Blu,
+Amber Rose,
+Pistachio Pop,
+Classic Leather,
+Lush Candy
+" | split: "," %}
+
+<div class="ob-combo box">
+  <label>Choose Perfume 1</label>
+  <select name="properties[Perfume 1]" id="ob-choice-1" required>
+    <option value="" disabled selected>Select</option>
+    {% for s in eligible_scents %}<option value="{{ s | strip }}">{{ s | strip }}</option>{% endfor %}
+  </select>
+
+  <label>Choose Perfume 2</label>
+  <select name="properties[Perfume 2]" id="ob-choice-2" required>
+    <option value="" disabled selected>Select</option>
+    {% for s in eligible_scents %}<option value="{{ s | strip }}">{{ s | strip }}</option>{% endfor %}
+  </select>
+
+  <label>Choose Perfume 3</label>
+  <select name="properties[Perfume 3]" id="ob-choice-3" required>
+    <option value="" disabled selected>Select</option>
+    {% for s in eligible_scents %}<option value="{{ s | strip }}">{{ s | strip }}</option>{% endfor %}
+  </select>
+
+  <p id="ob-dup-warning" style="display:none;margin-top:8px;color:#b00020;">Please pick 3 different perfumes.</p>
+</div>
+
+<script>
+(function(){
+  function ok(){
+    var a = document.getElementById('ob-choice-1')?.value||'';
+    var b = document.getElementById('ob-choice-2')?.value||'';
+    var c = document.getElementById('ob-choice-3')?.value||'';
+    var vals=[a,b,c].filter(Boolean);
+    var valid=(new Set(vals)).size===vals.length;
+    document.getElementById('ob-dup-warning').style.display=valid?'none':'block';
+    return valid;
+  }
+  ['ob-choice-1','ob-choice-2','ob-choice-3'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.addEventListener('change', ok);
+  });
+  // stop add-to-cart if duplicates
+  document.addEventListener('submit', function(e){
+    var form=e.target.closest('form[action*="/cart/add"]'); if(!form) return;
+    if (document.body.dataset.obCombo === 'true' && !ok()) e.preventDefault();
+  }, true);
+})();
+</script>
+
+<style>
+.ob-combo label{display:block;margin:10px 0 6px;font-weight:600}
+.ob-combo select{width:100%;padding:.6rem;border:1px solid #ddd;border-radius:8px}
+</style>

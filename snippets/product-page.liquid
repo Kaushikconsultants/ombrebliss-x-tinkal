@@ -1,0 +1,640 @@
+{%- liquid
+    assign gift_card_recipient_feature_active = false
+    if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+    endif
+    assign container = section.settings.container
+    assign padding_full_width = section.settings.padding_full_width
+    assign show_sticky_info = section.settings.show_sticky_info
+    assign mg_top_desktop = section.settings.mg_top_desktop
+    assign mg_top_tablet = section.settings.mg_top_tablet
+    assign mg_top_mobile = section.settings.mg_top_mobile
+    assign mg_bottom_desktop = section.settings.mg_bottom_desktop
+    assign mg_bottom_tablet = section.settings.mg_bottom_tablet
+    assign mg_bottom_mobile = section.settings.mg_bottom_mobile
+    assign main_image_position = section.settings.main_image_position
+    assign main_image_show_custom_cursor = section.settings.main_image_show_custom_cursor
+    assign count_color = section.settings.count_color
+    assign icon_color = section.settings.icon_color
+    assign thumnail_layout = section.settings.thumnail_layout
+    assign main_image_arrows_desktop = section.settings.main_image_arrows_desktop
+    assign main_image_arrows_mobile = section.settings.main_image_arrows_mobile
+    assign main_image_counter_mobile = section.settings.main_image_counter_mobile
+    assign main_image_enable_parallax_mb = section.settings.main_image_enable_parallax_mb
+    assign main_image_show_zoom_icon_mb = section.settings.main_image_show_zoom_icon_mb
+    assign main_image_layout = section.settings.main_image_layout
+    assign show_thumbnail_mobile = section.settings.show_thumbnail_mobile
+    assign max_thumbnail_to_show = section.settings.thumbnail_to_show
+    assign current_variant = product.selected_or_first_available_variant
+    assign variantCount = product.variants | size
+    assign featured_media_aspect_ratio = product.featured_media.aspect_ratio
+    if product.featured_media.aspect_ratio == nil
+        assign featured_media_aspect_ratio = 1
+    endif
+    assign media_size = section.settings.product_image_ratio
+    assign portrait_aspect_ratio = section.settings.portrait_aspect_ratio | append: '%'
+    assign zoomed_image = section.settings.zoomed_image
+    assign media_fit = section.settings.media_fit
+    assign product_image_popup = section.settings.product_image_popup
+    assign video_layout = section.settings.video_layout
+    assign show_badge = section.settings.show_badge
+    assign show_hot_stock = settings.show_hot_stock
+    if show_hot_stock
+        assign productMaxStock = settings.hot_stock_limit | plus: 0
+    endif
+    assign show_qty = section.settings.show_qty
+    assign show_subtotal = section.settings.show_subtotal
+    assign subtotal_style = section.settings.subtotal_style
+    assign show_subtotal_text = false
+    assign subtotal = 0
+    if show_subtotal
+        assign show_subtotal_text = true
+        assign subtotal = current_variant.price | money
+    endif
+    assign show_sticky_add_to_cart = section.settings.show_sticky_add_to_cart
+    assign sticky_add_to_cart_always_mb = section.settings.enable_sticky_add_to_cart_always_mobile
+    assign sticky_atc_layout = section.settings.sticky_atc_layout
+    assign show_sticky_vendor = section.settings.show_sticky_vendor
+    assign show_tab = section.settings.show_tab
+    if show_tab
+        assign tab_layout = section.settings.tab_layout
+        assign tab_layout_mobile = section.settings.tab_layout_mobile
+        assign icon_style_layout = section.settings.icon_style_layout
+        assign title_font_size = section.settings.title_font_size
+        assign title_font_size_mb = section.settings.title_font_size_mb
+        assign font_weight_title = section.settings.font_weight_title
+        assign title_text_transform = section.settings.title_text_transform
+        assign title_padding_top_bottom = section.settings.title_padding_top_bottom
+        if section.blocks.size > 0
+            assign show_tab = true
+        else
+            assign show_tab = false
+        endif
+    endif
+    assign first_3d_model = product.media | where: "media_type", "model" | first
+    assign has_product_combo = false
+
+    assign has_sidebar = false
+    assign show_sidebar = section.settings.show_sidebar
+    assign sidebar_type = 'vertical'
+    assign sidebar_position = section.settings.sidebar_position
+    assign sidebar_collapse = section.settings.sidebar_collapse
+    assign sidebar_collapse_default = section.settings.sidebar_collapse_default
+    if show_sidebar
+        if sidebar_type == 'vertical'
+            if section.blocks.size > 0
+                assign has_sidebar = true
+            endif
+        endif
+    endif
+    if has_sidebar
+        assign sidebar_heading_font = section.settings.sidebar_heading_font
+        assign sidebar_heading_font_size = section.settings.sidebar_heading_font_size
+        assign sidebar_heading_font_weight = section.settings.sidebar_heading_font_weight
+        assign sidebar_heading_text_transform = section.settings.sidebar_heading_text_transform
+        assign enable_sticky = section.settings.enable_sticky
+        assign sidebar_layout = section.settings.sidebar_layout
+    endif
+    assign has_breadcrumb = false
+    for block in section.blocks
+        case block.type
+            when 'breadcrumb'
+                assign breadcrumb_layout = block.settings.breadcrumb_layout
+                assign breadcrumb_alignment = block.settings.breadcrumb_alignment
+                assign breadcrumb_mg_top_desktop = block.settings.breadcrumb_mg_top_desktop
+                assign breadcrumb_mg_top_mobile = block.settings.breadcrumb_mg_top_mobile
+                assign breadcrumb_mg_bottom_desktop = block.settings.breadcrumb_mg_bottom_desktop
+                assign breadcrumb_mg_bottom_mobile = block.settings.breadcrumb_mg_bottom_mobile
+                assign breadcrumb_bg = block.settings.breadcrumb_bg
+                assign breadcrumb_gradient = block.settings.breadcrumb_gradient
+                assign breadcrumb_bg_mb = block.settings.breadcrumb_bg_mb
+                assign breadcrumb_gradient_mb = block.settings.breadcrumb_gradient_mb
+
+                if breadcrumb_layout == 'full'
+                    assign check_breadcrumb_full = true
+                else
+                    assign check_breadcrumb_full = false
+                endif
+                assign has_breadcrumb = true
+            when 'title'
+                assign check_block_title = true
+
+            when 'quantity_selector'
+                assign check_block_qty = true
+                assign qty_style = block.settings.qty_style
+                assign qty_layout = block.settings.qty_layout
+
+            when 'perks'
+                assign has_perks = true
+                assign show_compare_color = block.settings.show_compare_color
+                if show_compare_color
+                    assign show_compare_color_drop_drap = block.settings.show_compare_color_drop_drap
+                    assign product_swatch_option = settings.swatch | downcase
+                    assign compare_layout = block.settings.compare_layout
+                    assign isColor = false
+                    for option in product.options_with_values
+                        assign option_name = option.name | downcase
+                        if product_swatch_option contains option_name
+                            assign isColor = true
+                            assign index = forloop.index0
+                            if option.values.size > 1
+                                assign show_compare_color = true
+                            endif
+                        endif
+                    endfor
+                endif
+                assign show_size_chart = block.settings.show_size_chart
+                if show_size_chart
+                    assign has_size_chart = false
+                    assign size_chart_type = block.settings.size_chart_type
+                    if size_chart_type == 'product_type' or size_chart_type == 'product_vendor'
+                        assign size_chart_image_type = block.settings.size_chart_image_type
+                    elsif size_chart_type == 'custom_image'
+                        assign size_chart_image = block.settings.size_chart_image
+                    endif
+                    if size_chart_type == 'product_type'
+                        if size_chart_image_type == 'jpg'
+                            assign size_chart_image = product.type | handle | append: '-sizechart.jpg'
+                        else
+                            assign size_chart_image = product.type | handle | append: '-sizechart.png'
+                        endif
+                        if images[size_chart_image] != blank
+                            assign has_size_chart = true
+                        endif
+                    elsif size_chart_type == 'product_vendor'
+                        if size_chart_image_type == 'jpg'
+                            assign size_chart_image = product.vendor | handle | append: '-sizechart.jpg'
+                        else
+                            assign size_chart_image = product.vendor | handle | append: '-sizechart.jpg'
+                        endif
+                        if images[size_chart_image] != blank
+                            assign has_size_chart = true
+                        endif
+                    elsif size_chart_type == 'metafield'
+                        if product.metafields.c_f.size_chart
+                            assign has_size_chart = true
+                        endif
+                    elsif size_chart_type == 'custom_image'
+                        if size_chart_image != blank
+                            assign has_size_chart = true
+                        endif
+                    endif
+                endif
+            when 'buy_buttons'
+                assign check_block_buttons = true
+            when 'share'
+                assign show_share = block.settings.show_share
+                assign share_layout = block.settings.share_layout
+            when 'variant_picker'
+                assign picker_type = block.settings.picker_type
+                assign show_variant_image_group = block.settings.show_variant_image_group
+            when 'grouped_product'
+                assign product_combo = product.metafields.c_f.product_combo
+                assign combo_discount_rate = product.metafields.c_f.combo_discount_rate | plus: 0 | divided_by: 100.00
+
+                if product_combo
+                    assign has_product_combo = true
+                else
+                    assign has_product_combo = false
+                endif
+            when 'complementary_products'
+                assign complementary_product_title = block.settings.complementary_product_title
+                assign complementary_product_arrows = block.settings.complementary_product_arrows
+                assign complementary_product_dots = block.settings.complementary_product_dots
+                assign complementary_product_layout = block.settings.complementary_product_layout
+                if complementary_product_layout == "1"
+                    assign complementary_product_limit_1 = block.settings.complementary_product_limit_1
+                endif
+                if complementary_product_layout == "2"
+                    assign complementary_product_limit_2 = block.settings.complementary_product_limit_2
+                    assign complementary_product_object = block.settings.complementary_product_object
+                endif
+        endcase
+    endfor
+
+    if show_qty
+        if check_block_qty
+            if check_block_buttons
+                if qty_layout == '1'
+                    assign check_show_qty = 'show_qty_1'
+                elsif qty_layout == '2'
+                    assign check_show_qty = 'show_qty_2'
+                endif
+            else
+                assign check_show_qty = 'show_qty_1'
+            endif
+        else
+            assign check_show_qty = 'show_qty_0'
+        endif
+    else
+        assign check_show_qty = 'show_qty_0'
+    endif
+
+    if show_share
+        if check_block_title and check_block_buttons
+            assign check_show_share = share_layout
+        elsif check_block_title and check_block_buttons != true
+            if share_layout == '2'
+                assign check_show_share = '1'
+            else
+                assign check_show_share = share_layout
+            endif
+        elsif check_block_title != true and check_block_buttons
+            if share_layout == '3'
+                assign check_show_share = '1'
+            else
+                assign check_show_share = share_layout
+            endif
+        endif
+    endif
+
+    assign show_customization_option = settings.show_customization_option
+    if show_customization_option
+        assign has_customization_option = false
+        assign customization_option_type = settings.customization_option_type
+        assign customization_option_hidden = settings.customization_option_hidden
+        if customization_option_type == 'all'
+            assign has_customization_option = true
+        elsif customization_option_type == 'tag'
+            assign customization_option_tags = settings.customization_option_tags | downcase | strip | split: ","
+            for tag in customization_option_tags
+                assign tagtitle = tag | strip
+                assign productTag = product.tags | downcase
+                if productTag contains tagtitle
+                    assign has_customization_option = true
+                endif
+            endfor
+        elsif customization_option_type == 'collection'
+            assign customization_option_collection = settings.customization_option_collection | downcase | handle
+            if customization_option_collection != blank
+                for collection in product.collections
+                    assign collection_title = collection.title | downcase | handle
+                    if collection_title == customization_option_collection
+                        assign has_customization_option = true
+                    endif
+                endfor
+            endif
+        endif
+        assign customization_option_1 = settings.customization_option_1
+        assign customization_option_2 = settings.customization_option_2
+    endif
+
+    assign lcp_widths = '360,540,720,900,1080,1440,1800,2048'
+-%}
+
+{%- if first_3d_model -%}
+    <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="{{ 'component-product-model.css' | asset_url }}" media="print" onload="this.media='all'">
+    <link id="ModelViewerStyle" rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css" media="print" onload="this.media='all'">
+    <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+<style type="text/css">
+    #ProductSection-{{ section.id }} .productView-thumbnail .productView-thumbnail-link:after{
+        padding-bottom: {{ portrait_aspect_ratio }};
+    }
+
+    #ProductSection-{{ section.id }} .cursor-wrapper .counter {
+        color: {{ count_color }};
+    }
+
+    #ProductSection-{{ section.id }} .cursor-wrapper .counter #count-image:before {
+        background-color: {{ count_color }};
+    }
+
+    #ProductSection-{{ section.id }} .custom-cursor__inner .arrow:before,
+    #ProductSection-{{ section.id }} .custom-cursor__inner .arrow:after {
+        background-color: {{ icon_color }};
+    }
+
+    #ProductSection-{{ section.id }} .tabs-contents .toggleLink,
+    #ProductSection-{{ section.id }} .tabs .tab .tab-title {
+        font-size: {{ title_font_size | append: 'px' }};
+        font-weight: {{ font_weight_title }};
+        text-transform: {{ title_text_transform }};
+        padding-top: {{ title_padding_top_bottom | append: 'px' }};
+        padding-bottom: {{ title_padding_top_bottom | append: 'px' }};
+    }
+
+    {% if has_sidebar %}
+        :root {
+            {% if sidebar_heading_font == 'font_1' %}
+                --sidebar-heading-font: var(--font-heading-family);
+            {% elsif sidebar_heading_font == 'font_2' %}
+                --sidebar-heading-font: var(--font-body-family);
+            {% endif %}
+            {% if colors_bg != 'rgba(0,0,0,0)' and colors_bg != blank %}
+                --body-bg: {{ colors_bg }};
+            {% endif %}
+        }
+    {% endif %}
+
+    {% if has_sidebar %}
+        #ProductSection-{{ section.id }} .sidebarBlock-heading{
+            font-family: var(--sidebar-heading-font);
+            font-size: {{ sidebar_heading_font_size | append: 'px' }};
+            font-weight: {{ sidebar_heading_font_weight }};
+            text-transform: {{ sidebar_heading_text_transform }};
+        }
+    {% endif %}
+
+    @media (max-width: 1024px) {
+        {% if container == 'fullwidth' %}
+            #ProductSection-{{ section.id }} .container-full {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            #ProductSection-{{ section.id }} .moreItem-breadcrumb .container-full {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        {% endif %}
+    }
+
+    @media (max-width: 550px) {
+        #ProductSection-{{ section.id }} .tabs-contents .toggleLink,
+        #ProductSection-{{ section.id }} .tabs .tab .tab-title {
+            font-size: {{ title_font_size_mb | append: 'px' }};
+        }
+    }
+
+    @media (max-width: 767px) {
+        #ProductSection-{{ section.id }} {
+            padding-top: {{ mg_top_mobile | append: 'px' }};
+            padding-bottom: {{ mg_bottom_mobile | append: 'px' }};
+        }
+        {% if container == 'fullwidth' %}
+            #ProductSection-{{ section.id }} .container-full {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #ProductSection-{{ section.id }} .moreItem-breadcrumb .container-full {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        {% endif %}
+        {% if tab_layout_mobile == 'vertical_sidebar' %}
+            #ProductSection-{{ section.id }} {
+                overflow: clip;
+            }
+        {% endif %}
+        {% if main_image_enable_parallax_mb %}
+            #ProductSection-{{ section.id }} .productView-thumbnail-wrapper .slick-next {
+                right: 0px !important;
+            }
+            #ProductSection-{{ section.id }} .productView-thumbnail-wrapper .slick-prev {
+                left: 0px !important;
+            }
+        {% endif %}
+    }
+
+    @media (min-width: 1025px) {
+        {% if container == 'fullwidth' %}
+            #ProductSection-{{ section.id }} .container-full,
+            #ProductSection-{{ section.id }} .moreItem-breadcrumb {
+                padding-left: {{ padding_full_width | append: 'px' }};
+                padding-right: {{ padding_full_width | append: 'px' }};
+            }
+            #ProductSection-{{ section.id }} .moreItem-breadcrumb .container-full {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        {% endif %}
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        #ProductSection-{{ section.id }} {
+            padding-top: {{ mg_top_tablet | append: 'px' }};
+            padding-bottom: {{ mg_bottom_tablet | append: 'px' }};
+        }
+    }
+
+    @media (min-width: 1200px) {
+        #ProductSection-{{ section.id }} {
+            padding-top: {{ mg_top_desktop | append: 'px' }};
+            padding-bottom: {{ mg_bottom_desktop | append: 'px' }};
+        }
+    }
+</style>
+
+<script>
+  window.product_inven_array_{{ product.id }} = {{ product.variants | map: 'id' | json }};
+  window.product_inven_qty_array_{{ product.id }} = {{ product.variants | map: 'inventory_quantity' | json }};
+  window.product_selling_policy_array_{{ product.id }} = {{ product.variants | map: 'inventory_policy' | json }};
+
+  window.subtotal = {
+    show: {{ show_subtotal_text }},
+    style: {{ subtotal_style }},
+    text: `{{ 'products.product.sub_total' | t : value : '[value]' }}`
+  };
+
+  {% if show_variant_image_group %}
+    window.variant_image_group = {{ show_variant_image_group }};
+  {% else %}
+    window.variant_image_group = 'false';
+  {% endif %}
+</script>
+
+{%- if product_image_popup == 'fancybox' -%}
+    <link rel="stylesheet" href="{{ 'component-fancybox.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'component-fancybox.css' | asset_url | stylesheet_tag }}</noscript>
+{%- endif -%}
+
+<div class="{{tab_layout_mobile}} product-details product-default{% if has_sidebar %} has-sidebar{% endif %}" data-section-id="{{ section.id }}" data-section-type="product" id="ProductSection-{{ section.id }}" data-has-combo="{{ has_product_combo }}" data-image-opo>
+    {% if has_breadcrumb %}
+        {%- liquid
+            if breadcrumb_gradient != 'rgba(0,0,0,0)' or breadcrumb_bg != 'rgba(0,0,0,0)' or breadcrumb_gradient_mb != 'rgba(0,0,0,0)' or breadcrumb_bg_mb != 'rgba(0,0,0,0)'
+                assign breadcrumb_has_bg = true
+            else
+                assign breadcrumb_has_bg = false
+            endif
+        -%}
+        <div class="productView-moreItem moreItem-breadcrumb {% unless check_breadcrumb_full %}hidden-on-desktop{% endunless %}"
+            style="--spacing-top: {{ breadcrumb_mg_top_desktop | append: 'px' }};
+            --spacing-bottom: {{ breadcrumb_mg_bottom_desktop | append: 'px' }};
+            --spacing-top-mb: {{ breadcrumb_mg_top_mobile | append: 'px' }};
+            --spacing-bottom-mb: {{ breadcrumb_mg_bottom_mobile | append: 'px' }};
+            --breadcrumb-bg: {%- if breadcrumb_gradient != '' -%}{{ breadcrumb_gradient }}{%- else -%}{{ breadcrumb_bg }}{%- endif -%};
+            --breadcrumb-mb-bg: {% if breadcrumb_gradient_mb != blank and breadcrumb_gradient_mb != 'rgba(0,0,0,0)' %}{{ breadcrumb_gradient_mb }}{% elsif breadcrumb_bg_mb != blank and breadcrumb_bg_mb != 'rgba(0,0,0,0)' %}{{ breadcrumb_bg_mb }}{% else %}#fff{% endif %};
+            "
+        >
+            {% if breadcrumb_has_bg %}
+                <div class="breadcrumb-bg">
+            {% endif %}
+                <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %}">
+                    {% render 'breadcrumb',
+                        alignment: breadcrumb_alignment
+                    %}
+                </div>
+            {% if breadcrumb_has_bg %}
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <div class="{% if container == '1170' %}container-1170{% elsif container == '1770' %}container-1770{% elsif container == 'fullwidth'%}container-full{% else %}container{% endif %} productView-container">
+        <div class="productView halo-productView layout-{{ thumnail_layout }} positionMainImage--{{ main_image_position }}{% if product.media.size == 0 %} productView-no-media{% endif %}{% if show_sticky_info %} productView-sticky{% endif %}{% if main_image_enable_parallax_mb %} productView-parallax-mobile{%endif %}{% if has_sidebar %} has-left-sidebar sidebar--layout_{{ sidebar_type }}{% endif %}" data-product-handle="{{ product.handle }}">
+            {%- if has_sidebar -%}
+                {{ 'component-main-sidebar.css' | asset_url | stylesheet_tag }}
+                <div class="toolbar-wrapper toolbar-mobile">
+                    <div class="toolbar-item toolbar-sidebar" data-sidebar>
+                        <span class="toolbar-icon icon-filter">
+                            {% render 'icon-sidebar' %}
+                        </span>
+                    </div>
+                </div>
+                <div class="page-sidebar page-sidebar-{{ sidebar_position }} page-sidebar--{{ sidebar_type }} sidebar--{{ sidebar_layout }}{% if enable_sticky %} has-sticky{% endif %}" id="halo-sidebar">
+                    <a href="javascript:void(0)" class="halo-sidebar-close" data-close-sidebar role="button">
+                        <span class="visually-hidden">{{ 'general.common.close' | t }}</span>
+                        {% render 'icon-close' %}
+                    </a>
+                    <div class="halo-sidebar-header text-left">
+                        <span class="title">
+                            {{ 'sections.sidebar.title' | t }}
+                        </span>
+                    </div>
+                    <div class="halo-sidebar-wrapper custom-scrollbar">
+                        {% render 'sidebar',
+                            results: collection,
+                            section: section,
+                            sidebar_type: sidebar_type,
+                            show_collapse: sidebar_collapse,
+                            sidebar_collapse: sidebar_collapse_default
+                        %}
+                    </div>
+                </div>
+            {%- endif -%}
+
+            {%- if has_sidebar -%}
+                <div class="page-content" id="ProductContent">
+            {%- endif -%}
+
+                <div class="productView-top">
+                    <div class="halo-productView-left productView-images clearfix{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--fade-in{% endif %}" data-image-gallery>
+                        {%- if main_image_show_custom_cursor -%}
+                            <div class="cursor-wrapper handleMouseLeave">
+                                <div class="custom-cursor custom-cursor__outer">
+                                    <div class="custom-cursor custom-cursor__inner">
+                                        <span class="arrow arrow-bar fadeIn"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        {%- endif -%}
+
+                        <div class="productView-images-wrapper" data-video-{{ video_layout }}>
+                            <div class="productView-image-wrapper">
+                                {%- if show_badge -%}
+                                    {% render 'product-badge',
+                                        product: product,
+                                        class: 'productView-badge',
+                                        badge_detail: true,
+                                        serial: 1
+                                    %}
+                                {%- endif -%}
+
+                                <div class="productView-nav style-{{ main_image_layout }} image-fit-{{ media_fit }}"
+                                    data-image-gallery-main
+                                    data-arrows-desk="{{ main_image_arrows_desktop }}"
+                                    data-arrows-mobi="{{ main_image_arrows_mobile }}"
+                                    data-counter-mobi="{{ main_image_counter_mobile }}"
+                                    data-media-count="{{ product.media.size }}"
+                                >
+                                    {%- for media in product.media -%}
+                                        {%- case media.media_type -%}
+                                            {%- when 'image' -%}
+                                                {%- assign is_lcp_image = false -%}
+                                                {%- if forloop.first -%}{%- assign is_lcp_image = true -%}{%- endif -%}
+
+                                                <div class="productView-image productView-image-{{ media_size }}{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' }}{% endif %} fit-{{ media_fit }}" data-index="{{ forloop.index }}">
+                                                    <div class="productView-img-container product-single__media" data-media-id="{{ media.id }}"
+                                                        {% unless media_fit == 'unset' %}
+                                                            {% if product.featured_media %}
+                                                                {% if media_size == 'adapt' %}
+                                                                    style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;"
+                                                                {% elsif media_size == 'square' %}
+                                                                    style="padding-bottom: 100%;"
+                                                                {% elsif media_size == 'portrait' %}
+                                                                    {% if portrait_aspect_ratio != blank %}
+                                                                        style="padding-bottom: {{ portrait_aspect_ratio }};"
+                                                                    {% endif %}
+                                                                {% endif %}
+                                                            {% endif %}
+                                                        {% endunless %}
+                                                    >
+                                                        <div
+                                                            class="media"
+                                                            {% if zoomed_image and main_image_show_custom_cursor != true %} data-zoom-image="{{ media.preview_image | image_url: width: 2048 }}"{% endif %}
+                                                            {% if product_image_popup == 'fancybox' %} data-fancybox="images" href="{{ media.preview_image | image_url: width: 2048 }}" {% endif %}
+                                                        >
+                                                            {%- if is_lcp_image -%}
+                                                                {{
+                                                                    media.preview_image
+                                                                    | image_url: width: 1080
+                                                                    | image_tag:
+                                                                        id: 'product-featured-image-' | append: media.id,
+                                                                        alt: media.preview_image.alt,
+                                                                        widths: lcp_widths,
+                                                                        sizes: "(min-width: 2000px) 1500px, (min-width: 1200px) 1200px, (min-width: 768px) calc((100vw - 30px) / 2), calc(100vw - 20px)",
+                                                                        loading: 'eager',
+                                                                        fetchpriority: 'high',
+                                                                        decoding: 'async',
+                                                                        data_main_image: '',
+                                                                        data_index: forloop.index,
+                                                                        data_cursor_image: ''
+                                                                }}
+                                                            {%- else -%}
+                                                                <img id="product-featured-image-{{ media.id }}"
+                                                                    {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ media.preview_image | img_url: 'master' }}"
+                                                                    {% unless settings.enable_lazyload %}src="{{ media | img_url: 'master' }}"{% endunless %}
+                                                                    {% if settings.enable_lazyload %}data-src="{{ media | img_url: 'master' }}"{% endif %}
+                                                                    alt="{{ media.preview_image.alt | escape }}"
+                                                                    sizes="(min-width: 2000px) 1500px, (min-width: 1200px) 1200px, (min-width: 768px) calc((100vw - 30px) / 2), calc(100vw - 20px)"
+                                                                    width="{{ media.width }}"
+                                                                    height="{{ media.height }}"
+                                                                    data-sizes="auto"
+                                                                    data-main-image
+                                                                    data-index="{{ forloop.index }}"
+                                                                    data-cursor-image
+                                                                    class="lazyload"
+                                                                    loading="lazy"
+                                                                />
+                                                                <span class="data-lazy-loading"></span>
+                                                            {%- endif -%}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {%- else -%}
+                                                {{ media | media_tag }}
+                                        {%- endcase -%}
+                                    {%- endfor -%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="halo-productView-right productView-details clearfix">
+                        <div class="productView-product clearfix">
+                            {%- for block in section.blocks -%}
+                                {%- liquid
+                                    assign spacing_top = block.settings.spacing_top
+                                    assign spacing_bottom = block.settings.spacing_bottom
+                                -%}
+                                {%- case block.type -%}
+                                    {%- when '@app' -%}
+                                        {% render block %}
+                                {%- endcase -%}
+                            {%- endfor -%}
+                        </div>
+                    </div>
+                </div>
+
+            {%- if has_sidebar -%}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% render 'schema',
+    product: product
+%}

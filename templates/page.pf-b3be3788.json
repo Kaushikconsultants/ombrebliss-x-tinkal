@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "pf-b3be3788": {
+      "type": "pf-b3be3788",
+      "settings": {
+        "pf_124152fa_value": "<strong>Call/WhatsApp&nbsp;@&nbsp;+91 9266359767</strong>",
+        "pf_6b67aecb_value": "<strong>Email&nbsp;- Purchase@ombrebliss.com</strong>",
+        "pf_710358f9_placeholder": "Enter your Valid Contact Number",
+        "pf_16866a38_placeholder": "Enter your Comapny Name.",
+        "pf_04831a48_placeholder": "Enter your Valid Email",
+        "pf_029f5dc6_placeholder": "Enter your full name",
+        "pf_5dc67103_label_text": "Contact Number",
+        "pf_a36b1686_label_text": "Company Name",
+        "pf_38e7840d_label_text": "Order Value",
+        "pf_faab029f_label_text": "Full Name",
+        "pf_5560a06a_label_text": "Category",
+        "pf_2b80dd2a_value": "Submit",
+        "pf_d7200483_label_text": "Email"
+      }
+    }
+  },
+  "order": [
+    "pf-b3be3788"
+  ],
+  "layout": "theme.pagefly"
+}
