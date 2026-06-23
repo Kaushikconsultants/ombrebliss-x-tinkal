@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="print" onload="this.media='all'">
-<noscript>{{ 'base.css' | asset_url | stylesheet_tag }}</noscript>
+{{ 'base.css' | asset_url | stylesheet_tag }}
 
 {%- if settings.banner_animation == 'effect_fade_up' or settings.animations_hover_elements == '3d-lift' or settings.animations_hover_elements == 'vertical-lift' -%}
 	{{ 'fade-up-animation.css' | asset_url | stylesheet_tag }}
@@ -9,15 +8,13 @@
 	{{ 'layout_rtl.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
-<link rel="stylesheet" href="{{ 'animated.css' | asset_url }}" media="print" onload="this.media='all'">
-<noscript>{{ 'animated.css' | asset_url | stylesheet_tag }}</noscript>
+{{ 'animated.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-banner.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-quick-cart.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-quick-cart.css' | asset_url | stylesheet_tag }}</noscript>
-<link rel="stylesheet" href="{{ 'vendor.css' | asset_url }}" media="print" onload="this.media='all'">
-<noscript>{{ 'vendor.css' | asset_url | stylesheet_tag }}</noscript>
+{{ 'vendor.css' | asset_url | stylesheet_tag }}
 
 {% if settings.product_card_layout == '02' %}
 	{{ 'component-card-02.css' | asset_url | stylesheet_tag }}

@@ -1,6 +1,6 @@
-<script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'lazysizes.min.js' | asset_url }}" defer="defer"></script>
+{{ 'vendor.js' | asset_url | script_tag }}
+{{ 'global.js' | asset_url | script_tag }}
+{{ 'lazysizes.min.js' | asset_url | script_tag }}
 <!-- {{ 'menu.js' | asset_url | script_tag }} -->
 
 {%- if settings.show_quick_search -%}
@@ -53,11 +53,7 @@
     window.lazySizesConfig = window.lazySizesConfig || {};
     lazySizesConfig.loadMode = 1;
     window.lazySizesConfig.init = false;
-    document.addEventListener("DOMContentLoaded", function() {
-        if (typeof lazySizes !== 'undefined') {
-            lazySizes.init();
-        }
-    });
+    lazySizes.init();
 
     window.rtl_slick = {{ enable_iso_rtl }};
     window.mobile_menu = '{{ settings.mobile_menu }}';
