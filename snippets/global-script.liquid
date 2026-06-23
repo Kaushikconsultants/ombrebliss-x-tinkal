@@ -1,6 +1,6 @@
 <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'lazysizes.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 <!-- <script src="{{ 'menu.js' | asset_url }}" defer="defer"></script> -->
 
 {%- if settings.show_quick_search -%}
@@ -52,10 +52,6 @@
 <script>
     window.lazySizesConfig = window.lazySizesConfig || {};
     lazySizesConfig.loadMode = 1;
-    window.lazySizesConfig.init = false;
-    document.addEventListener("DOMContentLoaded", function() {
-        lazySizes.init();
-    });
 
     window.rtl_slick = {{ enable_iso_rtl }};
     window.mobile_menu = '{{ settings.mobile_menu }}';

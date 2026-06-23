@@ -103,7 +103,8 @@
     class PreloadScreen extends HTMLElement {
       constructor() {
         super();
-        document.addEventListener("DOMContentLoaded", () => {this.show()});
+        // Hide preload screen immediately on initialization to avoid blocking FCP/LCP metrics
+        this.show();
       }
   
       show() {
