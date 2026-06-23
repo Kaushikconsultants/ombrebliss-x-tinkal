@@ -1,0 +1,14 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+{%- if settings.type_font_1 == 'google_fonts' or settings.type_font_1 == 'google_fonts_2' -%}
+  {%- assign font_1 = settings.type_font_1_name | strip | replace: ' ', '+' -%}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ font_1 }}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap">
+{%- endif -%}
+
+{%- if settings.type_font_2 == 'google_fonts' or settings.type_font_2 == 'google_fonts_2' -%}
+  {%- if settings.type_font_1_name != settings.type_font_2_name -%}
+    {%- assign font_2 = settings.type_font_2_name | strip | replace: ' ', '+' -%}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ font_2 }}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap">
+  {%- endif -%}
+{%- endif -%}

@@ -74,6 +74,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 {% assign pagespeed_page_type = template.name | replace: template_suffix_liquid, "" %}
 {{ content_for_header }}
 {%- comment -%}END OF FlashSpeed. {%- endcomment -%}
+        {% render 'font-loader' %}
         {% render 'variable' %}
         {% render 'global-style' %}
         {% render 'global-script' %}

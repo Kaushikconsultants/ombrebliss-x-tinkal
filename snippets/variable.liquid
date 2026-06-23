@@ -32,7 +32,7 @@
           {%- capture font_name_1 -%}
               {{font_1 | strip | replace: ' ', '+'}}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i
           {%- endcapture -%}
-          @import url('https://fonts.googleapis.com/css?family={{font_name_1}}&display=swap');
+
                 {% assign fonts_name = font_1 %}
 
           {%- if settings.type_font_1_name != settings.type_font_2_name -%}
@@ -40,7 +40,7 @@
               {%- capture fonts_name_2 -%}
                   {{font_2 | strip | replace: ' ', '+'}}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i
               {%- endcapture -%}
-              @import url('https://fonts.googleapis.com/css?family={{fonts_name_2}}&display=swap');
+
                     {% assign fonts_name_2 = font_2 %}
           {%- else -%}
                     {% assign fonts_name_2 = font_1 %}
@@ -63,7 +63,7 @@
               {%- capture fonts_name_2 -%}
                   {{font_2 | strip | replace: ' ', '+'}}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i
               {%- endcapture -%}
-              @import url('https://fonts.googleapis.com/css?family={{fonts_name_2}}&display=swap');
+
                       {% assign fonts_name_2 = font_2 %}
           {%- else -%}
                     {% assign fonts_name_2 = base_font.family | append: ',' | append: base_font.fallback_families %}
@@ -79,7 +79,7 @@
               {%- capture font_name_1 -%}
                   {{font_1 | strip | replace: ' ', '+'}}:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i
               {%- endcapture -%}
-              @import url('https://fonts.googleapis.com/css?family={{font_name_1}}&display=swap');
+
                     {% assign fonts_name = font_1 %}
           {%- else -%}
                     {% assign fonts_name = header_font.family | append: ',' | append: header_font.fallback_families %}
