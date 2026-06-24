@@ -669,7 +669,6 @@ footer details[open] summary~* {
 
     .footer-block__mobile .footer-block__heading.is-clicked+.footer-block__list {
         display: block;
-        animation: appear-down var(--duration-default) ease;
     }
 
     .footer-block__bottom .footer-block__item {
