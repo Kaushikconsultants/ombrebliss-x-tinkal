@@ -50,9 +50,9 @@ class StickyAddToCart extends HTMLElement {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         const offsetScroll = $(this.stickyBounds).offset().top + $(this.stickyBounds).outerHeight(true) + 100;
         const winHeight = window.innerHeight;
-        const docHeight = document.body.clientHeight;
+        const docHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
 
-        if (scrollTop > offsetScroll && scrollTop + winHeight < docHeight) {
+        if (scrollTop > offsetScroll && scrollTop + winHeight < docHeight - 100) {
             requestAnimationFrame(this.show.bind(this));
 
             if (this.sticky.classList.contains('style-1')) {
