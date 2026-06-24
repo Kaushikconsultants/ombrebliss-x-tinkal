@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Select Your Complimentary 25ml Perfume At Checkout",
+            "text": "Free 25ml Perfume at Checkout | Extra 5% Off on Prepaid Orders |",
             "btn_color": "#cc0e14",
             "btn_border_color": "#2da116",
             "btn_bg_color": "#727272",
@@ -30,8 +30,8 @@
       ],
       "settings": {
         "enable_announcement": true,
-        "layout": "slider",
-        "color_text": "#FFFFFF",
+        "layout": "scroll",
+        "color_text": "#ffffff",
         "bg_color_text": "#55343b",
         "bg_color_text_gradient": "",
         "font_size_text": 14,
