@@ -339,12 +339,11 @@
                             this.querySelector('.container').appendChild(nextBtn);
                         }
 
-                        const autoPlayInterval = setInterval(nextSlide, 3000);
-
-                        row.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-                        row.addEventListener('mouseleave', () => {
-                            setInterval(nextSlide, 3000);
-                        });
+                        if (totalSlides > 1) { 
+                            const autoPlayInterval = setInterval(nextSlide, 3000); 
+                            row.addEventListener('mouseenter', () => clearInterval(autoPlayInterval)); 
+                            row.addEventListener('mouseleave', () => setInterval(nextSlide, 3000)); 
+                        }
 
                         this.announcementBarSlider.classList.add('slick-initialized');
                     }
