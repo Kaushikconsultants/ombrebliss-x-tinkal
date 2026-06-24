@@ -178,7 +178,7 @@ class VariantQuickShopSelects extends HTMLElement {
                                 }
                             });
                         } else {
-                            electOption.each((idx, elt) => {
+                            selectOption.each((idx, elt) => {
                                 var $option = $(elt),
                                     optionValue = $(elt).val();
 
@@ -276,7 +276,7 @@ class VariantQuickShopSelects extends HTMLElement {
                                 }
                             });
                         } else {
-                            electOption.each((idx, elt) => {
+                            selectOption.each((idx, elt) => {
                                 var $option = $(elt),
                                     optionValue = $(elt).val();
 

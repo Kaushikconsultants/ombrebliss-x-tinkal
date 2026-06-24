@@ -369,7 +369,7 @@ class VariantStickyAddToCart extends HTMLElement {
                                   }
                                 });
                             } else {
-                                electOption.each((idx, elt) => {
+                                selectOption.each((idx, elt) => {
                                     var $option = $(elt),
                                         optionValue = $(elt).val();
     
@@ -497,7 +497,7 @@ class VariantStickyAddToCart extends HTMLElement {
                                     }
                                 });
                             } else {
-                                electOption.each((idx, elt) => {
+                                selectOption.each((idx, elt) => {
                                     var $option = $(elt),
                                         optionValue = $(elt).val();
     

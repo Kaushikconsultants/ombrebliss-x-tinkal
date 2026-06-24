@@ -27,7 +27,7 @@
 <noscript>{{ 'component-grid.css' | asset_url | stylesheet_tag }}</noscript>
 
 {% if product_page_layout == "default" %}
-  {% render 'product-page' %}
+  {% render 'product-page-left-thumbs' %}
 {% elsif product_page_layout == "full_width" %}
   {% render 'product-page-full-width' %}
 {% elsif product_page_layout == "full_width_2" %}
