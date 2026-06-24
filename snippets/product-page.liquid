@@ -484,7 +484,7 @@
                     </div>
                 </div>
                 <div class="page-sidebar page-sidebar-{{ sidebar_position }} page-sidebar--{{ sidebar_type }} sidebar--{{ sidebar_layout }}{% if enable_sticky %} has-sticky{% endif %}" id="halo-sidebar">
-                    <a href="javascript:void(0)" class="halo-sidebar-close" data-close-sidebar role="button">
+                    <a role="button" tabindex="0" class="halo-sidebar-close" data-close-sidebar role="button">
                         <span class="visually-hidden">{{ 'general.common.close' | t }}</span>
                         {% render 'icon-close' %}
                     </a>

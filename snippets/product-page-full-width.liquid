@@ -438,7 +438,7 @@
                     </div>
                 </div>
                 <div class="page-sidebar page-sidebar-{{ sidebar_position }} page-sidebar--{{ sidebar_type }} sidebar--{{ sidebar_layout }}{% if enable_sticky %} has-sticky{% endif %}" id="halo-sidebar">
-                    <a href="javascript:void(0)" class="halo-sidebar-close" data-close-sidebar role="button">
+                    <a role="button" tabindex="0" class="halo-sidebar-close" data-close-sidebar role="button">
                         <span class="visually-hidden">{{ 'general.common.close' | t }}</span>
                         {% render 'icon-close' %}
                     </a>
@@ -722,7 +722,7 @@
                                             {%- case media.media_type -%}
                                                 {%- when 'image' -%}
                                                     <div class="productView-thumbnail filter-{{ media.alt | escape | downcase | replace: ' ', '-' }}" data-media-id="{{ section.id }}-{{ media.id }}">
-                                                        <a class="productView-thumbnail-link animated-loading" href="javascript:void(0)" data-image="{{ media | img_url: 'large' }}">
+                                                        <a class="productView-thumbnail-link animated-loading" role="button" tabindex="0" data-image="{{ media | img_url: 'large' }}">
                                                             <img src="{%- if thumnail_layout == '3' -%}{{ media | img_url: 'large' }}{% else %}{{ media | img_url: 'medium' }}{% endif %}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
                                                         </a>
                                                     </div>

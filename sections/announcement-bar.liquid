@@ -1,7 +1,7 @@
 {%- if section.settings.enable_announcement and section.blocks.size > 0 -%}
     {%-liquid
         assign arrow = section.settings.arrow_active
-        assign timeScroll = 5 | times: section.blocks.size
+        assign timeScroll = 15 | times: section.blocks.size
     -%}
 
     <style type="text/css" media="screen">
@@ -67,7 +67,7 @@
 
         .announcement-bar .layout--scroll .announcement-bar__message .message,
         .announcement-bar .layout--scroll .announcement-bar__message p {
-            padding: 5px 12.5px;
+            padding: 5px 40px;
             margin: 0;
         }
 
