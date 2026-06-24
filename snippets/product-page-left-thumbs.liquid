@@ -518,15 +518,15 @@
                                                             {% if product_image_popup == 'fancybox' %} data-fancybox="images" href="{{ media.preview_image | img_url: 'master' }}" {% endif %}
                                                         >
                                                             <img id="product-featured-image-{{ media.id }}"
-                                                                srcset="{{ media.preview_image | img_url: 'master' }}"
-                                                                src="{{ media | img_url: 'master' }}"
+                                                                srcset="{{ media.preview_image | image_url: width: 360 }} 360w, {{ media.preview_image | image_url: width: 540 }} 540w, {{ media.preview_image | image_url: width: 720 }} 720w, {{ media.preview_image | image_url: width: 1080 }} 1080w, {{ media.preview_image | image_url: width: 1440 }} 1440w"
+                                                                src="{{ media.preview_image | image_url: width: 1080 }}"
                                                                 {% if settings.enable_lazyload %}data-src="{{ media | img_url: 'master' }}"{% endif %}
                                                                 alt="{{ media.preview_image.alt | escape }}"
                                                                 title="{{ media.preview_image.alt | escape }}"
-                                                                sizes="(min-width: 2000px) 1500px, (min-width: 1200px) 1200px, (min-width: 768px) calc((100vw - 30px) / 2), calc(100vw - 20px)"
+                                                                sizes="(min-width: 1200px) 600px, (min-width: 768px) calc((100vw - 30px) / 2), 100vw"
                                                                 width="{{ media.width }}"
                                                                 height="{{ media.height }}"
-                                                                {% unless forloop.first %}loading="lazy"{% endunless %}
+                                                                {% if forloop.first %}fetchpriority="high" decoding="async"{% else %}loading="lazy"{% endif %}
                                                                 data-sizes="auto"
                                                                 data-main-image
                                                                 data-index="{{ forloop.index }}"
