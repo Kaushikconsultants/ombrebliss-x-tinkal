@@ -1,6 +1,8 @@
 <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'lazysizes.min.js' | asset_url }}" defer="defer"></script>
+<!-- lazysizes must load synchronously - config set before load -->
+<script>window.lazySizesConfig = { loadMode: 1 };</script>
+<script src="{{ 'lazysizes.min.js' | asset_url }}"></script>
 <!-- {{ 'menu.js' | asset_url | script_tag }} -->
 
 {%- if settings.show_quick_search -%}
@@ -50,10 +52,7 @@
 %}
 
 <script>
-    window.lazySizesConfig = window.lazySizesConfig || {};
-    lazySizesConfig.loadMode = 1;
-    window.lazySizesConfig.init = false;
-    lazySizes.init();
+    // lazySizes auto-inits via config set above (window.lazySizesConfig = { loadMode: 1 })
 
     window.rtl_slick = {{ enable_iso_rtl }};
     window.mobile_menu = '{{ settings.mobile_menu }}';
