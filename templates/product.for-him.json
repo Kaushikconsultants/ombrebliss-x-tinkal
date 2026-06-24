@@ -1,1 +1,562 @@
-{"sections":{"main":{"type":"main-product","blocks":{"2e8c7c14-a0ad-4930-a1d8-3def05310426":{"type":"breadcrumb","settings":{"breadcrumb_layout":"full","breadcrumb_alignment":"left","breadcrumb_bg":"#ffffff","breadcrumb_gradient":"","breadcrumb_bg_mb":"#ffffff","breadcrumb_gradient_mb":"","breadcrumb_mg_top_desktop":10,"breadcrumb_mg_top_mobile":10,"breadcrumb_mg_bottom_desktop":10,"breadcrumb_mg_bottom_mobile":10}},"b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0":{"type":"title","settings":{"fontsize_text":30,"fontsize_text_mb":22,"color_title":"#232323","spacing_top":5,"spacing_bottom":2}},"product_text_GdJPtX":{"type":"product_text","settings":{"text":"","text_icon":"","text_description":"<b>For Him | 20% Fragrance Concentration<\/b>","fontsize_text":12,"content_spacing":0,"custom_block_align":"left","color_title":"#232323","background_color_block":"rgba(0,0,0,0)","background_gradient_color_block":"","spacing_top":0,"spacing_bottom":0}},"judge_me_reviews_preview_badge_x4F8tN":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}},"vendor_eXm3Bt":{"type":"vendor","disabled":true,"settings":{"fontsize_text":20,"color_title":"#232323","text_transform":"normal","spacing_top":0,"spacing_bottom":0}},"0e4ea696-4820-4c98-aaa6-806d41782a3d":{"type":"meta","disabled":true,"settings":{"spacing_top":0,"spacing_bottom":14,"show_sold_in":true,"sold_in_number":"3,5,6,7,8,10,12,15","sold_in_hours":"10,15,16,17,18,20,25,35","color_text_sold_in":"#e95144"}},"4f95b592-8369-4ab0-b30d-24e463fb6890":{"type":"price","settings":{"fontsize_text":23,"spacing_top":20,"spacing_bottom":0}},"product_text_t3jywK":{"type":"product_text","settings":{"text":"","text_icon":"","text_description":"Inclusive of all taxes","fontsize_text":12,"content_spacing":0,"custom_block_align":"left","color_title":"#232323","background_color_block":"#ffffff","background_gradient_color_block":"","spacing_top":0,"spacing_bottom":0}},"product_text_gp6LTG":{"type":"product_text","settings":{"text":"","text_icon":"","text_description":"<ul>\n  <li>Affordable Luxury \/ Long-lasting Luxury<\/li>\n  <li>Conscious Crafting \/ Transparent Formulation<\/li>\n  <li>20% Fragrance Concentration<\/li>\n  <li>Masculine aroma<\/li>\n<\/ul>","fontsize_text":13,"content_spacing":0,"custom_block_align":"left","color_title":"#232323","background_color_block":"rgba(0,0,0,0)","background_gradient_color_block":"","spacing_top":15,"spacing_bottom":15}},"10093fcf-2053-47e9-bedb-841bb0d046fa":{"type":"trust_image","settings":{"show_trust_image":true,"spacing_top":0,"spacing_bottom":0}},"faa2b3e6-c0a1-4269-baa6-d2605efe4c05":{"type":"quantity_selector","settings":{"qty_style":"1","qty_layout":"2","spacing_top":50,"spacing_bottom":0}},"f1b31d90-1e43-4948-9fe3-97ba43f6fb34":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":false,"spacing_top":0,"spacing_bottom":15,"atc_animation":"tilt-shaking","atc_color":"#f5f2f2","atc_border_color":"#232323","atc_bg_color":"#232323","atc_bg_color_gradient":"","atc_color_hover":"#232323","atc_border_color_hover":"#232323","atc_bg_color_hover":"#ffffff","atc_bg_color_gradient_hover":"","bin_color":"#232323","bin_border_color":"#acacac","bin_bg_color":"#ffffff","bin_bg_color_gradient":"","bin_color_hover":"#ffffff","bin_border_color_hover":"#232323","bin_bg_color_hover":"#232323","bin_bg_color_hover_gradient":""}},"product_text_PDpYMr":{"type":"product_text","disabled":true,"settings":{"text":"","text_icon":"","text_description":"<div class=\"return-policy\" style=\"background-color: #E0AB40; padding: 8px; max-width: 550px; text-align: center; font-family: 'Times New Roman', serif; font-size: 18px; border: 1px solid black;\">\n    <h2 style=\"font-size: 1.1em; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1px;\">5-Day Easy Return\/Exchange Policy<\/h2>\n<\/div>","fontsize_text":14,"content_spacing":0,"custom_block_align":"center","color_title":"#232323","background_color_block":"rgba(0,0,0,0)","background_gradient_color_block":"","spacing_top":20,"spacing_bottom":0}},"product_text_CLbTbE":{"type":"product_text","disabled":true,"settings":{"text":"","text_icon":"","text_description":"<div class=\"return-policy\" style=\"border: 1px solid #000; padding: 15px; max-width: 550px;\">\n        On your first purchase of 100ml perfume bottle, you get the website-exclusive privilege of trying the perfume for a week before deciding if you wish to keep it or Exchange for a no-questions-asked free replacement. T&C applied.\n    <br>\n    <a href=\"https:\/\/ombrebliss.com\/pages\/cancellation-and-return-policy\" style=\"font-size: 1em; color: #000; text-decoration: underline;\">Read More<\/a>\n<\/div>","fontsize_text":14,"content_spacing":0,"custom_block_align":"center","color_title":"#232323","background_color_block":"rgba(0,0,0,0)","background_gradient_color_block":"","spacing_top":0,"spacing_bottom":0}},"product_text_XjrWNa":{"type":"product_text","disabled":true,"settings":{"text":"Explore Our Build You Own Box Offer:","text_icon":"","text_description":"<body>\n   <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <style>\n        .product-container {\n            display: flex;\n            justify-content: center;\n            gap: 10px;\n            font-family: Helvetica, sans-serif;\n        }\n        .product-info {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            width: 300px;\n            padding: 10px;\n            border: 1px solid #ddd;\n            border-radius: 10px;\n            background-color: #f9f9f9;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n            text-align: center;\n        }\n        .product-info .icon {\n            font-size: 24px;\n            margin-bottom: 10px;\n        }\n        .product-info .price {\n            font-size: 15px;\n            font-weight: bold;\n            margin-bottom: 10px;\n        }\n        .product-info .description {\n            font-size: 14px;\n            margin-bottom: 20px;\n        }\n        .product-info .dotted-line {\n            border-top: 1px dashed #000;\n            width: 100%;\n            margin-bottom: 10px;\n        }\n        .product-info .footer {\n            font-size: 14px;\n            color: #666;\n        }\n        .product-info .footer a {\n            color: #000;\n            text-decoration: none;\n            font-weight: bold;\n        }\n    <\/style>\n    <title>Product Information<\/title>\n\n\n    <div class=\"product-container\">\n        <div class=\"product-info\">\n            <div class=\"icon\">🏷️<\/div>\n            \n            <div class=\"description\">Pick Any 3 for Rs.2500. <br><u><a href=\"https:\/\/ombrebliss.com\/products\/pick-any-3-edps-rs-2500\">Click Here.<\/a><\/u>\n<\/div>\n            <div class=\"dotted-line\"><\/div>\n           \n        <\/div>\n        <div class=\"product-info\">\n            <div class=\"icon\">🏷️<\/div>\n           \n            <div class=\"description\">Pick Any 5 for Rs.4000. <br><u><a href=\"https:\/\/ombrebliss.com\/products\/pick-any-5-edps-rs-4000\">Click Here.<\/a><\/u>\n<\/div>\n            <div class=\"dotted-line\"><\/div>\n            \n        \n    <\/div>\n\n<\/div>\n<\/body>","fontsize_text":14,"content_spacing":0,"custom_block_align":"left","color_title":"#232323","background_color_block":"rgba(0,0,0,0)","background_gradient_color_block":"","spacing_top":8,"spacing_bottom":0}},"bd066b80-c8e3-4f3e-8280-b27fbf6e9423":{"type":"description","settings":{"open_tab_mobile":true,"title":"Scent Notes","enable_btn_show_more":false,"maximum_des_to_show":300}},"87197f5f-be0e-4b89-9270-62bf6917ebe7":{"type":"custom","settings":{"open_tab_mobile":false,"title":"About","type":"metafield","content":"","enable_btn_show_more":false,"maximum_des_to_show":2000,"product_custom_source":"key_text","product_tab_key_metafield":"reasons_to_love"}},"custom_zHtWTc":{"type":"custom","disabled":true,"settings":{"open_tab_mobile":false,"title":"Fragrance Notes","type":"metafield","content":"","enable_btn_show_more":false,"maximum_des_to_show":2000,"product_custom_source":"key_text","product_tab_key_metafield":"notes"}},"custom_qwXfPt":{"type":"custom","disabled":true,"settings":{"open_tab_mobile":false,"title":"Product Specification","type":"metafield","content":"","enable_btn_show_more":false,"maximum_des_to_show":2000,"product_custom_source":"key_text","product_tab_key_metafield":"specification"}},"custom_jKcpbw":{"type":"custom","settings":{"open_tab_mobile":false,"title":"Legal Information","type":"metafield","content":"","enable_btn_show_more":false,"maximum_des_to_show":2000,"product_custom_source":"key_text","product_tab_key_metafield":"legal_information"}},"custom_eejpFh":{"type":"custom","settings":{"open_tab_mobile":false,"title":"FAQs","type":"all","content":"<p>\n  <strong>Are these fragrances long lasting?<\/strong><br>\n  They are designed to be very long lasting, just like designer fragrances, in some cases even longer, depending on the composition.\n<\/p>\n\n<p>\n  <strong>Unsure about something? Ask us!<\/strong><br>\n  <a href=\"mailto:support@ombrebliss.com\">support@ombrebliss.com<\/a>\n<\/p>","enable_btn_show_more":false,"maximum_des_to_show":2000,"product_custom_source":"dynamic","product_tab_key_metafield":""}},"19ab1d9f-74b2-4c76-bf2e-1bc749e5c2a3":{"type":"share","disabled":true,"settings":{"show_share":true,"share_layout":"2","spacing_top":0,"spacing_bottom":0}}},"block_order":["2e8c7c14-a0ad-4930-a1d8-3def05310426","b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0","product_text_GdJPtX","judge_me_reviews_preview_badge_x4F8tN","vendor_eXm3Bt","0e4ea696-4820-4c98-aaa6-806d41782a3d","4f95b592-8369-4ab0-b30d-24e463fb6890","product_text_t3jywK","product_text_gp6LTG","10093fcf-2053-47e9-bedb-841bb0d046fa","faa2b3e6-c0a1-4269-baa6-d2605efe4c05","f1b31d90-1e43-4948-9fe3-97ba43f6fb34","product_text_PDpYMr","product_text_CLbTbE","product_text_XjrWNa","bd066b80-c8e3-4f3e-8280-b27fbf6e9423","87197f5f-be0e-4b89-9270-62bf6917ebe7","custom_zHtWTc","custom_qwXfPt","custom_jKcpbw","custom_eejpFh","19ab1d9f-74b2-4c76-bf2e-1bc749e5c2a3"],"settings":{"container":"container","padding_full_width":20,"show_sticky_info":true,"mg_top_desktop":20,"mg_top_tablet":20,"mg_top_mobile":20,"mg_bottom_desktop":20,"mg_bottom_tablet":20,"mg_bottom_mobile":20,"main_image_arrows_desktop":false,"main_image_arrows_mobile":false,"main_image_counter_mobile":true,"main_image_enable_parallax_mb":false,"main_image_show_zoom_icon_mb":true,"main_image_position":"left","main_image_layout":"1","main_image_show_custom_cursor":true,"count_color":"#191919","icon_color":"#000000","show_thumbnail_mobile":true,"thumnail_layout":"1","thumbnail_to_show":4,"show_sidebar":false,"sidebar_collapse":"collapse","enable_sticky":false,"sidebar_layout":"layout_1","sidebar_collapse_default":"close","sidebar_position":"left","sidebar_heading_font":"font_1","sidebar_heading_font_size":23,"sidebar_heading_font_weight":"800","sidebar_heading_text_transform":"uppercase","product_image_ratio":"adapt","portrait_aspect_ratio":134,"zoomed_image":true,"media_fit":"unset","product_image_popup":"fancybox","video_layout":"popup","show_badge":true,"show_qty":true,"show_subtotal":false,"subtotal_style":"2","show_sticky_add_to_cart":true,"enable_sticky_add_to_cart_always_mobile":false,"show_sticky_vendor":false,"sticky_atc_layout":"1","show_tab":true,"tab_layout":"vertical","tab_layout_mobile":"vertical","icon_style_layout":"style_1","title_font_size":18,"title_font_size_mb":16,"font_weight_title":"600","title_text_transform":"none","title_padding_top_bottom":15,"tab_border_color":"#000000","tab_border_color_rgb":"","show_product_bundle":true,"background_color":"#f8f8f8","padding_top":30,"padding_top_tablet":30,"padding_top_mobile":30,"padding_bottom":70,"padding_bottom_tablet":40,"padding_bottom_mobile":30,"block_title":"Frequently Bought Together","block_title_align":"center","block_dots":false,"block_arrows":true,"product_style":"3","block_image_ratio":"adapt","bundle_discount":true,"bundle_discount_text":"Get a [discount]% discount buying these products together","bundle_discount_text_color":"#232323","total_btn_color":"#ffffff","total_btn_border":"#232323","total_btn_bg":"#232323","total_btn_bg_gradient":"","total_btn_color_hover":"#232323","total_btn_border_hover":"#232323","total_btn_bg_hover":"#ffffff","total_btn_bg_gradient_hover":""}},"image_banner_zGyUFK":{"type":"image-banner","blocks":{"large_img_zcVkVU":{"type":"largeImg","settings":{"image":"shopify:\/\/shop_images\/42_43c3d81b-1e7b-4cf6-9096-17bc56ffd7b2.png","mobile_image":"shopify:\/\/shop_images\/42_43c3d81b-1e7b-4cf6-9096-17bc56ffd7b2.png","enable_max_width_image":false,"custom_width_image":1170,"enable_scroll_down":false,"enable_custom_image":false,"image_behavior":"none","sub_title":"","border_sub_title":false,"font_size_sub_title":14,"font_size_sub_title_mb":14,"margin_bottom_sub_title":14,"sub_heading_font":"font_1","font_weight_sub_title":"700","sub_title_position":"sub_title_above","color_sub_title":"#232323","color_sub_title_mb":"#ffffff","heading":"","letter_spacing_heading":"","enable_style_italic":false,"font_size_heading":40,"font_size_heading_mb":24,"margin_bottom_heading":20,"font_weight_heading":"600","color_heading":"#232323","color_heading_mb":"#ffffff","border_title":"border_s1","border_color_title":"#232323","border_color_title_mobile":"#ffffff","text":"","font_size_des":12,"font_size_des_mb":12,"line_height_des":26,"margin_bottom_des":35,"color_des":"#232323","color_des_mb":"#ffffff","countdown":"","hide_countdown_fc":"countdown","countdown_style":"round","countdown_position":"countdown_below_desc","font_size_countdown_number":30,"font_size_countdown_text":14,"color_countdown":"#232323","color_countdown_mb":"#ffffff","countdown_margin_bottom":35,"content_width":475,"align":"center","align_items":"center","position":"left","custom_horizontal":"","custom_vertical":"","btn_text":"","link":"","btn_icon":"","button_1_width":235,"enable_button_custom_border":false,"button_color":"#ffffff","button_border":"#232323","button_background":"#232323","button_background_gradient":"","button_color_hover":"#ffffff","button_border_hover":"#232323","button_background_hover":"#232323","button_background_gradient_hover":"","btn_text_2":"","link_2":"","btn_icon_2":"","button_color_2":"#ffffff","button_border_2":"#232323","button_background_2":"#232323","button_background_2_gradient":"","button_color_hover_2":"#ffffff","button_border_hover_2":"#232323","button_background_hover_2":"#232323","button_background_gradient_hover_2":"","video_link":"","adaptive_height_video":"56","icon_style":"style_1","color_icon":"#ffffff","bg_color_icon":"#000000","enable_custom_video_icon_position":false,"video_icon_horizontal_position":"","video_icon_vertical_position":"","video_icon_horizontal_position_mb":"","video_icon_vertical_position_mb":""}}},"block_order":["large_img_zcVkVU"],"disabled":true,"settings":{"id_section":"","container":"fullwidth","padding_full_width":0,"mg_top_desktop":10,"mg_top_tablet":10,"mg_top_mobile":10,"mg_bottom_desktop":10,"mg_bottom_tablet":10,"mg_bottom_mobile":10,"image_banner_title":"","enable_border_title":false,"color_title":"#202020","fontsize_title":24,"fontsize_title_mb":20,"margin_bottom_title":25,"image_banner_des":"","color_des":"#202020","fontsize_des":16,"title_align":"center","style_bg":"none","bg_color":"","bg_color_gradient":"","display_type":"slide","list_gap":0,"enable_arrows":false,"arrows_position":"","enable_dots":false,"enable_autoplay":false}},"image_banner_8wAVCx":{"type":"image-banner","blocks":{"large_img_jgzcgd":{"type":"largeImg","settings":{"image":"shopify:\/\/shop_images\/43_cabad7ae-38a9-4524-9b9a-d25e179de890.png","mobile_image":"shopify:\/\/shop_images\/43_cabad7ae-38a9-4524-9b9a-d25e179de890.png","enable_max_width_image":false,"custom_width_image":1170,"enable_scroll_down":false,"enable_custom_image":false,"image_behavior":"none","sub_title":"","border_sub_title":false,"font_size_sub_title":14,"font_size_sub_title_mb":14,"margin_bottom_sub_title":14,"sub_heading_font":"font_1","font_weight_sub_title":"700","sub_title_position":"sub_title_above","color_sub_title":"#232323","color_sub_title_mb":"#ffffff","heading":"","letter_spacing_heading":"","enable_style_italic":false,"font_size_heading":40,"font_size_heading_mb":24,"margin_bottom_heading":20,"font_weight_heading":"600","color_heading":"#232323","color_heading_mb":"#ffffff","border_title":"border_s1","border_color_title":"#232323","border_color_title_mobile":"#ffffff","text":"","font_size_des":12,"font_size_des_mb":12,"line_height_des":26,"margin_bottom_des":35,"color_des":"#232323","color_des_mb":"#ffffff","countdown":"","hide_countdown_fc":"countdown","countdown_style":"round","countdown_position":"countdown_below_desc","font_size_countdown_number":30,"font_size_countdown_text":14,"color_countdown":"#232323","color_countdown_mb":"#ffffff","countdown_margin_bottom":35,"content_width":475,"align":"center","align_items":"center","position":"left","custom_horizontal":"","custom_vertical":"","btn_text":"","link":"","btn_icon":"","button_1_width":235,"enable_button_custom_border":false,"button_color":"#ffffff","button_border":"#232323","button_background":"#232323","button_background_gradient":"","button_color_hover":"#ffffff","button_border_hover":"#232323","button_background_hover":"#232323","button_background_gradient_hover":"","btn_text_2":"","link_2":"","btn_icon_2":"","button_color_2":"#ffffff","button_border_2":"#232323","button_background_2":"#232323","button_background_2_gradient":"","button_color_hover_2":"#ffffff","button_border_hover_2":"#232323","button_background_hover_2":"#232323","button_background_gradient_hover_2":"","video_link":"","adaptive_height_video":"56","icon_style":"style_1","color_icon":"#ffffff","bg_color_icon":"#000000","enable_custom_video_icon_position":false,"video_icon_horizontal_position":"","video_icon_vertical_position":"","video_icon_horizontal_position_mb":"","video_icon_vertical_position_mb":""}}},"block_order":["large_img_jgzcgd"],"disabled":true,"settings":{"id_section":"","container":"fullwidth","padding_full_width":0,"mg_top_desktop":10,"mg_top_tablet":10,"mg_top_mobile":10,"mg_bottom_desktop":10,"mg_bottom_tablet":10,"mg_bottom_mobile":10,"image_banner_title":"","enable_border_title":false,"color_title":"#202020","fontsize_title":24,"fontsize_title_mb":20,"margin_bottom_title":25,"image_banner_des":"","color_des":"#202020","fontsize_des":16,"title_align":"center","style_bg":"none","bg_color":"","bg_color_gradient":"","display_type":"slide","list_gap":0,"enable_arrows":false,"arrows_position":"","enable_dots":false,"enable_autoplay":false}},"image_banner_Kgw7wF":{"type":"image-banner","blocks":{"large_img_FdAfmR":{"type":"largeImg","settings":{"image":"shopify:\/\/shop_images\/44_2e2d6d49-1b64-41c2-ac15-936c630bdeb9.png","mobile_image":"shopify:\/\/shop_images\/44_2e2d6d49-1b64-41c2-ac15-936c630bdeb9.png","enable_max_width_image":false,"custom_width_image":1170,"enable_scroll_down":false,"enable_custom_image":false,"image_behavior":"none","sub_title":"","border_sub_title":false,"font_size_sub_title":14,"font_size_sub_title_mb":14,"margin_bottom_sub_title":14,"sub_heading_font":"font_1","font_weight_sub_title":"700","sub_title_position":"sub_title_above","color_sub_title":"#232323","color_sub_title_mb":"#ffffff","heading":"","letter_spacing_heading":"","enable_style_italic":false,"font_size_heading":40,"font_size_heading_mb":24,"margin_bottom_heading":20,"font_weight_heading":"600","color_heading":"#232323","color_heading_mb":"#ffffff","border_title":"border_s1","border_color_title":"#232323","border_color_title_mobile":"#ffffff","text":"","font_size_des":12,"font_size_des_mb":12,"line_height_des":26,"margin_bottom_des":35,"color_des":"#232323","color_des_mb":"#ffffff","countdown":"","hide_countdown_fc":"countdown","countdown_style":"round","countdown_position":"countdown_below_desc","font_size_countdown_number":30,"font_size_countdown_text":14,"color_countdown":"#232323","color_countdown_mb":"#ffffff","countdown_margin_bottom":35,"content_width":475,"align":"center","align_items":"center","position":"left","custom_horizontal":"","custom_vertical":"","btn_text":"","link":"","btn_icon":"","button_1_width":235,"enable_button_custom_border":false,"button_color":"#ffffff","button_border":"#232323","button_background":"#232323","button_background_gradient":"","button_color_hover":"#ffffff","button_border_hover":"#232323","button_background_hover":"#232323","button_background_gradient_hover":"","btn_text_2":"","link_2":"","btn_icon_2":"","button_color_2":"#ffffff","button_border_2":"#232323","button_background_2":"#232323","button_background_2_gradient":"","button_color_hover_2":"#ffffff","button_border_hover_2":"#232323","button_background_hover_2":"#232323","button_background_gradient_hover_2":"","video_link":"","adaptive_height_video":"56","icon_style":"style_1","color_icon":"#ffffff","bg_color_icon":"#000000","enable_custom_video_icon_position":false,"video_icon_horizontal_position":"","video_icon_vertical_position":"","video_icon_horizontal_position_mb":"","video_icon_vertical_position_mb":""}}},"block_order":["large_img_FdAfmR"],"disabled":true,"settings":{"id_section":"","container":"fullwidth","padding_full_width":0,"mg_top_desktop":10,"mg_top_tablet":10,"mg_top_mobile":10,"mg_bottom_desktop":10,"mg_bottom_tablet":10,"mg_bottom_mobile":10,"image_banner_title":"","enable_border_title":false,"color_title":"#202020","fontsize_title":24,"fontsize_title_mb":20,"margin_bottom_title":25,"image_banner_des":"","color_des":"#202020","fontsize_des":16,"title_align":"center","style_bg":"none","bg_color":"","bg_color_gradient":"","display_type":"slide","list_gap":0,"enable_arrows":false,"arrows_position":"","enable_dots":false,"enable_autoplay":false}},"image_banner_KeLLKE":{"type":"image-banner","blocks":{"large_img_y73VqC":{"type":"largeImg","settings":{"image":"shopify:\/\/shop_images\/45_be83720a-fbb3-4429-b5f4-de063e43b617.png","mobile_image":"shopify:\/\/shop_images\/45_be83720a-fbb3-4429-b5f4-de063e43b617.png","enable_max_width_image":false,"custom_width_image":1170,"enable_scroll_down":false,"enable_custom_image":false,"image_behavior":"none","sub_title":"","border_sub_title":false,"font_size_sub_title":14,"font_size_sub_title_mb":14,"margin_bottom_sub_title":14,"sub_heading_font":"font_1","font_weight_sub_title":"700","sub_title_position":"sub_title_above","color_sub_title":"#232323","color_sub_title_mb":"#ffffff","heading":"","letter_spacing_heading":"","enable_style_italic":false,"font_size_heading":40,"font_size_heading_mb":24,"margin_bottom_heading":20,"font_weight_heading":"600","color_heading":"#232323","color_heading_mb":"#ffffff","border_title":"border_s1","border_color_title":"#232323","border_color_title_mobile":"#ffffff","text":"","font_size_des":12,"font_size_des_mb":12,"line_height_des":26,"margin_bottom_des":35,"color_des":"#232323","color_des_mb":"#ffffff","countdown":"","hide_countdown_fc":"countdown","countdown_style":"round","countdown_position":"countdown_below_desc","font_size_countdown_number":30,"font_size_countdown_text":14,"color_countdown":"#232323","color_countdown_mb":"#ffffff","countdown_margin_bottom":35,"content_width":475,"align":"center","align_items":"center","position":"left","custom_horizontal":"","custom_vertical":"","btn_text":"","link":"","btn_icon":"","button_1_width":235,"enable_button_custom_border":false,"button_color":"#ffffff","button_border":"#232323","button_background":"#232323","button_background_gradient":"","button_color_hover":"#ffffff","button_border_hover":"#232323","button_background_hover":"#232323","button_background_gradient_hover":"","btn_text_2":"","link_2":"","btn_icon_2":"","button_color_2":"#ffffff","button_border_2":"#232323","button_background_2":"#232323","button_background_2_gradient":"","button_color_hover_2":"#ffffff","button_border_hover_2":"#232323","button_background_hover_2":"#232323","button_background_gradient_hover_2":"","video_link":"","adaptive_height_video":"56","icon_style":"style_1","color_icon":"#ffffff","bg_color_icon":"#000000","enable_custom_video_icon_position":false,"video_icon_horizontal_position":"","video_icon_vertical_position":"","video_icon_horizontal_position_mb":"","video_icon_vertical_position_mb":""}}},"block_order":["large_img_y73VqC"],"disabled":true,"settings":{"id_section":"","container":"fullwidth","padding_full_width":0,"mg_top_desktop":10,"mg_top_tablet":10,"mg_top_mobile":10,"mg_bottom_desktop":10,"mg_bottom_tablet":10,"mg_bottom_mobile":10,"image_banner_title":"","enable_border_title":false,"color_title":"#202020","fontsize_title":24,"fontsize_title_mb":20,"margin_bottom_title":25,"image_banner_des":"","color_des":"#202020","fontsize_des":16,"title_align":"center","style_bg":"none","bg_color":"","bg_color_gradient":"","display_type":"slide","list_gap":0,"enable_arrows":false,"arrows_position":"","enable_dots":false,"enable_autoplay":false}},"video_block_YDdQg3":{"type":"video-block","disabled":true,"settings":{"container":"fullwidth","mg_top_desktop":30,"mg_top_tablet":30,"mg_top_mobile":30,"mg_bottom_desktop":30,"mg_bottom_tablet":30,"mg_bottom_mobile":30,"spotlight_bg":"#ffffff","spotlight_bg_gradient":"","video_block_title":"","color_title":"#232323","fontsize_title":10,"fontsize_title_mb":10,"margin_bottom_title":0,"video_block_des":"","color_des":"#3c3c3c","fontsize_des":16,"title_align":"center","autoplay":true,"video_height":"54","style_video":"youtube","video_url":"https:\/\/youtu.be\/n_JPRL52AXs","url_mp4":"","description":"","full_width":true}},"1723092097338feb3e":{"type":"apps","settings":{"include_margins":true}},"ss_simple_faq_fLcReW":{"type":"ss-simple-faq","blocks":{"text_HFTdTb":{"type":"text","settings":{"question":"What makes Ombre Bliss perfumes unique?","answer":"<p>Ombre Bliss combines premium ingredients with unique scent compositions to create fragrances that evoke luxury and elegance. Each scent is designed to be long-lasting and distinctive.<\/p>"}},"text_bVXnQJ":{"type":"text","settings":{"question":"How should I apply Ombre Bliss perfumes for the best results?","answer":"<p>Apply Ombree Bliss perfumes to your pulse points such as the wrists, neck, and behind the ears. For a more subtle effect, you can lightly mist it in the air and walk through the fragrance.<\/p>"}},"text_w8cDcq":{"type":"text","settings":{"question":"Are Ombre Bliss perfumes suitable for sensitive skin?","answer":"<p>Yes, Ombre Bliss perfumes are dermatologically tested and made with skin-friendly ingredients. However, we recommend conducting a patch test if you have extremely sensitive skin.<\/p>"}},"text_qBPcPr":{"type":"text","settings":{"question":"How long does the scent of Ombre Bliss last?","answer":"<p>The longevity of our fragrances varies depending on skin type, environment, and the specific scent. On average, our perfumes offer long-lasting wear of 6-8 hours.<\/p>"}},"text_KQHX9a":{"type":"text","settings":{"question":"Can Ombre Bliss perfumes be layered with other fragrances?","answer":"<p>Yes, Ombre Bliss scents are versatile and can be layered to create a personalized fragrance experience. We recommend pairing complementary scents for the best results.<\/p>"}}},"block_order":["text_HFTdTb","text_bVXnQJ","text_w8cDcq","text_qBPcPr","text_KQHX9a"],"disabled":true,"settings":{"heading":"FAQs","icon_color":"#ffffff","hover_color":"#000000","question_color":"#000000","background_color":"rgba(0,0,0,0)","answer_color":"#000000","answer_bg_color":"#ffffff","questions-font-size":1.5}},"product-recommendations":{"type":"product-recommendations","settings":{"display_product_block":true,"product_block_container":"1170","padding_full_width":0,"enable_border_top":false,"enable_border_bottom":false,"color_border_bottom":"#e8e8e8","border_style":"container","mg_top_desktop":50,"mg_top_tablet":50,"mg_top_mobile":50,"mg_bottom_desktop":50,"mg_bottom_tablet":50,"mg_bottom_mobile":50,"product_block_layout":"grid","product_bg":"#ffffff","style_block_header":"style1","product_block_title":"You Might Love","enable_border_title":false,"mg_top_title":27,"mg_bottom_title":3,"fontsize_title":20,"fontsize_title_mb":20,"color_title":"#000000","border_color_title":"#000000","product_block_title_align":"center","product_block_limit":8,"grid_gap":30,"product_block_per_row":"4","product_block_swipe_on_mobile":true,"product_block_dots":false,"product_block_dots_mb":true,"product_block_arrows":true,"product_block_arrows_mb":false,"product_block_show":"4","product_block_per_view":"4","show_half":true,"scroll_height":4,"scroll_track_bg":"#f1f1f1","scroll_thumb_color":"#000000","scroll_thumb_hover_color":"#444444","enable_hover_drag_icon":true,"enable_layout_special":false,"bg_card":"#ffffff","padding_card":15,"border_radius_card":5,"border_layout_card":"full","border_width_card":5,"border_color_card":"#f0f1f4"}},"17284655340cf2729c":{"type":"apps","blocks":{"judge_me_reviews_review_widget_URBATW":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{"review_data":"sample_data","max_width":1200,"show_shop_reviews":false,"empty_state":"empty_widget"}}},"block_order":["judge_me_reviews_review_widget_URBATW"],"settings":{"include_margins":false}},"product-recently-viewed":{"type":"product-recently-viewed","settings":{"display_product_recently_viewed":true,"product_recently_viewed_container":"container","padding_full_width":0,"enable_border_top":true,"enable_border_bottom":false,"color_border_bottom":"#e8e8e8","border_style":"container","mg_top_desktop":80,"mg_top_tablet":50,"mg_top_mobile":30,"mg_bottom_desktop":0,"mg_bottom_tablet":0,"mg_bottom_mobile":0,"product_recently_viewed_layout":"slider","product_bg":"#ffffff","product_bg_gradient":"","style_block_header":"style1","product_recently_viewed_title":"Recently Viewed Products","enable_border_title":false,"mg_top_title":27,"mg_bottom_title":3,"fontsize_title":18,"fontsize_title_mb":18,"border_color_title":"#232323","color_title":"#232323","product_recently_viewed_title_align":"center","product_recently_viewed_limit":10,"product_recently_viewed_image_ratio":"adapt","grid_gap":30,"product_recently_viewed_per_row":"4","product_recently_viewed_swipe_on_mobile":true,"product_recently_viewed_dots":false,"product_recently_viewed_dots_mb":true,"product_recently_viewed_arrows":true,"product_recently_viewed_arrows_mb":false,"product_recently_viewed_show":"4","product_block_per_view":"4","show_half":true,"scroll_height":4,"scroll_track_bg":"#f1f1f1","scroll_thumb_color":"#000000","scroll_thumb_hover_color":"#444444","enable_hover_drag_icon":false,"enable_layout_special":false,"bg_card":"#ffffff","padding_card":15,"border_radius_card":5,"border_layout_card":"full","border_width_card":5,"border_color_card":"#f0f1f4"}},"1742365829e8905d1f":{"type":"apps","settings":{"include_margins":false}}},"order":["main","image_banner_zGyUFK","image_banner_8wAVCx","image_banner_Kgw7wF","image_banner_KeLLKE","video_block_YDdQg3","1723092097338feb3e","ss_simple_faq_fLcReW","product-recommendations","17284655340cf2729c","product-recently-viewed","1742365829e8905d1f"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "2e8c7c14-a0ad-4930-a1d8-3def05310426": {
+          "type": "breadcrumb",
+          "settings": {
+            "breadcrumb_layout": "full",
+            "breadcrumb_alignment": "left",
+            "breadcrumb_bg": "#ffffff",
+            "breadcrumb_gradient": "",
+            "breadcrumb_bg_mb": "#ffffff",
+            "breadcrumb_gradient_mb": "",
+            "breadcrumb_mg_top_desktop": 10,
+            "breadcrumb_mg_top_mobile": 10,
+            "breadcrumb_mg_bottom_desktop": 10,
+            "breadcrumb_mg_bottom_mobile": 10
+          }
+        },
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 30,
+            "fontsize_text_mb": 22,
+            "color_title": "#232323",
+            "spacing_top": 5,
+            "spacing_bottom": 2
+          }
+        },
+        "product_text_GdJPtX": {
+          "type": "product_text",
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "<b>For Him | 20% Fragrance Concentration</b>",
+            "fontsize_text": 12,
+            "content_spacing": 0,
+            "custom_block_align": "left",
+            "color_title": "#232323",
+            "background_color_block": "rgba(0,0,0,0)",
+            "background_gradient_color_block": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "judge_me_reviews_preview_badge_x4F8tN": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "vendor_eXm3Bt": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {
+            "fontsize_text": 20,
+            "color_title": "#232323",
+            "text_transform": "normal",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "0e4ea696-4820-4c98-aaa6-806d41782a3d": {
+          "type": "meta",
+          "disabled": true,
+          "settings": {
+            "spacing_top": 0,
+            "spacing_bottom": 14,
+            "show_sold_in": true,
+            "sold_in_number": "3,5,6,7,8,10,12,15",
+            "sold_in_hours": "10,15,16,17,18,20,25,35",
+            "color_text_sold_in": "#e95144"
+          }
+        },
+        "4f95b592-8369-4ab0-b30d-24e463fb6890": {
+          "type": "price",
+          "settings": {
+            "fontsize_text": 23,
+            "spacing_top": 20,
+            "spacing_bottom": 0
+          }
+        },
+        "product_text_t3jywK": {
+          "type": "product_text",
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "Inclusive of all taxes",
+            "fontsize_text": 12,
+            "content_spacing": 0,
+            "custom_block_align": "left",
+            "color_title": "#232323",
+            "background_color_block": "#ffffff",
+            "background_gradient_color_block": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "product_text_gp6LTG": {
+          "type": "product_text",
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "<ul>\n  <li>Affordable Luxury / Long-lasting Luxury</li>\n  <li>Conscious Crafting / Transparent Formulation</li>\n  <li>20% Fragrance Concentration</li>\n  <li>Masculine aroma</li>\n</ul>",
+            "fontsize_text": 13,
+            "content_spacing": 0,
+            "custom_block_align": "left",
+            "color_title": "#232323",
+            "background_color_block": "rgba(0,0,0,0)",
+            "background_gradient_color_block": "",
+            "spacing_top": 15,
+            "spacing_bottom": 15
+          }
+        },
+        "10093fcf-2053-47e9-bedb-841bb0d046fa": {
+          "type": "trust_image",
+          "settings": {
+            "show_trust_image": true,
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "faa2b3e6-c0a1-4269-baa6-d2605efe4c05": {
+          "type": "quantity_selector",
+          "settings": {
+            "qty_style": "1",
+            "qty_layout": "2",
+            "spacing_top": 50,
+            "spacing_bottom": 0
+          }
+        },
+        "f1b31d90-1e43-4948-9fe3-97ba43f6fb34": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "spacing_top": 0,
+            "spacing_bottom": 15,
+            "atc_animation": "tilt-shaking",
+            "atc_color": "#f5f2f2",
+            "atc_border_color": "#232323",
+            "atc_bg_color": "#232323",
+            "atc_bg_color_gradient": "",
+            "atc_color_hover": "#232323",
+            "atc_border_color_hover": "#232323",
+            "atc_bg_color_hover": "#ffffff",
+            "atc_bg_color_gradient_hover": "",
+            "bin_color": "#232323",
+            "bin_border_color": "#acacac",
+            "bin_bg_color": "#ffffff",
+            "bin_bg_color_gradient": "",
+            "bin_color_hover": "#ffffff",
+            "bin_border_color_hover": "#232323",
+            "bin_bg_color_hover": "#232323",
+            "bin_bg_color_hover_gradient": ""
+          }
+        },
+        "product_text_PDpYMr": {
+          "type": "product_text",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "<div class=\"return-policy\" style=\"background-color: #E0AB40; padding: 8px; max-width: 550px; text-align: center; font-family: 'Times New Roman', serif; font-size: 18px; border: 1px solid black;\">\n    <h2 style=\"font-size: 1.1em; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 1px;\">5-Day Easy Return/Exchange Policy</h2>\n</div>",
+            "fontsize_text": 14,
+            "content_spacing": 0,
+            "custom_block_align": "center",
+            "color_title": "#232323",
+            "background_color_block": "rgba(0,0,0,0)",
+            "background_gradient_color_block": "",
+            "spacing_top": 20,
+            "spacing_bottom": 0
+          }
+        },
+        "product_text_CLbTbE": {
+          "type": "product_text",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "<div class=\"return-policy\" style=\"border: 1px solid #000; padding: 15px; max-width: 550px;\">\n        On your first purchase of 100ml perfume bottle, you get the website-exclusive privilege of trying the perfume for a week before deciding if you wish to keep it or Exchange for a no-questions-asked free replacement. T&C applied.\n    <br>\n    <a href=\"https://ombrebliss.com/pages/cancellation-and-return-policy\" style=\"font-size: 1em; color: #000; text-decoration: underline;\">Read More</a>\n</div>",
+            "fontsize_text": 14,
+            "content_spacing": 0,
+            "custom_block_align": "center",
+            "color_title": "#232323",
+            "background_color_block": "rgba(0,0,0,0)",
+            "background_gradient_color_block": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "product_text_XjrWNa": {
+          "type": "product_text",
+          "disabled": true,
+          "settings": {
+            "text": "Explore Our Build You Own Box Offer:",
+            "text_icon": "",
+            "text_description": "<body>\n   <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <style>\n        .product-container {\n            display: flex;\n            justify-content: center;\n            gap: 10px;\n            font-family: Helvetica, sans-serif;\n        }\n        .product-info {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            width: 300px;\n            padding: 10px;\n            border: 1px solid #ddd;\n            border-radius: 10px;\n            background-color: #f9f9f9;\n            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n            text-align: center;\n        }\n        .product-info .icon {\n            font-size: 24px;\n            margin-bottom: 10px;\n        }\n        .product-info .price {\n            font-size: 15px;\n            font-weight: bold;\n            margin-bottom: 10px;\n        }\n        .product-info .description {\n            font-size: 14px;\n            margin-bottom: 20px;\n        }\n        .product-info .dotted-line {\n            border-top: 1px dashed #000;\n            width: 100%;\n            margin-bottom: 10px;\n        }\n        .product-info .footer {\n            font-size: 14px;\n            color: #666;\n        }\n        .product-info .footer a {\n            color: #000;\n            text-decoration: none;\n            font-weight: bold;\n        }\n    </style>\n    <title>Product Information</title>\n\n\n    <div class=\"product-container\">\n        <div class=\"product-info\">\n            <div class=\"icon\">🏷️</div>\n            \n            <div class=\"description\">Pick Any 3 for Rs.2500. <br><u><a href=\"https://ombrebliss.com/products/pick-any-3-edps-rs-2500\">Click Here.</a></u>\n</div>\n            <div class=\"dotted-line\"></div>\n           \n        </div>\n        <div class=\"product-info\">\n            <div class=\"icon\">🏷️</div>\n           \n            <div class=\"description\">Pick Any 5 for Rs.4000. <br><u><a href=\"https://ombrebliss.com/products/pick-any-5-edps-rs-4000\">Click Here.</a></u>\n</div>\n            <div class=\"dotted-line\"></div>\n            \n        \n    </div>\n\n</div>\n</body>",
+            "fontsize_text": 14,
+            "content_spacing": 0,
+            "custom_block_align": "left",
+            "color_title": "#232323",
+            "background_color_block": "rgba(0,0,0,0)",
+            "background_gradient_color_block": "",
+            "spacing_top": 8,
+            "spacing_bottom": 0
+          }
+        },
+        "bd066b80-c8e3-4f3e-8280-b27fbf6e9423": {
+          "type": "description",
+          "settings": {
+            "open_tab_mobile": true,
+            "title": "Scent Notes",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "87197f5f-be0e-4b89-9270-62bf6917ebe7": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "About",
+            "type": "metafield",
+            "content": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 2000,
+            "product_custom_source": "key_text",
+            "product_tab_key_metafield": "reasons_to_love"
+          }
+        },
+        "custom_zHtWTc": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Fragrance Notes",
+            "type": "metafield",
+            "content": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 2000,
+            "product_custom_source": "key_text",
+            "product_tab_key_metafield": "notes"
+          }
+        },
+        "custom_qwXfPt": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Product Specification",
+            "type": "metafield",
+            "content": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 2000,
+            "product_custom_source": "key_text",
+            "product_tab_key_metafield": "specification"
+          }
+        },
+        "custom_jKcpbw": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Legal Information",
+            "type": "metafield",
+            "content": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 2000,
+            "product_custom_source": "key_text",
+            "product_tab_key_metafield": "legal_information"
+          }
+        },
+        "custom_eejpFh": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "FAQs",
+            "type": "all",
+            "content": "<p>\n  <strong>Are these fragrances long lasting?</strong><br>\n  They are designed to be very long lasting, just like designer fragrances, in some cases even longer, depending on the composition.\n</p>\n\n<p>\n  <strong>Unsure about something? Ask us!</strong><br>\n  <a href=\"mailto:support@ombrebliss.com\">support@ombrebliss.com</a>\n</p>",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 2000,
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": ""
+          }
+        },
+        "19ab1d9f-74b2-4c76-bf2e-1bc749e5c2a3": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "show_share": true,
+            "share_layout": "2",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "2e8c7c14-a0ad-4930-a1d8-3def05310426",
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
+        "product_text_GdJPtX",
+        "judge_me_reviews_preview_badge_x4F8tN",
+        "vendor_eXm3Bt",
+        "0e4ea696-4820-4c98-aaa6-806d41782a3d",
+        "4f95b592-8369-4ab0-b30d-24e463fb6890",
+        "product_text_t3jywK",
+        "product_text_gp6LTG",
+        "10093fcf-2053-47e9-bedb-841bb0d046fa",
+        "faa2b3e6-c0a1-4269-baa6-d2605efe4c05",
+        "f1b31d90-1e43-4948-9fe3-97ba43f6fb34",
+        "product_text_PDpYMr",
+        "product_text_CLbTbE",
+        "product_text_XjrWNa",
+        "bd066b80-c8e3-4f3e-8280-b27fbf6e9423",
+        "87197f5f-be0e-4b89-9270-62bf6917ebe7",
+        "custom_zHtWTc",
+        "custom_qwXfPt",
+        "custom_jKcpbw",
+        "custom_eejpFh",
+        "19ab1d9f-74b2-4c76-bf2e-1bc749e5c2a3"
+      ],
+      "settings": {
+        "container": "container",
+        "padding_full_width": 20,
+        "show_sticky_info": true,
+        "mg_top_desktop": 20,
+        "mg_top_tablet": 20,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 20,
+        "mg_bottom_tablet": 20,
+        "mg_bottom_mobile": 20,
+        "main_image_arrows_desktop": false,
+        "main_image_arrows_mobile": false,
+        "main_image_counter_mobile": true,
+        "main_image_enable_parallax_mb": false,
+        "main_image_show_zoom_icon_mb": true,
+        "main_image_position": "left",
+        "main_image_layout": "1",
+        "main_image_show_custom_cursor": true,
+        "count_color": "#191919",
+        "icon_color": "#000000",
+        "show_thumbnail_mobile": true,
+        "thumnail_layout": "1",
+        "thumbnail_to_show": 4,
+        "show_sidebar": false,
+        "sidebar_collapse": "collapse",
+        "enable_sticky": false,
+        "sidebar_layout": "layout_1",
+        "sidebar_collapse_default": "close",
+        "sidebar_position": "left",
+        "sidebar_heading_font": "font_1",
+        "sidebar_heading_font_size": 23,
+        "sidebar_heading_font_weight": "800",
+        "sidebar_heading_text_transform": "uppercase",
+        "product_image_ratio": "adapt",
+        "portrait_aspect_ratio": 134,
+        "zoomed_image": true,
+        "media_fit": "unset",
+        "product_image_popup": "fancybox",
+        "video_layout": "popup",
+        "show_badge": true,
+        "show_qty": true,
+        "show_subtotal": false,
+        "subtotal_style": "2",
+        "show_sticky_add_to_cart": true,
+        "enable_sticky_add_to_cart_always_mobile": false,
+        "show_sticky_vendor": false,
+        "sticky_atc_layout": "1",
+        "show_tab": true,
+        "tab_layout": "vertical",
+        "tab_layout_mobile": "vertical",
+        "icon_style_layout": "style_1",
+        "title_font_size": 18,
+        "title_font_size_mb": 16,
+        "font_weight_title": "600",
+        "title_text_transform": "none",
+        "title_padding_top_bottom": 15,
+        "tab_border_color": "#000000",
+        "tab_border_color_rgb": "",
+        "show_product_bundle": true,
+        "background_color": "#f8f8f8",
+        "padding_top": 30,
+        "padding_top_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom": 70,
+        "padding_bottom_tablet": 40,
+        "padding_bottom_mobile": 30,
+        "block_title": "Frequently Bought Together",
+        "block_title_align": "center",
+        "block_dots": false,
+        "block_arrows": true,
+        "product_style": "3",
+        "block_image_ratio": "adapt",
+        "bundle_discount": true,
+        "bundle_discount_text": "Get a [discount]% discount buying these products together",
+        "bundle_discount_text_color": "#232323",
+        "total_btn_color": "#ffffff",
+        "total_btn_border": "#232323",
+        "total_btn_bg": "#232323",
+        "total_btn_bg_gradient": "",
+        "total_btn_color_hover": "#232323",
+        "total_btn_border_hover": "#232323",
+        "total_btn_bg_hover": "#ffffff",
+        "total_btn_bg_gradient_hover": ""
+      }
+    },
+    "1723092097338feb3e": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "display_product_block": true,
+        "product_block_container": "1170",
+        "padding_full_width": 0,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50,
+        "product_block_layout": "grid",
+        "product_bg": "#ffffff",
+        "style_block_header": "style1",
+        "product_block_title": "You Might Love",
+        "enable_border_title": false,
+        "mg_top_title": 27,
+        "mg_bottom_title": 3,
+        "fontsize_title": 20,
+        "fontsize_title_mb": 20,
+        "color_title": "#000000",
+        "border_color_title": "#000000",
+        "product_block_title_align": "center",
+        "product_block_limit": 8,
+        "grid_gap": 30,
+        "product_block_per_row": "4",
+        "product_block_swipe_on_mobile": true,
+        "product_block_dots": false,
+        "product_block_dots_mb": true,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": false,
+        "product_block_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_hover_drag_icon": true,
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    },
+    "17284655340cf2729c": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_URBATW": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_URBATW"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "product-recently-viewed": {
+      "type": "product-recently-viewed",
+      "settings": {
+        "display_product_recently_viewed": true,
+        "product_recently_viewed_container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": true,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 80,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "product_recently_viewed_layout": "slider",
+        "product_bg": "#ffffff",
+        "product_bg_gradient": "",
+        "style_block_header": "style1",
+        "product_recently_viewed_title": "Recently Viewed Products",
+        "enable_border_title": false,
+        "mg_top_title": 27,
+        "mg_bottom_title": 3,
+        "fontsize_title": 18,
+        "fontsize_title_mb": 18,
+        "border_color_title": "#232323",
+        "color_title": "#232323",
+        "product_recently_viewed_title_align": "center",
+        "product_recently_viewed_limit": 10,
+        "product_recently_viewed_image_ratio": "adapt",
+        "grid_gap": 30,
+        "product_recently_viewed_per_row": "4",
+        "product_recently_viewed_swipe_on_mobile": true,
+        "product_recently_viewed_dots": false,
+        "product_recently_viewed_dots_mb": true,
+        "product_recently_viewed_arrows": true,
+        "product_recently_viewed_arrows_mb": false,
+        "product_recently_viewed_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_hover_drag_icon": false,
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    },
+    "1742365829e8905d1f": {
+      "type": "apps",
+      "settings": {
+        "include_margins": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1723092097338feb3e",
+    "product-recommendations",
+    "17284655340cf2729c",
+    "product-recently-viewed",
+    "1742365829e8905d1f"
+  ]
+}
