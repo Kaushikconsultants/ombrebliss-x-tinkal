@@ -54,7 +54,7 @@
 <div class="footer-block__item footer-block__column footer-block__{{ block.type }}{% if block.type == 'text' %} block_text--{{ layout_style }}{% endif %} {{ block__text_first }}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="--block-custom-width: {{custom_width}};--block-margin-bottom: {{ mg_bottom }}">
   <div class="{% if block.settings.enable_side_border %}side-bordered{% endif %}">
     {%- if heading != blank -%}
-      <div class="footer-block__heading">{{- heading | escape -}}</div>
+      <div class="footer-block__heading" data-toggle-column-footer>{{- heading | escape -}}</div>
     {%- endif -%}
     <div class="footer-block__details{% if block.settings.enable_custom_position_icon != blank %} enable_custom_position_icon{% endif %}{% if block.settings.phone_text != blank or block.settings.address_text != blank or block.settings.email_text != blank %} has-content-piece{% endif %}" style="--icon-color: {{ final_icon_color }}; --icon-size: {{ block.settings.icon_size | append: 'px' }}; --content-spacing: {{ block.settings.content_spacing | append: 'px' }}">
       {%- if logo != blank -%}

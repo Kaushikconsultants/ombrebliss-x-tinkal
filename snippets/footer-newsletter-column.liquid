@@ -81,7 +81,7 @@
       {%- endif -%}
 
       {%- if heading != blank -%}
-        <div class="footer-block__heading">{{- heading | escape -}}</div>
+        <div class="footer-block__heading" data-toggle-column-footer>{{- heading | escape -}}</div>
       {%- endif -%}
       <div class="item clearfix">
         {%- unless subtext_before_heading -%}
