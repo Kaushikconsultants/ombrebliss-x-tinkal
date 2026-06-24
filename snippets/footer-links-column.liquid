@@ -2,7 +2,7 @@
 <div class="footer-block__item footer-block__column footer-block__{{ block.type }} text-{{ text_align }} {{ block__text_first }}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="{% if settings.banner_animation == 'effect_fade_up' %}--animation-order: {{ forloop.index }};{% endif %}--block-custom-width: {{block.settings.custom_width}}%;--block-margin-bottom: {{block.settings.mg_bottom | append: 'px'}}">
   <div class="footer-block__mobile">
     {%- if block.settings.heading != blank -%}
-      <div class="footer-block__heading" data-toggle-column-footer>{{- block.settings.heading | escape -}}</div>
+      <div class="footer-block__heading">{{- block.settings.heading | escape -}}</div>
     {%- endif -%}
     {%- if block.settings.menu != blank -%}
       <div class="footer-block__list">

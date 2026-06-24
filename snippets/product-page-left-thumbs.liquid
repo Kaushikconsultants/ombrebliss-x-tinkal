@@ -725,14 +725,14 @@
                                             {%- case media.media_type -%}
                                                 {%- when 'image' -%}
                                                     <div class="productView-thumbnail{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' }}{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-                                                        <a class="productView-thumbnail-link animated-loading" href="javascript:void(0)" data-image="{{ media | img_url: 'large' }}">
+                                                        <a class="productView-thumbnail-link" href="javascript:void(0)" data-image="{{ media | img_url: 'large' }}">
                                                             <img src="{%- if thumnail_layout == '3' -%}{{ media | img_url: 'large' }}{% else %}{{ media | img_url: 'medium' }}{% endif %}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
                                                         </a>
                                                     </div>
                                                 {%- when 'external_video' -%}
                                                     {%- if video_layout == 'thumbnail' -%}
                                                         <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
-                                                            <div class="productView-thumbnail-link animated-loading">
+                                                            <div class="productView-thumbnail-link">
                                                                 <img src="{%- if thumnail_layout == '3' -%}{{ media | img_url: 'large' }}{% else %}{{ media | img_url: 'medium' }}{% endif %}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
                                                             </div>
                                                             <div class="productView-thumbnail-icon">
@@ -743,7 +743,7 @@
                                                 {%- when 'video' -%}
                                                     {%- if video_layout == 'thumbnail' -%}
                                                         <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
-                                                            <div class="productView-thumbnail-link animated-loading">
+                                                            <div class="productView-thumbnail-link">
                                                                 <img src="{{ media | media_tag | split: 'src="' | last | split: '">' | first }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
                                                             </div>
                                                             <div class="productView-thumbnail-icon">
@@ -753,7 +753,7 @@
                                                     {%- endif -%}
                                                 {%- when 'model' -%}
                                                     <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
-                                                        <div class="productView-thumbnail-link animated-loading">
+                                                        <div class="productView-thumbnail-link">
                                                             <img src="{{ media | media_tag | split: 'poster="' | last | split: '">' | first }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
                                                         </div>
                                                         <div class="productView-thumbnail-icon">
@@ -762,7 +762,7 @@
                                                     </div>
                                                 {%- else -%}
                                                     <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
-                                                        <div class="productView-thumbnail-link animated-loading">
+                                                        <div class="productView-thumbnail-link">
                                                             {{ media | media_tag }}
                                                         </div>
                                                     </div>
