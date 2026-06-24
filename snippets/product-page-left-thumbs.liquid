@@ -725,15 +725,15 @@
                                             {%- case media.media_type -%}
                                                 {%- when 'image' -%}
                                                     <div class="productView-thumbnail{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' }}{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
-                                                        <a class="productView-thumbnail-link" role="button" tabindex="0" data-image="{{ media | img_url: 'large' }}">
-                                                            <img src="{{ media | image_url: width: 200 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" width="200" height="200" />
+                                                        <a class="productView-thumbnail-link" role="button" tabindex="0" data-image="{{ media.preview_image | image_url: width: 800 }}">
+                                                            <img src="{{ media.preview_image | image_url: width: 200 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" width="200" height="200" />
                                                         </a>
                                                     </div>
                                                 {%- when 'external_video' -%}
                                                     {%- if video_layout == 'thumbnail' -%}
                                                         <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
                                                             <div class="productView-thumbnail-link">
-                                                                <img src="{{ media | image_url: width: 200 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" width="200" height="200" />
+                                                                <img src="{{ media.preview_image | image_url: width: 200 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" width="200" height="200" />
                                                             </div>
                                                             <div class="productView-thumbnail-icon">
                                                                 {% render 'icon-video' %}
