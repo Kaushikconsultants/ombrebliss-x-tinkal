@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Free 25ml Perfume at Checkout | Extra 5% Off on Prepaid Orders |",
+            "text": "<span>EXTRA 5% OFF PREPAID ORDERS</span>\n<span class=\"separator\">•</span>\n<span>FREE 25ML PERFUME AT CHECKOUT</span>\n<span class=\"separator\">•</span>",
             "btn_color": "#cc0e14",
             "btn_border_color": "#2da116",
             "btn_bg_color": "#727272",
