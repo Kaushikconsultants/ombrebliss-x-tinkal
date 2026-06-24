@@ -94,6 +94,9 @@
             if (el && el.tagName === 'SCRIPT' && el.src) {
               var s = el.src.toLowerCase();
               if (s.indexOf('fast-bundle') > -1 || s.indexOf('gokwik') > -1 || s.indexOf('kwikpass') > -1 || s.indexOf('fastbundle') > -1) {
+                if (isFired) {
+                  return originalAppendChild.apply(this, arguments);
+                }
                 el.setAttribute('defer', 'defer');
                 delayedScripts.push({ parent: this, el: el, method: 'append' });
                 return el;
@@ -106,6 +109,9 @@
             if (el && el.tagName === 'SCRIPT' && el.src) {
               var s = el.src.toLowerCase();
               if (s.indexOf('fast-bundle') > -1 || s.indexOf('gokwik') > -1 || s.indexOf('kwikpass') > -1 || s.indexOf('fastbundle') > -1) {
+                if (isFired) {
+                  return originalInsertBefore.apply(this, arguments);
+                }
                 el.setAttribute('defer', 'defer');
                 delayedScripts.push({ parent: this, el: el, ref: ref, method: 'insert' });
                 return el;

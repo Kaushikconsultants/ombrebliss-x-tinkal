@@ -10,8 +10,8 @@
                 {%- if settings.show_quick_search -%}
                     <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}" data-product-to-show="{{ settings.quick_search_to_show }}">
                 {%- endif -%}
-                    <details class="search_details">
-                        <summary class="header__search-full" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
+                    <div class="search_details">
+                        <div class="header__search-full" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
                             <div class="container">
                                 <button type="button" class="header-search-close" aria-label="{{ 'general.common.close' | t }}">
                                     {% render 'icon-close' %}
@@ -55,13 +55,13 @@
                                     {%- render 'predictive-search-results' -%}
                                 {%- endif -%}
                             </div>
-                        </summary>
+                        </div>
                         <div class="search-modal modal__content{% if settings.show_quick_search %} quickSearch{% endif %}" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
                             {%- if settings.show_quick_search -%}
                                 {% render 'halo-quick-search', sectionId: 'quick-popup-search-list-result' %}
                             {%- endif -%}
                         </div>
-                    </details>
+                    </div>
                     {%- if settings.show_quick_search -%}
                     </predictive-search>
                 {%- endif -%}

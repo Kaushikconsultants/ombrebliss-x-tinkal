@@ -249,11 +249,11 @@ body:not(:has(predictive-search)) .quickSearchResultsWrap {
     margin: 0 5px 0 0;
 }
 
-details[open]>.search-modal {
+predictive-search[open] .search_details, details[open]>.search-modal {
     opacity: 1;
 }
 
-details[open] .search-modal .quickSearchResultsWrap {
+predictive-search[open] .search_details, details[open] .search-modal .quickSearchResultsWrap {
     display: block;
     animation: appear-down var(--duration-default) ease;
 }
@@ -648,7 +648,7 @@ input::-webkit-search-decoration {
     display: none;
 }
 
-details[open]>.search-modal .quickSearchResultsWrap.hidden[data-quick-trending-products] {
+predictive-search[open] .search_details, details[open]>.search-modal .quickSearchResultsWrap.hidden[data-quick-trending-products] {
     display: none !important;
 }
 

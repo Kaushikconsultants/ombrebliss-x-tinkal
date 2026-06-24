@@ -3,8 +3,8 @@
     <div class="halo-sidebar-header text-left"><span class="title">{{ 'general.search.search' | t }}</span></div>
     <div class="halo-sidebar-wrapper custom-scrollbar">
         <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}" data-product-to-show="{{ settings.quick_search_to_show }}">
-            <details class="search_details">
-                <summary class="header__search-full" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
+            <div class="search_details">
+                <div class="header__search-full" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
                     <button type="button" class="header-search-close" aria-label="{{ 'general.common.close' | t }}">{% render 'icon-close' %}</button>
                     <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
                         <div class="field">
@@ -22,13 +22,13 @@
                             {%- endif -%}
                         {%- endif -%}
                     </form>
-                </summary>
+                </div>
                 <div class="search-modal modal__content{% if settings.show_quick_search %} quickSearch{% endif %}" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
                     {%- if settings.show_quick_search -%}
                         {% render 'halo-quick-search', sectionId: 'quick-sidebar-search-list-result' %}
                     {%- endif -%}
                 </div>
-            </details>
+            </div>
         </predictive-search>
     </div>
 </div>

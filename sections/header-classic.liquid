@@ -45,37 +45,37 @@
                                     </div>
                                 {%- endif -%}
                                 {% if block.settings.show_search %}
-                                        <details-modal class="header__iconItem header__search" style="--search-color: {{ block.settings.search_color }}; --search-bg-color: {{ block.settings.bg_search_color }}; --search-border-color: {{ block.settings.search_border_color }}; --search-icon-color: {{ block.settings.search_icon_color }}">
-                                            {%- if settings.show_quick_search -%}
-                                                <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}" data-product-to-show="{{ settings.quick_search_to_show }}">
-                                            {%- endif -%}
-                                            <details class="search_details">
-                                                <summary class="header__search-full" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
-                                                    <button type="button" class="header-search-close" aria-label="{{ 'general.common.close' | t }}">{% render 'icon-close' %}</button>
-                                                    <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
-                                                        <div class="field">
-                                                            <input class="search__input field__input form-input-placeholder" id="Search-In-Modal-Classic" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.search' | t }}" autocomplete="off" {%- if settings.show_quick_search -%}role="combobox" aria-expanded="false" aria-owns="predictive-search-results-list" aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"{%- endif -%}>   
-                                                            <input type="hidden" name="options[prefix]" value="last">
-                                                            <input type="hidden" name="type" value="product">
-                                                            <label class="field__label hiddenLabels" for="Search-In-Modal-Classic">{{ 'general.search.search' | t }}</label>
-                                                            <button class="button search__button field__button focus-inset" aria-label="{{ 'general.search.search' | t }}">{% render 'icon-search' %}</button>
-                                                        </div>
-                                                        {%- if settings.show_quick_search -%}
-                                                            {%- if settings.show_search_trending or settings.show_search_product -%}
-                                                                {%- render 'quick-searching-trending-products' -%}
-                                                            {%- endif -%}
-                                                            {%- render 'predictive-search-results' -%}
-                                                        {%- endif -%}
-                                                    </form>
-                                                </summary>
-                                            </details>
-                                            {%- if settings.show_quick_search -%}
-                                                </predictive-search>
-                                            {%- endif -%}
-                                        </details-modal>
-                                    <div class="search-modal modal__content{% if settings.show_quick_search %} quickSearch{% endif %}" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
+                                    <div class="header__iconItem header__search" style="--search-color: {{ block.settings.search_color }}; --search-bg-color: {{ block.settings.bg_search_color }}; --search-border-color: {{ block.settings.search_border_color }}; --search-icon-color: {{ block.settings.search_icon_color }}">
                                         {%- if settings.show_quick_search -%}
-                                            {% render 'halo-quick-search', sectionId: section.id %}
+                                            <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}" data-product-to-show="{{ settings.quick_search_to_show }}">
+                                        {%- endif -%}
+                                        <div class="search_details">
+                                            <div class="header__search-full" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
+                                                <button type="button" class="header-search-close" aria-label="{{ 'general.common.close' | t }}">{% render 'icon-close' %}</button>
+                                                <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+                                                    <div class="field">
+                                                        <input class="search__input field__input form-input-placeholder" id="Search-In-Modal-Classic" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.search_the_store' | t }}" autocomplete="off" {%- if settings.show_quick_search -%}role="combobox" aria-expanded="false" aria-owns="predictive-search-results-list" aria-controls="predictive-search-results-list" aria-haspopup="listbox" aria-autocomplete="list" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false"{%- endif -%}>   
+                                                        <input type="hidden" name="options[prefix]" value="last">
+                                                        <input type="hidden" name="type" value="product">
+                                                        <label class="field__label hiddenLabels" for="Search-In-Modal-Classic">{{ 'general.search.search_the_store' | t }}</label>
+                                                        <button class="button search__button field__button focus-inset" aria-label="{{ 'general.search.search' | t }}">{% render 'icon-search-02' %}</button>
+                                                    </div>
+                                                    {%- if settings.show_quick_search -%}
+                                                        {%- if settings.show_search_trending or settings.show_search_product -%}
+                                                            {%- render 'quick-searching-trending-products', sectionId: 'classic-list-result' -%}
+                                                        {%- endif -%}
+                                                        {%- render 'predictive-search-results' -%}
+                                                    {%- endif -%}
+                                                </form>
+                                            </div>
+                                            <div class="search-modal modal__content{% if settings.show_quick_search %} quickSearch{% endif %}" role="dialog" aria-modal="true" aria-label="{{ 'general.search.search' | t }}">
+                                                {%- if settings.show_quick_search -%}
+                                                    {% render 'halo-quick-search', sectionId: 'quick-classic-list-result' %}
+                                                {%- endif -%}
+                                            </div>
+                                        </div>
+                                        {%- if settings.show_quick_search -%}
+                                            </predictive-search>
                                         {%- endif -%}
                                     </div>
                                 {% endif %}
