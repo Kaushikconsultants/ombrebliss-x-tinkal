@@ -3079,19 +3079,7 @@ quantity-input.disabled {
     }
 }
 
-/* Fix: layout-1/2 thumbnails show correctly before slick initializes on all screen sizes */
-.productView.layout-1 .productView-thumbnail-wrapper .productView-for:not(.slick-initialized),
-.productView.layout-2 .productView-thumbnail-wrapper .productView-for:not(.slick-initialized) {
-    white-space: normal;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-}
-.productView.layout-1 .productView-thumbnail-wrapper .productView-for:not(.slick-initialized) > div,
-.productView.layout-2 .productView-thumbnail-wrapper .productView-for:not(.slick-initialized) > div {
-    width: 100%;
-    display: block;
-}
+
 
 @media (min-width: 1280px) {
     .productView.layout-1 .productView-images-wrapper,
@@ -3168,11 +3156,15 @@ quantity-input.disabled {
     .productView.layout-1 .productView-thumbnail-wrapper .productView-for:not(.slick-initialized),
     .productView.layout-2 .productView-thumbnail-wrapper .productView-for:not(.slick-initialized){
         white-space: normal;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
     }
 
     .productView.layout-1 .productView-thumbnail-wrapper .productView-for:not(.slick-initialized) > div,
     .productView.layout-2 .productView-thumbnail-wrapper .productView-for:not(.slick-initialized) > div{
         width: 100%;
+        display: block;
     }
 
     .halo-productView.layout-1 .productView-for .slick-arrow.slick-prev svg,
