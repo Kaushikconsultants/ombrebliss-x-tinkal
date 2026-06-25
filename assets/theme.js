@@ -1113,7 +1113,8 @@
             this.productBlock = document.querySelectorAll('[data-product-tab-block]');
 
             const config = {
-                threshold: 0.1,
+                threshold: 0,
+                rootMargin: '2000px 0px 2000px 0px'
             }
 
             this.observer = new IntersectionObserver(handler, config);
@@ -1681,7 +1682,8 @@
                 swipe = $this.dataset.swipe;
 
             const config = {
-                threshold: 0.25,
+                threshold: 0,
+                rootMargin: '2000px 0px 2000px 0px'
             }
 
             const handleIntersection = (entries, observer) => {
