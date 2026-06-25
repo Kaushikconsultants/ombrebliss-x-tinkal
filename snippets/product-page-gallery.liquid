@@ -745,7 +745,7 @@
                                                     {%- if video_layout == 'thumbnail' -%}
                                                         <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
                                                             <div class="productView-thumbnail-link animated-loading">
-                                                                <img src="{{ media | media_tag | split: 'src="' | last | split: '">' | first }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
+                                                                <img src="{{ media.preview_image | image_url: width: 200 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
                                                             </div>
                                                             <div class="productView-thumbnail-icon">
                                                                 {% render 'icon-video' %}
@@ -755,7 +755,7 @@
                                                 {%- when 'model' -%}
                                                     <div class="productView-thumbnail" data-media-id="{{ section.id }}-{{ media.id }}">
                                                         <div class="productView-thumbnail-link animated-loading">
-                                                            <img src="{{ media | media_tag | split: 'poster="' | last | split: '">' | first }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
+                                                            <img src="{{ media.preview_image | image_url: width: 200 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
                                                         </div>
                                                         <div class="productView-thumbnail-icon">
                                                             {% render 'icon-3d-model' %}

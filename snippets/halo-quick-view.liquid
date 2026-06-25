@@ -249,12 +249,12 @@
                                     </div>
                                 {%- when 'video' -%}
                                     <div class="productView-thumbnail" data-media-id="{{ product.id }}-{{ media.id }}">
-                                        <div class="productView-thumbnail-link"><img src="{{ media | media_tag | split: 'src="' | last | split: '">' | first }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}"/></div>
+                                        <div class="productView-thumbnail-link"><img src="{{ media.preview_image | img_url: 'compact' }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}"/></div>
                                         <div class="productView-thumbnail-icon">{% render 'icon-video' %}</div>
                                     </div>
                                 {%- when 'model' -%}
                                     <div class="productView-thumbnail" data-media-id="{{ product.id }}-{{ media.id }}">
-                                        <div class="productView-thumbnail-link"><img src="{{ media | media_tag | split: 'poster="' | last | split: '">' | first }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}"/></div>
+                                        <div class="productView-thumbnail-link"><img src="{{ media.preview_image | img_url: 'compact' }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}"/></div>
                                         <div class="productView-thumbnail-icon">{%- render 'icon-3d-model' -%}</div>
                                     </div>
                                 {%- else -%}
