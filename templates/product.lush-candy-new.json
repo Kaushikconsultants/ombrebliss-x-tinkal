@@ -73,7 +73,6 @@
         },
         "variant_picker_FVrWD3": {
           "type": "variant_picker",
-          "disabled": true,
           "settings": {
             "picker_type": "button",
             "show_variant_image_group": false,
