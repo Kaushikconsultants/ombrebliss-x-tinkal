@@ -10,14 +10,15 @@
     @media screen and (min-width: 1025px) {
         body:not([allow-transparency]) .header-navigation-wrapper {position: static !important;}
         .header-nav-hamburger {padding-top: {{section.settings.padding_top | append: 'px'}};padding-bottom: {{section.settings.padding_bottom | append: 'px'}}}
-        .header-nav-hamburger > .container{flex-wrap:wrap;max-width:1400px;margin-left:auto;margin-right:auto;padding-left:30px;padding-right:30px;box-sizing:border-box}
-        .header-nav-hamburger .header-logo{order:1;flex:1 1 auto}
-        .header-nav-hamburger .header-icons{order:2;flex:0 0 auto;display:flex;align-items:center;justify-content:flex-end}
-        .header-nav-hamburger .main-menu{order:3;flex:0 0 100%;width:100%}
+        .header-nav-hamburger > .container{flex-wrap:nowrap;max-width:1400px;margin-left:auto;margin-right:auto;padding-left:30px;padding-right:30px;box-sizing:border-box}
+        .header-nav-hamburger .header-logo{order:1;flex:0 0 auto; margin-right: 15px;}
+        .header-nav-hamburger .main-menu{order:2;flex:1 1 auto;width:auto;display:flex;justify-content:center;}
+        .header-nav-hamburger .header-icons{order:3;flex:0 0 auto;display:flex;align-items:center;justify-content:flex-end; gap: 15px !important;}
         .header-nav-hamburger .main-menu > .container{display:flex;justify-content:center}
         .header-nav-hamburger .main-menu .main-menu--wrapper{display:flex;justify-content:center;width:100%}
         .header-nav-hamburger .main-menu .header__inline-menu{display:flex;justify-content:center;width:100%}
-        .header-nav-hamburger .main-menu .list-menu--inline{justify-content:center}
+        .header-nav-hamburger .main-menu .list-menu--inline{display:flex !important; justify-content:center; margin:0; flex-wrap:nowrap !important; white-space:nowrap !important; gap: 8px !important;}
+        .header-nav-hamburger .menu-lv-1__action { padding-left: 2px !important; padding-right: 2px !important; font-size: 12px !important; letter-spacing: 0 !important; }
         .header-nav-hamburger:not(.header-hamburger--transparent),.scrolled-past-header .header-hamburger--transparent {
             {%- if section.settings.header_navigation_bg_gradient != 'rgba(0,0,0,0)' and section.settings.header_navigation_bg_gradient != blank -%}
                  background: {{ section.settings.header_navigation_bg_gradient }}
@@ -123,7 +124,6 @@
             transform: scale(1);
         }
     }
-    @media (min-width:1025px) and (max-width:1280px){.header-nav-hamburger--style2 .header-logo{max-width:250px}.header-nav-hamburger--style2 .header-icons,.header-nav-hamburger--style2 .main-menu{width:100%;max-width:calc((100% - 250px)/ 2)}}@media screen and (min-width:1281px){.header-nav-hamburger--style2 .header-logo{max-width:300px}.header-nav-hamburger--style2 .header-icons,.header-nav-hamburger--style2 .main-menu{width:100%;max-width:calc((100% - 300px)/ 2)}}
 </style>
 
 {%-liquid
@@ -141,7 +141,7 @@
         {%- for block in section.blocks -%}
         {%- case block.type -%}
             {%- when 'logo' -%}
-                <div class="header-logo header-item header-item--side d-flex flex-align-center fs-0 fg-0 pt-2 pb-5{% if block.settings.logo_position == 'main_menu'%} show-main-menu{% elsif block.settings.logo_position == 'sticky_menu'%} hide-main-menu{% else %}{% endif %}" style="--logo_font_size: {{block.settings.logo_font_size | append: 'px'}};--logo_font_weight: {{block.settings.logo_font_weight}};--logo_text_transform: {{block.settings.logo_text_transform}};--logo_text_color: {{block.settings.logo_color}};--logo_width: {{block.settings.logo_width | append: 'px'}};--logo_width_sticky: {{block.settings.logo_width_fixed | append: '%'}}">
+                <div class="header-logo header-item header-item--side d-flex flex-align-center fs-0 fg-0{% if block.settings.logo_position == 'main_menu'%} show-main-menu{% elsif block.settings.logo_position == 'sticky_menu'%} hide-main-menu{% else %}{% endif %}" style="--logo_font_size: {{block.settings.logo_font_size | append: 'px'}};--logo_font_weight: {{block.settings.logo_font_weight}};--logo_text_transform: {{block.settings.logo_text_transform}};--logo_text_color: {{block.settings.logo_color}};--logo_width: {{block.settings.logo_width | append: 'px'}};--logo_width_sticky: {{block.settings.logo_width_fixed | append: '%'}}">
                     <{% if request.page_type == 'index' %}h1{% else %}div{% endif %} class="header__heading">
                         <a href="{{ routes.root_url }}" class="header__heading-link focus-inset d-flex flex-align-center">
                             {%- liquid 

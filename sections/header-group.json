@@ -11,36 +11,38 @@
   "type": "header",
   "name": "Header Group",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
+    "11fit-marquee1": {
+      "type": "11fit-marquee1",
       "blocks": {
-        "announcement-bar-0": {
+        "block_1": {
           "type": "announcement",
           "settings": {
-            "text": "<span>EXTRA 5% OFF PREPAID ORDERS</span>\n<span class=\"separator\">•</span>\n<span>FREE 25ML PERFUME AT CHECKOUT</span>\n<span class=\"separator\">•</span>",
-            "btn_color": "#cc0e14",
-            "btn_border_color": "#2da116",
-            "btn_bg_color": "#727272",
-            "btn_bg_color_gradient": "linear-gradient(46deg, rgba(52, 133, 236, 1) 13%, rgba(170, 248, 219, 1) 86%)"
+            "text": "EXTRA 5% OFF PREPAID ORDERS",
+            "icon": "fa-solid fa-bolt"
+          }
+        },
+        "block_2": {
+          "type": "announcement",
+          "settings": {
+            "text": "FREE 25ML PERFUME AT CHECKOUT",
+            "icon": "fa-solid fa-gift"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "block_1",
+        "block_2"
       ],
       "settings": {
-        "enable_announcement": true,
-        "layout": "scroll",
-        "color_text": "#ffffff",
-        "bg_color_text": "#55343b",
-        "bg_color_text_gradient": "",
-        "font_size_text": 14,
-        "font_style_text": "normal",
-        "font_weight_text": "700",
-        "arrow_active": true,
-        "content_max_width": 34,
-        "padding_top": 10,
-        "padding_bottom": 10
+        "bg_color": "#55343b",
+        "text_color": "#ffffff",
+        "font_size_desktop": 14,
+        "font_size_mobile": 12,
+        "text_bold": true,
+        "text_uppercase": true,
+        "speed": 20,
+        "direction": "normal",
+        "padding_y": 10
       }
     },
     "header_navigation_hamburger_xWcJrN": {
@@ -50,9 +52,9 @@
           "type": "main_menu",
           "settings": {
             "menu": "revamp-menu",
-            "menu_top_spacing": 27,
-            "menu_bottom_spacing": 27,
-            "grid_gap_menu_item": 20,
+            "menu_top_spacing": 10,
+            "menu_bottom_spacing": 10,
+            "grid_gap_menu_item": 12,
             "alignment": "center",
             "bg_mega_menu": "#ffffff",
             "bg_mega_menu_gradient": "",
@@ -205,7 +207,7 @@
     }
   },
   "order": [
-    "announcement-bar",
+    "11fit-marquee1",
     "header_navigation_hamburger_xWcJrN",
     "header-mobile"
   ]
