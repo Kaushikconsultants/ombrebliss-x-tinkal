@@ -609,7 +609,7 @@
                                                                     data-sizes="auto"
                                                                 >
                                                             </div>
-                                                            <div class="productView-video mp4" data-mp4 data-type="mp4" data-video-url="{{ media | video_tag | split: 'source src="' | last | split: '" type=video/mp4>' | first | strip_html | remove: '">'}}">
+                                                            <div class="productView-video mp4" data-mp4 data-type="mp4" data-video-url="{% for source in media.sources %}{% if source.format == 'mp4' %}{{ source.url }}{% break %}{% endif %}{% endfor %}">
                                                                 {{ media | video_tag: controls: true, image_size: 'master' }}
                                                             </div>
                                                         </div>
@@ -696,7 +696,7 @@
                                                         </a>
                                                     {%- endif -%}
                                                 {%- when 'video' -%}
-                                                    <a class="videoPopup-btn" data-fancybox="video-gallery" href="{{ media | video_tag | split: 'source src="' | last | split: '" type=video/mp4>' | first | strip_html | remove: '">'}}" data-width="1200" data-height="675">
+                                                    <a class="videoPopup-btn" data-fancybox="video-gallery" href="{% for source in media.sources %}{% if source.format == 'mp4' %}{{ source.url }}{% break %}{% endif %}{% endfor %}" data-width="1200" data-height="675">
                                                         {% render 'icon-video' %}
                                                     </a>
                                             {%- endcase -%}
