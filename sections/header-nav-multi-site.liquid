@@ -336,7 +336,7 @@
                                                 assign url = routes.root_url
                                             endif
                                         -%}
-                                        <a {% if url == blank %} role="link" aria-disabled="true"{% else %} href="{{ url }}"{% endif %} class="{{ class }}" style="--width_logo: {{ section.settings.logo_width | append: 'px' }}; --height_logo: auto" data-load-logo-page="{{ multi_page_handle }}"{% if block.settings.logo_mobile != blank %} data-logo-mobile="{{ block.settings.logo_mobile | img_url: 'master' }}" data-logo-mobile-alt="{{ block.settings.logo_mobile.alt | default: shop.name | escape }}"{% endif %}>
+                                        <a {% if url == blank %} role="link" aria-disabled="true"{% else %} href="{{ url }}"{% endif %} class="{{ class }}" style="--width_logo: {{ section.settings.logo_width | append: 'px' }}; --height_logo: auto" data-load-logo-page="{{ multi_page_handle }}"{% if block.settings.logo_mobile != blank %} data-logo-mobile="{{ block.settings.logo_mobile | image_url: width: 1500 }}" data-logo-mobile-alt="{{ block.settings.logo_mobile.alt | default: shop.name | escape }}"{% endif %}>
                                             {%- if block.settings.logo != blank -%}
                                                 {%- assign image = block.settings.logo -%}
                                                 {%- assign image_size = section.settings.logo_width | append: 'x' -%}

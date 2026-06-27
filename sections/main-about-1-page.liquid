@@ -74,8 +74,8 @@
 			                            		{%- else -%}
 			                            			<div class="image image-zoom" style="padding-top: {{ 1 | divided_by: image_1.aspect_ratio | times: 100 | append: '%' }}">
 			                            		{%- endif -%}
-			                            			<img srcset="{{ image_1 | img_url: 'master' }}"
-										                src="{{ image_1 | img_url: 'master' }}"
+			                            			<img srcset="{{ image_1 | image_url: width: 1500 }}"
+										                src="{{ image_1 | image_url: width: 1500 }}"
 										                {% unless settings.enable_layout_rtl %} loading="lazy"{% endunless %}
 										                alt="{{ image_1.alt | default: shop.name | escape }}"
                                                         width="{{ image_1.width }}"
@@ -101,8 +101,8 @@
 			                            		{%- else -%}
 			                            			<div class="image image-zoom" style="padding-top: {{ 1 | divided_by: image_2.aspect_ratio | times: 100 | append: '%' }}">
 			                            		{%- endif -%}
-			                            			<img srcset="{{ image_2 | img_url: 'master' }}"
-										                src="{{ image_2 | img_url: 'master' }}"
+			                            			<img srcset="{{ image_2 | image_url: width: 1500 }}"
+										                src="{{ image_2 | image_url: width: 1500 }}"
 										                {% unless settings.enable_layout_rtl %} loading="lazy"{% endunless %}
 										                alt="{{ image_2.alt | default: shop.name | escape }}"
                                                         width="{{ image_2.width }}"
@@ -126,8 +126,8 @@
 			                            		{%- else -%}
 			                            			<div class="image image-zoom" style="padding-top: {{ 1 | divided_by: image_3.aspect_ratio | times: 100 | append: '%' }}">
 			                            		{%- endif -%}
-			                            			<img srcset="{{ image_3 | img_url: 'master' }}"
-										                src="{{ image_3 | img_url: 'master' }}"
+			                            			<img srcset="{{ image_3 | image_url: width: 1500 }}"
+										                src="{{ image_3 | image_url: width: 1500 }}"
 										                {% unless settings.enable_layout_rtl %} loading="lazy"{% endunless %}
 										                alt="{{ image_3.alt | default: shop.name | escape }}"
                                                         width="{{ image_3.width }}"

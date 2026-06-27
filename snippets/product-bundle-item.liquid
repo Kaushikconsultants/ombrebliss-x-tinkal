@@ -153,7 +153,7 @@
             <select id="product-variants-{{ product.id }}" name="group_id" style="display: none;" autocomplete="off">
                 {%- for variant in product.variants -%}
                     {%- if variant.available -%}
-                        <option {% if variant == current_variant %} selected="selected" {% endif %} value="{{ variant.id }}" data-price="{{ variant.price }}" {% if variant.image.src != blank %}data-image="{{ variant.image.src | product_img_url: 'master' }}"{% endif %}>
+                        <option {% if variant == current_variant %} selected="selected" {% endif %} value="{{ variant.id }}" data-price="{{ variant.price }}" {% if variant.image.src != blank %}data-image="{{ variant.image.src | product_image_url: width: 1500 }}"{% endif %}>
                             {{ variant.title }} - {{ variant.price | money }}
                         </option>
                     {%- else -%}

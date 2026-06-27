@@ -137,7 +137,7 @@
                                 {%- when 'image' -%}
                                     <div class="productView-image productView-image-{{ media_size }}{% if settings.show_quick_view_variant_image_group %} filter-{{ media.alt | handle }}{% endif %}">
                                         <div class="productView-img-container product-single__media" data-media-id="{{ media.id }}"{% if product.featured_media %}{% if media_size == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: featured_media_aspect_ratio | times: 100 }}%;"{% elsif media_size == 'square' %} style="padding-bottom: 100%;"{% elsif media_size == 'portrait' %}{% if portrait_aspect_ratio != blank %} style="padding-bottom: {{ portrait_aspect_ratio }};"{% endif %}{% endif %}{% endif %}>
-                                            <div class="media" {% if quick_view_zoomed_image %} data-zoom-image="{{ media.preview_image | img_url: 'master' }}"{% endif %}>
+                                            <div class="media" {% if quick_view_zoomed_image %} data-zoom-image="{{ media.preview_image | image_url: width: 1500 }}"{% endif %}>
                                                 <img id="product-featured-image-{{ media.id }}" 
                                                     {% render 'lazyload', preview_img: media.preview_image, class: true  %}
                                                     title="{{ media.preview_image.alt | escape }}" data-main-image >
@@ -165,7 +165,7 @@
                                                 <div class="productView-video youtube"><div data-youtube="{{ media.external_id }}"></div></div>
                                             {%- else -%}
                                                 <div class="media has-video">
-                                                    <img srcset="{{ media | img_url: 'master' }}" src="{{ media | img_url: 'master' }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" sizes="(min-width: 1200px) calc((1200px - 10rem) / 2), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)" loading="lazy" data-sizes="auto">
+                                                    <img srcset="{{ media | image_url: width: 1500 }}" src="{{ media | image_url: width: 1500 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" sizes="(min-width: 1200px) calc((1200px - 10rem) / 2), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)" loading="lazy" data-sizes="auto">
                                                 </div>
                                                 <div class="productView-video vimeo" data-vimeo>{{ media | external_video_tag }}</div>
                                             {%- endif -%}
@@ -185,7 +185,7 @@
                                             {% endif %}
                                         >
                                             <div class="media has-video">
-                                                <img srcset="{{ media | img_url: 'master' }}" src="{{ media | img_url: 'master' }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" sizes="(min-width: 1200px) calc((1200px - 10rem) / 2), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)" loading="lazy" data-sizes="auto">
+                                                <img srcset="{{ media | image_url: width: 1500 }}" src="{{ media | image_url: width: 1500 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" sizes="(min-width: 1200px) calc((1200px - 10rem) / 2), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)" loading="lazy" data-sizes="auto">
                                             </div>
                                             <div class="productView-video mp4" data-mp4>{{ media | video_tag: controls: true, image_size: 'master' }}</div>
                                         </div>

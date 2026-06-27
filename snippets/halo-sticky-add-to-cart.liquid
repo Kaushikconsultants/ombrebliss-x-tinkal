@@ -230,7 +230,7 @@
                                 {%- when 'image' -%}
                                     <div class="productView-thumbnail filter-{{ media.alt | handle }}" data-media-id="{{ section.id }}-{{ media.id }}">
                                         <div class="productView-thumbnail-link animated-loading" data-image="{{ media | img_url: 'original' }}">
-                                            <img src="{{ media | img_url: 'master' }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
+                                            <img src="{{ media | image_url: width: 1500 }}" alt="{{ media.alt | escape }}" title="{{ media.alt | escape }}" loading="lazy" />
                                         </div>
                                     </div>
                                 {%- when 'external_video' -%}

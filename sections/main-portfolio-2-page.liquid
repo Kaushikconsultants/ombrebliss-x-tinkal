@@ -149,14 +149,14 @@
                                             {%- for j in (1..5) -%}
                                                 {%- capture subImage %}thumbnail_image_{{j}}{% endcapture -%}
                                                 {%- if block.settings[subImage] != blank -%}
-                                                    {%- unless forloop.first -%},{%- endunless -%}{{block.settings[subImage] | img_url:'master'}}
+                                                    {%- unless forloop.first -%},{%- endunless -%}{{block.settings[subImage] | image_url: width: 1500}}
                                                 {%- endif -%}
                                             {%- endfor -%}
                                             "
                                         >
                                             <div class="image" style="padding-top: {{ 1 | divided_by: thumbnail.aspect_ratio | times: 100 | append: '%' }}">
-                                                <img srcset="{{ thumbnail | img_url: 'master' }}"
-                                                    src="{{ thumbnail | img_url: 'master' }}"
+                                                <img srcset="{{ thumbnail | image_url: width: 1500 }}"
+                                                    src="{{ thumbnail | image_url: width: 1500 }}"
                                                     {% unless settings.enable_layout_rtl %} loading="lazy"{% endunless %}
                                                     alt="{{ thumbnail.alt | default: shop.name | escape }}"
                                                     width="{{ thumbnail.width }}"

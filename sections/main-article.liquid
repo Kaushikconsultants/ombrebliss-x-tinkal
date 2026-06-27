@@ -380,7 +380,7 @@
                                                             {% if type_image_gallery == 'link' %}
                                                                 {% if block.settings[link] == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings[link] }}"{% endif %} class="image-zoom adaptive_height"
                                                             {% else %}
-                                                                href="{{ preview_img | img_url: 'master' }}" data-fancybox="images" class="image-zoom adaptive_height fancybox"
+                                                                href="{{ preview_img | image_url: width: 1500 }}" data-fancybox="images" class="image-zoom adaptive_height fancybox"
                                                             {% endif %}
                                                             style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%">
                                                                 <img {% render 'lazyload',preview_img: preview_img %} />

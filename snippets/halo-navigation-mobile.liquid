@@ -179,8 +179,8 @@
                                                                         <div class="banner">
                                                                             <a {% if banner_url_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_1 }}"{% endif %} class="image">
                                                                                 {%- if banner_1 != blank -%}
-                                                                                    <img srcset="{{ banner_1 | img_url: 'master' }} 1x, {{ banner_1 | img_url: 'master', scale: 2 }} 2x"
-                                                                                    src="{{ banner_1 | img_url: 'master' }}"
+                                                                                    <img srcset="{{ banner_1 | image_url: width: 1500 }} 1x, {{ banner_1 | image_url: width: 1500, scale: 2 }} 2x"
+                                                                                    src="{{ banner_1 | image_url: width: 1500 }}"
                                                                                     loading="lazy"
                                                                                     alt="{{ banner_1.alt | default: shop.name | escape }}">
                                                                                 {%- else -%}
@@ -207,8 +207,8 @@
                                                                         <div class="banner">
                                                                             <a {% if banner_url_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_2 }}"{% endif %} class="image">
                                                                                 {%- if banner_2 != blank -%}
-                                                                                    <img srcset="{{ banner_2 | img_url: 'master' }} 1x, {{ banner_2 | img_url: 'master', scale: 2 }} 2x"
-                                                                                    src="{{ banner_2 | img_url: 'master' }}"
+                                                                                    <img srcset="{{ banner_2 | image_url: width: 1500 }} 1x, {{ banner_2 | image_url: width: 1500, scale: 2 }} 2x"
+                                                                                    src="{{ banner_2 | image_url: width: 1500 }}"
                                                                                     loading="lazy"
                                                                                     alt="{{ banner_2.alt | default: shop.name | escape }}">
                                                                                 {%- else -%}
@@ -235,8 +235,8 @@
                                                                         <div class="banner">
                                                                             <a {% if banner_url_3 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_3 }}"{% endif %} class="image">
                                                                                 {%- if banner_3 != blank -%}
-                                                                                    <img srcset="{{ banner_3 | img_url: 'master' }} 1x, {{ banner_3 | img_url: 'master', scale: 2 }} 2x"
-                                                                                    src="{{ banner_3 | img_url: 'master' }}"
+                                                                                    <img srcset="{{ banner_3 | image_url: width: 1500 }} 1x, {{ banner_3 | image_url: width: 1500, scale: 2 }} 2x"
+                                                                                    src="{{ banner_3 | image_url: width: 1500 }}"
                                                                                     loading="lazy"
                                                                                     alt="{{ banner_3.alt | default: shop.name | escape }}">
                                                                                 {%- else -%}
@@ -263,8 +263,8 @@
                                                                         <div class="banner">
                                                                             <a {% if banner_url_4 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_4 }}"{% endif %} class="image">
                                                                                 {%- if banner_4 != blank -%}
-                                                                                    <img srcset="{{ banner_4 | img_url: 'master' }} 1x, {{ banner_4 | img_url: 'master', scale: 2 }} 2x"
-                                                                                    src="{{ banner_4 | img_url: 'master' }}"
+                                                                                    <img srcset="{{ banner_4 | image_url: width: 1500 }} 1x, {{ banner_4 | image_url: width: 1500, scale: 2 }} 2x"
+                                                                                    src="{{ banner_4 | image_url: width: 1500 }}"
                                                                                     loading="lazy"
                                                                                     alt="{{ banner_4.alt | default: shop.name | escape }}">
                                                                                 {%- else -%}

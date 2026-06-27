@@ -38,8 +38,8 @@
 		            >
 				{%- elsif size_chart_type == 'custom_image' -%}
 					{% assign img = size_chart_image %}
-	                <img srcset="{{ img | img_url: 'master' }}"
-		                src="{{ img | img_url: 'master' }}"
+	                <img srcset="{{ img | image_url: width: 1500 }}"
+		                src="{{ img | image_url: width: 1500 }}"
 		                loading="lazy"
 		                alt="{{ img.alt | default: shop.name | escape }}"
 		            >

@@ -2,10 +2,10 @@
   <div class="template-404 page-width page-margin center">
     <div class="background-image">
       {% if section.settings.background_image != blank %}
-        <img class="{% if section.settings.background_image_mb != blank %} has-image-mb{% else %} no-image-mb{% endif %}" src="{{section.settings.background_image | img_url:'master'}}">
+        <img class="{% if section.settings.background_image_mb != blank %} has-image-mb{% else %} no-image-mb{% endif %}" src="{{section.settings.background_image | image_url: width: 1500}}">
       {% endif %}
       {% if section.settings.background_image_mb != blank %}
-        <img class="image-mb" src="{{section.settings.background_image_mb | img_url:'master'}}">
+        <img class="image-mb" src="{{section.settings.background_image_mb | image_url: width: 1500}}">
       {% endif %}
     </div>
     <div class="content">

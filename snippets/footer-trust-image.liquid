@@ -11,7 +11,7 @@
 {%- endunless -%}     
 {%- if image_trust != blank -%}
     <div class="footer__security-trust text-{{ image_trust_align }}" style="--margin-top-image-trust: {{ margin_top_image_trust}};--margin-top-image-trust-mb: {% if block.settings.margin_top_image_trust >= 25 %}15px{% else %}{{ margin_top_image_trust}}{% endif %};">               
-        <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ image_trust | img_url: 'master' }}" alt="{{ image_trust.alt | default: 'Security trust' }}" {% unless settings.enable_lazyload %}src="{{ image_trust | img_url: 'master' }}"{% endunless %} {% if settings.enable_lazyload %}class="lazyload"{% endif %}
+        <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ image_trust | image_url: width: 1500 }}" alt="{{ image_trust.alt | default: 'Security trust' }}" {% unless settings.enable_lazyload %}src="{{ image_trust | image_url: width: 1500 }}"{% endunless %} {% if settings.enable_lazyload %}class="lazyload"{% endif %}
         style="{% if image_trust_align == 'left' %}margin-left: 0; margin-right: auto;{% elsif image_trust_align == 'right' %}margin-left: auto; margin-right: 0; {% endif %} "/>
         {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
     </div>

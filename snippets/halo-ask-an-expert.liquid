@@ -16,7 +16,7 @@
         
         {%- if product -%}
             <input type="hidden" name="contact[Product Title]" value="{{ product.title }}" />
-            <input type="hidden" name="contact[Product Image]" value="{{ product.featured_image.src | img_url: 'master' }} "/>
+            <input type="hidden" name="contact[Product Image]" value="{{ product.featured_image.src | image_url: width: 1500 }} "/>
             <input type="hidden" name="contact[Product Link]" value="{{ shop.url | append: product.url }}"/>
         {%- endif -%}
 

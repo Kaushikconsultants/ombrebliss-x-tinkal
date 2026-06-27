@@ -6,7 +6,7 @@
                 {%- if settings.popup_newsletter_link_image != blank -%}
                     <a {% if settings.popup_newsletter_link_image == blank %} role="link" aria-disabled="true"{% else %} href="{{ settings.popup_newsletter_link_image }}"{% endif %} target="_blank">
                 {%- endif -%}
-                    <img srcset="{{ image | img_url: 'master' }}" src="{{ image | img_url: 'master' }}" loading="lazy" alt="{{ image.alt | default: shop.name | escape }}">
+                    <img srcset="{{ image | image_url: width: 1500 }}" src="{{ image | image_url: width: 1500 }}" loading="lazy" alt="{{ image.alt | default: shop.name | escape }}">
                 {%- if settings.popup_newsletter_link_image != blank -%}    
                     </a>
                 {%- endif -%}

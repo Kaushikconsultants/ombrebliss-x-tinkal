@@ -26,7 +26,7 @@
 	    <button type="button" data-open-ask-an-expert{% if settings.ask_an_expert_banner != blank %} class="link"{% endif %} aria-label="{{ 'ask_an_expert.general.button' | t}}">
 		    {%- if settings.ask_an_expert_banner != blank -%}
 		        {% assign image =  settings.ask_an_expert_banner %}
-		        <img srcset="{{ image | img_url: 'master' }}" src="{{ image | img_url: 'master' }}" loading="lazy"  alt="{{ image.alt | default: shop.name | escape }}">
+		        <img srcset="{{ image | image_url: width: 1500 }}" src="{{ image | image_url: width: 1500 }}" loading="lazy"  alt="{{ image.alt | default: shop.name | escape }}">
 		    {%- else -%}
 		    	{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
 		    {%- endif -%}

@@ -584,9 +584,9 @@
                                                                 }}
                                                             {%- else -%}
                                                                 <img id="product-featured-image-{{ media.id }}"
-                                                                    {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ media.preview_image | img_url: 'master' }}"
-                                                                    {% unless settings.enable_lazyload %}src="{{ media | img_url: 'master' }}"{% endunless %}
-                                                                    {% if settings.enable_lazyload %}data-src="{{ media | img_url: 'master' }}"{% endif %}
+                                                                    {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ media.preview_image | image_url: width: 1500 }}"
+                                                                    {% unless settings.enable_lazyload %}src="{{ media | image_url: width: 1500 }}"{% endunless %}
+                                                                    {% if settings.enable_lazyload %}data-src="{{ media | image_url: width: 1500 }}"{% endif %}
                                                                     alt="{{ media.preview_image.alt | escape }}"
                                                                     sizes="(min-width: 2000px) 1500px, (min-width: 1200px) 1200px, (min-width: 768px) calc((100vw - 30px) / 2), calc(100vw - 20px)"
                                                                     width="{{ media.width }}"

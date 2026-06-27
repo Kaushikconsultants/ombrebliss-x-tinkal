@@ -161,7 +161,7 @@
 											{%- else -%}
 												{%- if menu_item_image != blank -%}
 													<span class="custom-icon style-{{ image_style }}">
-														<img src="{{ menu_item_image | img_url:'master' }}" alt="{{ menu_item_image.alt | default: menu_item_heading | escape }}">
+														<img src="{{ menu_item_image | image_url: width: 1500 }}" alt="{{ menu_item_image.alt | default: menu_item_heading | escape }}">
 													</span>
 												{%- endif -%}
 											{%- endif -%}
@@ -203,7 +203,7 @@
 											{%- else -%}
 												{%- if menu_item_image != blank -%}
 													<span class="custom-icon style-{{ image_style }}">
-														<img src="{{ menu_item_image | img_url:'master' }}" alt="{{ menu_item_image.alt | default: menu_item_heading | escape }}">
+														<img src="{{ menu_item_image | image_url: width: 1500 }}" alt="{{ menu_item_image.alt | default: menu_item_heading | escape }}">
 													</span>
 												{%- endif -%}
 											{%- endif -%}
@@ -235,7 +235,7 @@
 										{%- else -%}
 											{%- if menu_item_image != blank -%}
 												<span class="custom-icon style-{{ image_style }}">
-													<img src="{{ menu_item_image | img_url: "master" }}" alt="{{ menu_item_image.alt | default: menu_item_heading | escape }}">
+													<img src="{{ menu_item_image | image_url: width: 1500 }}" alt="{{ menu_item_image.alt | default: menu_item_heading | escape }}">
 												</span>
 											{%- endif -%}
 										{%- endif -%}

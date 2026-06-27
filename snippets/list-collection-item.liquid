@@ -26,7 +26,7 @@
         -%}
         {%- if image != blank -%}
           <a class="image image-{{ image_ratio }} adaptive_height" href="{{ link }}"{% if image_ratio == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: image.aspect_ratio | times: 100 }}%;"{% elsif image_ratio == 'square' %} style="padding-bottom: 100%;"{% elsif image_ratio == 'portrait' %}{% if portrait_aspect_ratio != blank %} style="padding-bottom: {{ portrait_aspect_ratio | append: '%' }};"{% endif %}{% endif %}>
-              <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ image | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ image | img_url: 'master' }}"{% endunless %} alt="{{ image.alt | default: shop.name | escape }}" loading="lazy"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>
+              <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ image | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ image | image_url: width: 1500 }}"{% endunless %} alt="{{ image.alt | default: shop.name | escape }}" loading="lazy"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>
               {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
             </a>
         {%- else -%}

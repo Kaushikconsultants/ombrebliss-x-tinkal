@@ -6,7 +6,7 @@
     {%- endif -%}
     {%- if image_mobile != blank -%}
         <div class="image image-mobile image-adapt" style="padding-top: {% unless image_mobile.presentation.focal_point == '50.0% 50.0%' %}{{ 1 | divided_by: image_mobile.aspect_ratio | times: 120 | append: '%' }};{% else %}{{ 1 | divided_by: image_mobile.aspect_ratio | times: 100 | append: '%' }};{% endunless %}">
-            <img srcset="{{ image_mobile | img_url: 'master' }}" src="{{ image_mobile | img_url: 'master' }}" alt="{{ image_mobile.alt | default: shop.name | escape }}" loading="lazy" {% unless image_mobile.presentation.focal_point == '50.0% 50.0%' %}style="object-position: {{ image_mobile.presentation.focal_point }}"{% endunless %}>
+            <img srcset="{{ image_mobile | image_url: width: 1500 }}" src="{{ image_mobile | image_url: width: 1500 }}" alt="{{ image_mobile.alt | default: shop.name | escape }}" loading="lazy" {% unless image_mobile.presentation.focal_point == '50.0% 50.0%' %}style="object-position: {{ image_mobile.presentation.focal_point }}"{% endunless %}>
         </div>
     {%- else -%}
         {%- if image != blank -%}

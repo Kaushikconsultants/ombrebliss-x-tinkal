@@ -517,13 +517,13 @@
                                                     >
                                                         <div 
                                                             class="media" 
-                                                            {% if zoomed_image and main_image_show_custom_cursor != true %} data-zoom-image="{{ media.preview_image | img_url: 'master' }}"{% endif %} 
-                                                            {% if product_image_popup == 'fancybox' %} data-fancybox="images" href="{{ media.preview_image | img_url: 'master' }}" {% endif %}
+                                                            {% if zoomed_image and main_image_show_custom_cursor != true %} data-zoom-image="{{ media.preview_image | image_url: width: 1500 }}"{% endif %} 
+                                                            {% if product_image_popup == 'fancybox' %} data-fancybox="images" href="{{ media.preview_image | image_url: width: 1500 }}" {% endif %}
                                                         >
                                                             <img id="product-featured-image-{{ media.id }}"
-                                                                {% if settings.enable_lazyload and forloop.index > 4 %}data-{% endif %}srcset="{{ media.preview_image | img_url: 'master' }}"
-                                                                {% unless settings.enable_lazyload and forloop.index > 4 %}src="{{ media | img_url: 'master' }}"{% endunless %}
-                                                                {% if settings.enable_lazyload %}data-src="{{ media | img_url: 'master' }}"{% endif %}
+                                                                {% if settings.enable_lazyload and forloop.index > 4 %}data-{% endif %}srcset="{{ media.preview_image | image_url: width: 1500 }}"
+                                                                {% unless settings.enable_lazyload and forloop.index > 4 %}src="{{ media | image_url: width: 1500 }}"{% endunless %}
+                                                                {% if settings.enable_lazyload %}data-src="{{ media | image_url: width: 1500 }}"{% endif %}
                                                                 alt="{{ media.preview_image.alt | escape }}"
                                                                 sizes="(min-width: 2000px) 1500px, (min-width: 1200px) 1200px, (min-width: 768px) calc((100vw - 30px) / 2), calc(100vw - 20px)"
                                                                 width="{{ media.width }}"
@@ -570,8 +570,8 @@
                                                             {%- else -%}
                                                                 <div class="media has-video">
                                                                     <img
-                                                                        srcset="{{ media | img_url: 'master' }}"
-                                                                        src="{{ media | img_url: 'master' }}"
+                                                                        srcset="{{ media | image_url: width: 1500 }}"
+                                                                        src="{{ media | image_url: width: 1500 }}"
                                                                         alt="{{ media.alt | escape }}"
                                                                         sizes="(min-width: 1200px) calc((1200px - 10rem) / 2), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
                                                                         loading="lazy"
@@ -601,8 +601,8 @@
                                                         >
                                                             <div class="media has-video">
                                                                 <img
-                                                                    srcset="{{ media | img_url: 'master' }}"
-                                                                    src="{{ media | img_url: 'master' }}"
+                                                                    srcset="{{ media | image_url: width: 1500 }}"
+                                                                    src="{{ media | image_url: width: 1500 }}"
                                                                     alt="{{ media.alt | escape }}"
                                                                     sizes="(min-width: 1200px) calc((1200px - 10rem) / 2), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
                                                                     loading="lazy"

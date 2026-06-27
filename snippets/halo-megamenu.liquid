@@ -85,7 +85,7 @@
                                         <div class="banner d-block">
                                             <a{% if banner_url_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_1 }}"{% endif %} class="image adaptive_height image-zoom w-100 text-center" style="padding-top: {{ 1 | divided_by: banner_1.aspect_ratio | times: 100 }}%" title="{{ banner_1.alt | default: shop.name | escape }}">
                                                 {%- if banner_1 != blank -%}
-                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>{% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>{% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                 {%- else -%}
                                                     <div class="not_img" style="--height_not_img: 337px">210 x 337px</div>
                                                 {%- endif -%}
@@ -156,7 +156,7 @@
                                         <div class="banner d-block">
                                            <a{% if banner_url_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_1 }}"{% endif %} class="image adaptive_height image-zoom w-100 text-center" style="padding-top: {{ 1 | divided_by: banner_1.aspect_ratio | times: 100 }}%" title="{{ banner_1.alt | default: shop.name | escape }}">
                                                 {%- if banner_1 != blank -%}
-                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                 {%- else -%}
                                                     {%- if show_banner_3 == blank -%}
                                                         <div class="not_img" style="--height_not_img: 180px">468 x 180px</div>
@@ -171,7 +171,7 @@
                                         <div class="banner">
                                             <a{% if banner_url_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_2 }}"{% endif %} class="image adaptive_height image-zoom w-100 text-center" style="padding-top: {{ 1 | divided_by: banner_2.aspect_ratio | times: 100 }}%" title="{{ banner_2.alt | default: shop.name | escape }}">
                                                 {%- if banner_2 != blank -%}
-                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_2 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_2 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_2.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_2 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_2 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_2.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                 {%- else -%}
                                                     {%- if show_banner_3 == blank -%}
                                                         <div class="not_img" style="--height_not_img: 180px">468 x 180px</div>
@@ -189,8 +189,8 @@
                                     <div class="banner d-block">
                                         <a{% if banner_url_3 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_3 }}"{% endif %} class="image adaptive_height image-zoom w-100 text-center" style="padding-top: {{ 1 | divided_by: banner_3.aspect_ratio | times: 100 }}%" title="{{ banner_3.alt | default: shop.name | escape }}">
                                             {%- if banner_3 != blank -%}
-                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_3 | img_url: 'master' }}"
-                                                {% unless settings.enable_lazyload %}src="{{ banner_3 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_3.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_3 | image_url: width: 1500 }}"
+                                                {% unless settings.enable_lazyload %}src="{{ banner_3 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_3.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                             {%- else -%}
                                                 <div class="not_img" style="--height_not_img: 337px">210 x 337px</div>
                                             {%- endif -%}
@@ -234,7 +234,7 @@
                                                 {%- if show_banner_1 -%}
                                                         <a{% if banner_url_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_1 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_1.aspect_ratio | times: 100 }}%" title="{{ banner_1.alt | default: shop.name | escape }}">
                                                             {%- if banner_1 != blank -%}
-                                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                             {%- else -%}
                                                                 <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
                                                             {%- endif -%}
@@ -244,7 +244,7 @@
                                                 {%- if show_banner_2 -%}
                                                         <a{% if banner_url_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_2 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_2.aspect_ratio | times: 100 }}%" title="{{ banner_2.alt | default: shop.name | escape }}">
                                                             {%- if banner_2 != blank -%}
-                                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_2 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_2 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_2.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_2 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_2 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_2.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                             {%- else -%}
                                                                 <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
                                                             {%- endif -%}
@@ -254,7 +254,7 @@
                                                 {%- if show_banner_3 -%} 
                                                         <a{% if banner_url_3 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_3 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_3.aspect_ratio | times: 100 }}%" title="{{ banner_3.alt | default: shop.name | escape }}">
                                                             {%- if banner_3 != blank -%}
-                                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_3 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_3 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_3.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_3 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_3 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_3.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                             {%- else -%}
                                                                 <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
                                                             {%- endif -%}
@@ -264,7 +264,7 @@
                                                 {%- if show_banner_4 -%} 
                                                         <a{% if banner_url_4 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_4 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_4.aspect_ratio | times: 100 }}%" title="{{ banner_4.alt | default: shop.name | escape }}">
                                                             {%- if banner_4 != blank -%}
-                                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_4 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_4 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_4.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_4 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_4 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_4.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                             {%- else -%}
                                                                 <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
                                                             {%- endif -%}
@@ -274,7 +274,7 @@
                                                 {%- if show_banner_5 -%} 
                                                         <a{% if banner_url_5 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_5 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_5.aspect_ratio | times: 100 }}%" title="{{ banner_5.alt | default: shop.name | escape }}">
                                                             {%- if banner_5 != blank -%}
-                                                                <img srcset="{{ banner_5 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_5 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_5.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                                <img srcset="{{ banner_5 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_5 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_5.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                             {%- else -%}
                                                                 <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
                                                             {%- endif -%}
@@ -314,7 +314,7 @@
                                             {%- if show_banner_1 -%}
                                                     <a{% if banner_url_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_1 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_1.aspect_ratio | times: 100 }}%" title="{{ banner_1.alt | default: shop.name | escape }}">
                                                         {%- if banner_1 != blank -%}
-                                                            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | img_url: 'master' }}"{% unless settings.enable_lazyload %} src="{{ banner_1 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | image_url: width: 1500 }}"{% unless settings.enable_lazyload %} src="{{ banner_1 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                         {%- else -%}
                                                             <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
                                                         {%- endif -%}
@@ -324,7 +324,7 @@
                                             {%- if show_banner_2 -%}
                                                     <a{% if banner_url_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_2 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_2.aspect_ratio | times: 100 }}%" title="{{ banner_2.alt | default: shop.name | escape }}">
                                                         {%- if banner_2 != blank -%}
-                                                            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_2 | img_url: 'master' }}"{% unless settings.enable_lazyload %} src="{{ banner_2 | img_url: 'master' }}"{% endunless %}
+                                                            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_2 | image_url: width: 1500 }}"{% unless settings.enable_lazyload %} src="{{ banner_2 | image_url: width: 1500 }}"{% endunless %}
                                                             loading="lazy" alt="{{ banner_2.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                         {%- else -%}
                                                             <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
@@ -335,7 +335,7 @@
                                             {%- if show_banner_3 -%} 
                                                     <a{% if banner_url_3 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_3 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_3.aspect_ratio | times: 100 }}%" title="{{ banner_3.alt | default: shop.name | escape }}">
                                                         {%- if banner_3 != blank -%}
-                                                            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_3 | img_url: 'master' }}"{% unless settings.enable_lazyload %} src="{{ banner_3 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_3.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_3 | image_url: width: 1500 }}"{% unless settings.enable_lazyload %} src="{{ banner_3 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_3.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                         {%- else -%}
                                                             <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
                                                         {%- endif -%}
@@ -345,7 +345,7 @@
                                             {%- if show_banner_4 -%} 
                                                     <a{% if banner_url_4 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_4 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_4.aspect_ratio | times: 100 }}%" title="{{ banner_4.alt | default: shop.name | escape }}">
                                                         {%- if banner_4 != blank -%}
-                                                            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_4 | img_url: 'master' }}"{% unless settings.enable_lazyload %} src="{{ banner_4 | img_url: 'master' }}"{% endunless %} loading="lazy"
+                                                            <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_4 | image_url: width: 1500 }}"{% unless settings.enable_lazyload %} src="{{ banner_4 | image_url: width: 1500 }}"{% endunless %} loading="lazy"
                                                             alt="{{ banner_4.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                         {%- else -%}
                                                             <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
@@ -356,7 +356,7 @@
                                             {%- if show_banner_5 -%} 
                                                     <a{% if banner_url_5 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_5 }}"{% endif %} class="image adaptive_height image-zoom" style="padding-top: {{ 1 | divided_by: banner_5.aspect_ratio | times: 100 }}%" title="{{ banner_5.alt | default: shop.name | escape }}">
                                                         {%- if banner_5 != blank -%}
-                                                            <img srcset="{{ banner_5 | img_url: 'master' }}"{% unless settings.enable_lazyload %} src="{{ banner_5 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_5.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>
+                                                            <img srcset="{{ banner_5 | image_url: width: 1500 }}"{% unless settings.enable_lazyload %} src="{{ banner_5 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_5.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>
                                                             {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                         {%- else -%}
                                                             <div class="not_img" style="--height_not_img: 125px">210 x 125px</div>
@@ -481,7 +481,7 @@
                                         <div class="banner d-block">
                                            <a{% if banner_url_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_1 }}"{% endif %} class="image adaptive_height image-zoom w-100 text-center" style="padding-top: {{ 1 | divided_by: banner_1.aspect_ratio | times: 100 }}%" title="{{ banner_1.alt | default: shop.name | escape }}">
                                                 {%- if banner_1 != blank -%}
-                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>
+                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>
                                                     {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                 {%- else -%}
                                                     <div class="not_img" style="--height_not_img: 255px">390 x 255px</div>
@@ -495,7 +495,7 @@
                                         <div class="banner d-block">
                                             <a{% if banner_url_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_2 }}"{% endif %} class="image adaptive_height image-zoom w-100 text-center" style="padding-top: {{ 1 | divided_by: banner_2.aspect_ratio | times: 100 }}%" title="{{ banner_2.alt | default: shop.name | escape }}">
                                                 {%- if banner_2 != blank -%}
-                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_2 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_2 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_2.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>
+                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_2 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_2 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_2.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}>
                                                     {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                 {%- else -%}
                                                     <div class="not_img" style="--height_not_img: 255px">390 x 255px</div>
@@ -613,8 +613,8 @@
                                     <div class="banner d-block">
                                         <a{% if banner_url_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_1 }}"{% endif %} class="image adaptive_height image-zoom w-100 text-center" {% if show_banner_1 %}style="padding-top: {{ 1 | divided_by: banner_1.aspect_ratio | times: 100 }}%"{% endif %} title="{{ banner_1.alt | default: shop.name | escape }}">
                                             {%- if banner_1 != blank and show_banner_1 -%}
-                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | img_url: 'master' }}"
-                                                {% unless settings.enable_lazyload %}src="{{ banner_1 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | image_url: width: 1500 }}"
+                                                {% unless settings.enable_lazyload %}src="{{ banner_1 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                             {%- else -%}
                                                 <div class="not_img" style="--height_not_img: 337px">210 x 337px</div>
                                             {%- endif -%}
@@ -643,7 +643,7 @@
                                         <div class="banner d-block">
                                             <a{% if banner_url_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ banner_url_1 }}"{% endif %} class="image adaptive_height image-zoom w-100 text-center" style="padding-top: {{ 1 | divided_by: banner_1.aspect_ratio | times: 100 }}%" title="{{ banner_1.alt | default: shop.name | escape }}">
                                                 {%- if banner_1 != blank -%}
-                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | img_url: 'master' }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | img_url: 'master' }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
+                                                    <img {% if settings.enable_lazyload %}data-{% endif %}srcset="{{ banner_1 | image_url: width: 1500 }}" {% unless settings.enable_lazyload %}src="{{ banner_1 | image_url: width: 1500 }}"{% endunless %} loading="lazy" alt="{{ banner_1.alt | default: shop.name | escape }}"{% if settings.enable_lazyload %} class="lazyload"{% endif %}> {% if settings.enable_lazyload %}<span class="data-lazy-loading"></span>{% endif %}
                                                 {%- else -%}
                                                     <div class="not_img" style="--height_not_img: 337px">210 x 337px</div>
                                                 {%- endif -%}

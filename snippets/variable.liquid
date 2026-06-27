@@ -311,7 +311,7 @@
         /* Layout Boxed */
         --color-background-layout-boxed: {{ settings.bg_color_layout_boxed }};
         {%- if settings.bg_image_layout_boxed != blank -%}
-        --image-background-layout-boxed: url({{ settings.bg_image_layout_boxed | img_url: 'master' }});
+        --image-background-layout-boxed: url({{ settings.bg_image_layout_boxed | image_url: width: 1500 }});
         {%- endif -%}
 
         /* Arrow */

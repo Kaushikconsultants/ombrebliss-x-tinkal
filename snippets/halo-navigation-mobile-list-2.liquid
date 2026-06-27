@@ -54,7 +54,7 @@
                             {% endif %}
                         >
                             {%- if item_image != blank -%}
-                                <img srcset="{{ item_image | img_url: 'master' }}" src="{{ item_image | img_url: 'master' }}" alt="{{ item_image.alt | default: shop.name | escape }}" loading="lazy">
+                                <img srcset="{{ item_image | image_url: width: 1500 }}" src="{{ item_image | image_url: width: 1500 }}" alt="{{ item_image.alt | default: shop.name | escape }}" loading="lazy">
                             {%- else -%}
                                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                             {%- endif -%}

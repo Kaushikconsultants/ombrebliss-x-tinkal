@@ -419,7 +419,7 @@
                     {%- assign banners = section.blocks | where: 'type', 'banner' -%}
                     {%- for block in banners -%}
                         {%- assign preview_img = block.settings.image -%}
-                        {%- assign img_url = block.settings.image | img_url: 'master' -%}
+                        {%- assign img_url = block.settings.image | image_url: width: 1500 -%}
                         <div class="banner{% if section.settings.image_behavior != 'none' %} o-hidden{% endif %}">
                             {%- if block.settings.image != blank -%}
                                 <a {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %} class="adaptive_height image" style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%">
