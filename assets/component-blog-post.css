@@ -136,3 +136,160 @@
         display: none;
     }
 }
+
+/* PREMIUM REDESIGN FOR BEHIND THE BOTTLE BLOG CARDS */
+.featured-blog-block .article-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  border: 1px solid #f2e9e1 !important;
+  box-shadow: 0 4px 20px rgba(120, 110, 100, 0.03) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  overflow: hidden !important;
+}
+.featured-blog-block .article-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 15px 35px rgba(120, 110, 100, 0.07) !important;
+  border-color: #d8c2aa !important;
+}
+.featured-blog-block .article-card__image-wrapper {
+  overflow: hidden !important;
+  position: relative !important;
+  margin-bottom: 0 !important;
+  border-radius: 16px 16px 0 0 !important;
+}
+.featured-blog-block .article-card__image {
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.featured-blog-block .article-card:hover .article-card__image {
+  transform: scale(1.06) !important;
+}
+.featured-blog-block .article-card__info {
+  padding: 24px 20px !important;
+  background: #ffffff !important;
+}
+.featured-blog-block .article-card__title a {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  color: #1a1a1a !important;
+  line-height: 1.4 !important;
+  transition: color 0.3s ease !important;
+}
+.featured-blog-block .article-card:hover .article-card__title a {
+  color: #c5a075 !important;
+}
+.featured-blog-block .article-card__des {
+  font-size: 13px !important;
+  color: #666 !important;
+  line-height: 1.6 !important;
+  margin-top: 8px !important;
+  margin-bottom: 15px !important;
+}
+.featured-blog-block .article-card__author {
+  font-size: 11px !important;
+  color: #999 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.2px !important;
+  margin-bottom: 12px !important;
+}
+
+/* PREMIUM REDESIGN FOR NOW ALSO AVAILABLE LOGO SECTION */
+.availability-section {
+  text-align: center !important;
+  padding: 80px 20px !important;
+  background: #fbfbfb !important;
+  border-top: 1px solid #f2e9e1 !important;
+  border-bottom: 1px solid #f2e9e1 !important;
+  margin: 90px 0 !important;
+}
+.availability-section h2 {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  color: #1a1a1a !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+}
+.availability-section p {
+  font-size: 14px !important;
+  color: #777 !important;
+  margin-bottom: 40px !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-weight: 400 !important;
+}
+.availability-slider {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 30px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+.availability-slider a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 15px 25px !important;
+  background: #ffffff !important;
+  border: 1px solid #ebdcd0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  height: 70px !important;
+  width: 160px !important;
+  box-sizing: border-box !important;
+}
+.availability-slider img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  filter: grayscale(100%) opacity(50%) !important;
+  transition: all 0.4s ease !important;
+  display: block !important;
+}
+.availability-slider img[src*="instamart"], 
+.availability-slider img[src*="blinkit"],
+.availability-slider img[src*="firstcry"] {
+  mix-blend-mode: multiply !important;
+}
+.availability-slider a:hover {
+  transform: translateY(-5px) !important;
+  border-color: #1a1a1a !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+}
+.availability-slider a:hover img {
+  filter: grayscale(0%) opacity(100%) !important;
+}
+.scroll-hint {
+  display: none !important; /* Hide swipe hint since we redesigned the layout */
+}
+
+@media (max-width: 1024px) {
+  .availability-slider {
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 15px !important;
+    gap: 15px !important;
+  }
+  .availability-slider a {
+    width: 130px !important;
+    height: 60px !important;
+    padding: 10px 15px !important;
+  }
+}
+@media (max-width: 767px) {
+  .availability-section {
+    padding: 50px 15px !important;
+    margin: 60px 0 !important;
+  }
+  .availability-section h2 {
+    font-size: 24px !important;
+  }
+}
