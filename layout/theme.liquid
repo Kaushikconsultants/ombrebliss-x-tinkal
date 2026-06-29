@@ -14,10 +14,7 @@
 -%}
 <html class="no-js" lang="{{ request.locale.iso_code }}"{% if settings.enable_layout_rtl and enable_iso_rtl %} dir="rtl"{% endif %}>
     <head>
-      <!-- Preload LCP Banner Image - Desktop -->
-      <link rel='preload' as='image' href='https://ombrebliss.com/cdn/shop/files/Untitled_design_1.jpg?v=1781242231&width=1500' imagesrcset='https://ombrebliss.com/cdn/shop/files/Untitled_design_1.jpg?v=1781242231&width=750 750w, https://ombrebliss.com/cdn/shop/files/Untitled_design_1.jpg?v=1781242231&width=1100 1100w, https://ombrebliss.com/cdn/shop/files/Untitled_design_1.jpg?v=1781242231&width=1500 1500w' imagesizes='100vw' fetchpriority='high' media='(min-width: 768px)'>
-      <!-- Preload LCP Banner Image - Mobile -->
-      <link rel='preload' as='image' href='https://ombrebliss.com/cdn/shop/files/Untitled_design_1.jpg?v=1781242231&width=750' fetchpriority='high' media='(max-width: 767px)'>
+
 
       <!-- Critical Structural CSS -->
       <style>
@@ -185,6 +182,8 @@
         <link rel="canonical" href="{{ canonical_url }}">
         {%- if settings.favicon != blank -%}
             <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32 }}" type="image/png">
+        {%- else -%}
+            <link rel="icon" href="data:;base64,iVBORw0KGgo=">
         {%- endif -%}
         <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
         
