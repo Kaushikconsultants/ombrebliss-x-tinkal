@@ -638,124 +638,243 @@
                         {%- endunless -%}
                     </div>
                 {%- endif -%}
-                <div class="halo-row brand-layout--{{ section.settings.brand_layout }} column-{{ section.settings.brand_rows }} brands-slider halo-slider{% if section.settings.brand_rows_mb == '3' %} sm-column-3{% elsif section.settings.brand_rows_mb == '2' %} sm-column-2{% else %} sm-column-1{% endif %} md-column-3{% if section.settings.brand_layout == 'infinite' %} flex-nowrap o-hidden{% endif %}" {% if section.settings.brand_layout == 'slider' %}data-brands-slider{% endif %} data-rows="{{ section.settings.brand_rows }}" data-arrows="{{ section.settings.enable_arrows }}" data-dots="{{ section.settings.enable_dots }}" data-center-mode="{{ section.settings.enable_center_mode }}" data-rows-mobile="{{ section.settings.brand_rows_mb }}" data-autoplay="{{ section.settings.enable_autoplay }}" data-autoplay-speed="{{ section.settings.brand_speed }}" style="--row-distance-style: {{ section.settings.item_distance | prepend: '-' | append: 'px' }};{% if section.settings.brand_layout == 'infinite' %}--timeScroll: {{timeScroll | append: 's'}};--width_item: {{width_item}}{% endif %}">
-                    {%- if section.settings.brand_layout == 'infinite' -%}
-                        {%- for i in (1..limitItems) -%}
-                            <div class="brand-item-scroll d-flex flex-align-center fs-0{% if section.settings.scroll_from == 'ltr'%} marquee-ltr{% else %} marquee-rtl{% endif %}">
-                                {%- for block in section.blocks -%}
-                                    <div class="halo-item block-{{block.id}}" id="block-{{block.id}}" style="--item-distance-style: {{ section.settings.item_distance | append: 'px' }};--title_color: {{block.settings.color_text}};--title_color_hover:{{block.settings.color_text_hover}};--color_des:{{block.settings.color_des}}">
-                                        <div class="wrapper-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger{% if section.settings.brand_layout == 'infinite' %} animate--fade-in{% else %} animate--slide-in{% endif %}{% endif %}" style="--border_radius:{{ section.settings.border_radius | append: 'px' }};--animation-order: {{ forloop.index }};"{% if settings.banner_animation == 'effect_fade_up' %} data-cascade style=""{% endif %}>
-                                            {%- if block.settings.image != blank -%}
-                                                {%- assign preview_img = block.settings.image -%}
-                                                <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %}">
-                                                    <a class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
-                                                        <img src="{{ preview_img | img_url: '600x' }}" loading="eager" style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
-                                                        {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
-                                                    </a>
-                                                    {%- if block.settings.link contains '/products/' -%}
-                                                        {% assign product_handle = block.settings.link | split: '/products/' | last %}
-                                                        {% assign product = all_products[product_handle] %}
-                                                        {% if product != empty and product.available %}
-                                                            <form method="post" action="/cart/add" class="sleek-add-form" onsubmit="window.location.href='/cart';">
-                                                                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                                                                <button type="submit" class="sleek-add-btn" aria-label="Add to cart">
-                                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                                                                </button>
-                                                            </form>
-                                                        {% endif %}
-                                                    {%- endif -%}
-                                                </div>
-                                            {%- else -%}
-                                                <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
-                                                    {%- if block.settings.title != blank -%}
-                                                        <div class="not_img ft-16" style="--height_not_img: 110px">145 x 110px</div>
-                                                    {%- else -%}
-                                                        <div class="not_img ft-16" style="--height_not_img: 74px">186 x 74px</div>
-                                                    {%- endif -%}
-                                                </a>
-                                            {%- endif -%}
-                                            {%- if block.settings.title != blank -%}
-                                                <a class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</a>
-                                            {%- endif -%}
-                                      {%- if block.settings.link contains '/products/' -%}
-                                          {% assign product_handle = block.settings.link | split: '/products/' | last %}
-                                          {% assign product = all_products[product_handle] %}
-                                          {% if product != empty %}
-                                              {%- liquid
-                                                assign max_price = product.price
-                                                for variant in product.variants
-                                                  if variant.price > max_price
-                                                    assign max_price = variant.price
-                                                  endif
-                                                endfor
-                                              -%}
-                                              <span class="product-price-tag">{{ max_price | money | remove: 'INR' | remove: 'inr' }}</span>
-                                          {% endif %}
+                {%- if section.settings.brand_title == 'The Essence of Our Brand' -%}
+                  <style>
+                    .essence-brand-badges {
+                      display: flex;
+                      flex-wrap: wrap;
+                      justify-content: center;
+                      gap: 15px;
+                      padding: 30px 10px;
+                      max-width: 1200px;
+                      margin: 0 auto;
+                    }
+                    .essence-badge {
+                      display: flex;
+                      align-items: center;
+                      gap: 10px;
+                      background: #f5ebe0;
+                      border: 1px solid #ebdcd0;
+                      border-radius: 30px;
+                      padding: 8px 18px 8px 8px;
+                      color: #8c6a5c;
+                      font-family: 'Outfit', sans-serif;
+                      font-size: 13px;
+                      font-weight: 600;
+                      letter-spacing: 0.5px;
+                      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                      cursor: default;
+                      box-shadow: 0 4px 10px rgba(140, 106, 92, 0.03);
+                    }
+                    .essence-icon-circle {
+                      width: 32px;
+                      height: 32px;
+                      border-radius: 50%;
+                      background: #ffffff;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: #8c6a5c;
+                      border: 1px solid #ebdcd0;
+                      transition: all 0.3s ease;
+                    }
+                    .essence-icon-circle svg {
+                      width: 18px;
+                      height: 18px;
+                      display: block;
+                    }
+                    .essence-badge:hover {
+                      background: #8c6a5c;
+                      color: #ffffff;
+                      border-color: #8c6a5c;
+                      transform: translateY(-3px);
+                      box-shadow: 0 8px 20px rgba(140, 106, 92, 0.15);
+                    }
+                    .essence-badge:hover .essence-icon-circle {
+                      background: #8c6a5c;
+                      color: #ffffff;
+                      border-color: rgba(255, 255, 255, 0.2);
+                    }
+                    @media (max-width: 768px) {
+                      .essence-brand-badges {
+                        gap: 10px;
+                        padding: 15px 5px;
+                      }
+                      .essence-badge {
+                        padding: 6px 14px 6px 6px;
+                        font-size: 12px;
+                      }
+                      .essence-icon-circle {
+                        width: 28px;
+                        height: 28px;
+                      }
+                      .essence-icon-circle svg {
+                        width: 15px;
+                        height: 15px;
+                      }
+                    }
+                  </style>
+                  <div class="essence-brand-badges">
+                    <div class="essence-badge">
+                      <div class="essence-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 0-4 3.5-4 7a4 4 0 0 0 8 0c0-3.5-4-7-4-7z"/><path d="M12 9c0 0-2 1.75-2 3.5a2 2 0 0 0 4 0c0-1.75-2-3.5-2-3.5z"/><path d="M9 18h6M10 21h4"/></svg>
+                      </div>
+                      <span>Clean Fragrance</span>
+                    </div>
+                    <div class="essence-badge">
+                      <div class="essence-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="8" width="12" height="12" rx="3"/><path d="M12 2v3M9 5h6M12 8V5"/></svg>
+                      </div>
+                      <span>Honest Perfumery</span>
+                    </div>
+                    <div class="essence-badge">
+                      <div class="essence-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h10M6 9h10M6 4c5 0 7 2.5 7 5s-2 5-7 5M9 14l7 6"/></svg>
+                      </div>
+                      <span>Transparent Pricing</span>
+                    </div>
+                    <div class="essence-badge">
+                      <div class="essence-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 4.4 3.6 8 8 8s8-3.6 8-8V2z"/><path d="M12 10V2M12 10a4 4 0 0 0-4 4"/></svg>
+                      </div>
+                      <span>Ethical Scents</span>
+                    </div>
+                    <div class="essence-badge">
+                      <div class="essence-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6c-2 2-3 5-3 8s1 4 3 4 3-1 3-4-1-6-3-8z"/><path d="M6 12c1 0 3-1 4-3M18 12c-1 0-3-1-4-3"/></svg>
+                      </div>
+                      <span>Minimal Luxury</span>
+                    </div>
+                    <div class="essence-badge">
+                      <div class="essence-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 7.5 4 11.4 4 14.5a8 8 0 0 0 16 0c0-3.1-2.5-7-8-12.5z"/></svg>
+                      </div>
+                      <span>Pure Ingredients</span>
+                    </div>
+                  </div>
+                {%- else -%}
+                  <div class="halo-row brand-layout--{{ section.settings.brand_layout }} column-{{ section.settings.brand_rows }} brands-slider halo-slider{% if section.settings.brand_rows_mb == '3' %} sm-column-3{% elsif section.settings.brand_rows_mb == '2' %} sm-column-2{% else %} sm-column-1{% endif %} md-column-3{% if section.settings.brand_layout == 'infinite' %} flex-nowrap o-hidden{% endif %}" {% if section.settings.brand_layout == 'slider' %}data-brands-slider{% endif %} data-rows="{{ section.settings.brand_rows }}" data-arrows="{{ section.settings.enable_arrows }}" data-dots="{{ section.settings.enable_dots }}" data-center-mode="{{ section.settings.enable_center_mode }}" data-rows-mobile="{{ section.settings.brand_rows_mb }}" data-autoplay="{{ section.settings.enable_autoplay }}" data-autoplay-speed="{{ section.settings.brand_speed }}" style="--row-distance-style: {{ section.settings.item_distance | prepend: '-' | append: 'px' }};{% if section.settings.brand_layout == 'infinite' %}--timeScroll: {{timeScroll | append: 's'}};--width_item: {{width_item}}{% endif %}">
+                      {%- if section.settings.brand_layout == 'infinite' -%}
+                          {%- for i in (1..limitItems) -%}
+                              <div class="brand-item-scroll d-flex flex-align-center fs-0{% if section.settings.scroll_from == 'ltr'%} marquee-ltr{% else %} marquee-rtl{% endif %}">
+                                  {%- for block in section.blocks -%}
+                                      <div class="halo-item block-{{block.id}}" id="block-{{block.id}}" style="--item-distance-style: {{ section.settings.item_distance | append: 'px' }};--title_color: {{block.settings.color_text}};--title_color_hover:{{block.settings.color_text_hover}};--color_des:{{block.settings.color_des}}">
+                                          <div class="wrapper-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger{% if section.settings.brand_layout == 'infinite' %} animate--fade-in{% else %} animate--slide-in{% endif %}{% endif %}" style="--border_radius:{{ section.settings.border_radius | append: 'px' }};--animation-order: {{ forloop.index }};"{% if settings.banner_animation == 'effect_fade_up' %} data-cascade style=""{% endif %}>
+                                              {%- if block.settings.image != blank -%}
+                                                  {%- assign preview_img = block.settings.image -%}
+                                                  <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %}">
+                                                      <a class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
+                                                          <img src="{{ preview_img | img_url: '600x' }}" loading="eager" style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
+                                                          {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+                                                      </a>
+                                                      {%- if block.settings.link contains '/products/' -%}
+                                                          {% assign product_handle = block.settings.link | split: '/products/' | last %}
+                                                          {% assign product = all_products[product_handle] %}
+                                                          {% if product != empty and product.available %}
+                                                              <form method="post" action="/cart/add" class="sleek-add-form" onsubmit="window.location.href='/cart';">
+                                                                  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                                                  <button type="submit" class="sleek-add-btn" aria-label="Add to cart">
+                                                                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                                                                  </button>
+                                                              </form>
+                                                          {% endif %}
+                                                      {%- endif -%}
+                                                  </div>
+                                              {%- else -%}
+                                                  <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
+                                                      {%- if block.settings.title != blank -%}
+                                                          <div class="not_img ft-16" style="--height_not_img: 110px">145 x 110px</div>
+                                                      {%- else -%}
+                                                          <div class="not_img ft-16" style="--height_not_img: 74px">186 x 74px</div>
+                                                      {%- endif -%}
+                                                  </a>
+                                              {%- endif -%}
+                                              {%- if block.settings.title != blank -%}
+                                                  <a class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</a>
+                                              {%- endif -%}
+                                                {%- if block.settings.link contains '/products/' -%}
+                                                    {% assign product_handle = block.settings.link | split: '/products/' | last %}
+                                                    {% assign product = all_products[product_handle] %}
+                                                    {% if product != empty %}
+                                                        {%- liquid
+                                                          assign max_price = product.price
+                                                          for variant in product.variants
+                                                            if variant.price > max_price
+                                                              assign max_price = variant.price
+                                                            endif
+                                                          endfor
+                                                        -%}
+                                                        <span class="product-price-tag">{{ max_price | money | remove: 'INR' | remove: 'inr' }}</span>
+                                                    {% endif %}
+                                                {%- endif -%}
+                                              {%- if block.settings.description != blank -%}
+                                                  <a class="description"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.description }}</a>
+                                              {%- endif -%}
+                                          </div>
+                                      </div>
+                                  {%- endfor -%}
+                              </div>
+                          {%- endfor -%}
+                      {%- else -%}
+                          {%- for block in section.blocks -%}
+                              <div class="halo-item block-{{block.id}}" id="block-{{block.id}}" style="--item-distance-style: {{ section.settings.item_distance | append: 'px' }};--title_color: {{block.settings.color_text}};--title_color_hover:{{block.settings.color_text_hover}};--color_des:{{block.settings.color_des}}">
+                                  <div class="wrapper-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="--border_radius:{{ section.settings.border_radius | append: 'px' }};--animation-order: {{ forloop.index }};"{% if settings.banner_animation == 'effect_fade_up' %} data-cascade style=""{% endif %}>
+                                      {%- if block.settings.image != blank -%}
+                                          {%- assign preview_img = block.settings.image -%}
+                                          <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %}">
+                                              <a class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
+                                                  <img src="{{ preview_img | img_url: '600x' }}" loading="eager" style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
+                                                  {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
+                                              </a>
+                                              {%- if block.settings.link contains '/products/' -%}
+                                                  {% assign product_handle = block.settings.link | split: '/products/' | last %}
+                                                  {% assign product = all_products[product_handle] %}
+                                                  {% if product != empty and product.available %}
+                                                      <form method="post" action="/cart/add" class="sleek-add-form" onsubmit="window.location.href='/cart';">
+                                                          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                                          <button type="submit" class="sleek-add-btn" aria-label="Add to cart">
+                                                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                                                          </button>
+                                                      </form>
+                                                  {% endif %}
+                                              {%- endif -%}
+                                          </div>
+                                      {%- else -%}
+                                          <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
+                                              {%- if block.settings.title != blank -%}
+                                                  <div class="not_img ft-16" style="--height_not_img: 110px">145 x 110px</div>
+                                              {%- else -%}
+                                                  <div class="not_img ft-16" style="--height_not_img: 74px">186 x 74px</div>
+                                              {%- endif -%}
+                                          </a>
                                       {%- endif -%}
-                                        </div>
-                                    </div>
-                                {%- endfor -%}
-                            </div>
-                        {%- endfor -%}    
-                    {%- else -%}
-                        {%- for block in section.blocks -%}
-                            <div class="halo-item block-{{block.id}}" id="block-{{block.id}}" style="--item-distance-style: {{ section.settings.item_distance | append: 'px' }};--title_color: {{block.settings.color_text}};--title_color_hover:{{block.settings.color_text_hover}};--color_des:{{block.settings.color_des}}">
-                                <div class="wrapper-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}" style="--border_radius:{{ section.settings.border_radius | append: 'px' }};--animation-order: {{ forloop.index }};"{% if settings.banner_animation == 'effect_fade_up' %} data-cascade style=""{% endif %}>
-                                    {%- if block.settings.image != blank -%}
-                                        {%- assign preview_img = block.settings.image -%}
-                                        <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %}">
-                                            <a class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
-                                                <img src="{{ preview_img | img_url: '600x' }}" loading="eager" style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
-                                                {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
-                                            </a>
-                                            {%- if block.settings.link contains '/products/' -%}
-                                                {% assign product_handle = block.settings.link | split: '/products/' | last %}
-                                                {% assign product = all_products[product_handle] %}
-                                                {% if product != empty and product.available %}
-                                                    <form method="post" action="/cart/add" class="sleek-add-form" onsubmit="window.location.href='/cart';">
-                                                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                                                        <button type="submit" class="sleek-add-btn" aria-label="Add to cart">
-                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-                                                        </button>
-                                                    </form>
-                                                {% endif %}
-                                            {%- endif -%}
-                                        </div>
-                                    {%- else -%}
-                                        <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
-                                            {%- if block.settings.title != blank -%}
-                                                <div class="not_img ft-16" style="--height_not_img: 110px">145 x 110px</div>
-                                            {%- else -%}
-                                                <div class="not_img ft-16" style="--height_not_img: 74px">186 x 74px</div>
-                                            {%- endif -%}
-                                        </a>
-                                    {%- endif -%}
-                                    {%- if block.settings.title != blank -%}
-                                        <a class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</a>
-                                    {%- endif -%}
-                                      {%- if block.settings.link contains '/products/' -%}
-                                          {% assign product_handle = block.settings.link | split: '/products/' | last %}
-                                          {% assign product = all_products[product_handle] %}
-                                          {% if product != empty %}
-                                              {%- liquid
-                                                assign max_price = product.price
-                                                for variant in product.variants
-                                                  if variant.price > max_price
-                                                    assign max_price = variant.price
-                                                  endif
-                                                endfor
-                                              -%}
-                                              <span class="product-price-tag">{{ max_price | money | remove: 'INR' | remove: 'inr' }}</span>
-                                          {% endif %}
+                                      {%- if block.settings.title != blank -%}
+                                          <a class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</a>
                                       {%- endif -%}
-                                    {%- if block.settings.description != blank -%}
-                                        <a class="description"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.description }}</a>
-                                    {%- endif -%}
-                                </div>
-                            </div>
-                        {%- endfor -%}
-                    {%- endif -%}                    
-                </div>
+                                        {%- if block.settings.link contains '/products/' -%}
+                                            {% assign product_handle = block.settings.link | split: '/products/' | last %}
+                                            {% assign product = all_products[product_handle] %}
+                                            {% if product != empty %}
+                                                {%- liquid
+                                                  assign max_price = product.price
+                                                  for variant in product.variants
+                                                    if variant.price > max_price
+                                                      assign max_price = variant.price
+                                                    endif
+                                                  endfor
+                                                -%}
+                                                <span class="product-price-tag">{{ max_price | money | remove: 'INR' | remove: 'inr' }}</span>
+                                            {% endif %}
+                                        {%- endif -%}
+                                      {%- if block.settings.description != blank -%}
+                                          <a class="description"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.description }}</a>
+                                      {%- endif -%}
+                                  </div>
+                              </div>
+                          {%- endfor -%}
+                      {%- endif -%}                    
+                  </div>
+                {%- endif -%}
             {%- if section.settings.brands_block_style == 'style_3' -%}
             </div>
             {%- endif -%}
