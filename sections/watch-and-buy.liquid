@@ -1,0 +1,1146 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+
+{% style %}
+  .watch-buy-section-{{ section.id }} {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+  }
+  .watch-buy-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .watch-buy-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #232323;
+    margin: 0;
+  }
+  .watch-buy-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    overflow: hidden;
+  }
+  .watch-buy-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-start !important;
+  }
+  .watch-buy-slider::-webkit-scrollbar {
+    display: none;
+  }
+  .watch-buy-card {
+    flex: 0 0 250px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .watch-buy-card:hover {
+    transform: translateY(-5px);
+  }
+  .watch-buy-video-wrapper {
+    position: relative;
+    width: 100% !important;
+    padding-top: 177% !important; /* 9:16 Aspect Ratio */
+    background: #000 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+  .watch-buy-video-wrapper video {
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    background: #000 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .watch-buy-video-overlay-trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .watch-buy-product-info {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .watch-buy-product-thumb {
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .watch-buy-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .watch-buy-details h3 {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #232323;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .watch-buy-pricing {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .watch-buy-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+  }
+  .watch-buy-compare-price {
+    font-size: 11px;
+    text-decoration: line-through;
+    color: #888;
+  }
+  .watch-buy-badge {
+    background: #000;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  
+  /* Navigation Arrows */
+  .watch-buy-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+    color: #000;
+  }
+  .watch-buy-arrow:hover {
+    background: #000;
+    color: #fff;
+  }
+  .watch-buy-arrow-left {
+    left: 10px;
+  }
+  .watch-buy-arrow-right {
+    right: 10px;
+  }
+
+  /* PREMIUM MODAL STYLES */
+  .watch-buy-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .watch-buy-modal-content {
+    background: #ffffff;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 780px;
+    height: 90vh;
+    max-height: 600px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    animation: watchBuyModalFadeIn 0.3s ease-out;
+  }
+  @keyframes watchBuyModalFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .watch-buy-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+  }
+  .watch-buy-modal-close:hover {
+    background: rgba(0,0,0,0.8);
+  }
+  .watch-buy-modal-body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .watch-buy-modal-video-pane {
+    flex: 0 0 380px;
+    background: #000;
+    height: 100%;
+    position: relative;
+  }
+  .watch-buy-modal-video-pane video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .watch-buy-modal-product-pane {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    color: #333;
+    overflow-y: auto;
+  }
+  .watch-buy-modal-product-pane h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+  }
+  .watch-buy-modal-price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+  .watch-buy-modal-price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #d12442;
+  }
+  .watch-buy-modal-compare-price {
+    font-size: 15px;
+    text-decoration: line-through;
+    color: #888;
+  }
+  .watch-buy-modal-badge {
+    background: #d12442;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .watch-buy-modal-variants {
+    margin-bottom: 25px;
+  }
+  .watch-buy-modal-variants label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .watch-buy-modal-pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+  }
+  .watch-buy-modal-pill {
+    padding: 8px 16px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #475569;
+    background: #f8fafc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    user-select: none;
+  }
+  .watch-buy-modal-pill:hover:not(.sold-out):not(.active) {
+    border-color: #94a3b8;
+    background: #f1f5f9;
+  }
+  .watch-buy-modal-pill.active {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  .watch-buy-modal-pill.sold-out {
+    position: relative;
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: #cbd5e1;
+    color: #94a3b8;
+  }
+  .watch-buy-modal-pill.sold-out::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 1.5px;
+    background: #94a3b8;
+    transform: rotate(-15deg);
+  }
+  .watch-buy-modal-add-to-cart {
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .watch-buy-modal-add-to-cart:hover {
+    background: #222;
+  }
+  .watch-buy-modal-add-to-cart:active {
+    transform: scale(0.98);
+  }
+  .watch-buy-modal-view-details {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid #000;
+    color: #000;
+    background: transparent;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: all 0.2s, transform 0.1s;
+    cursor: pointer;
+  }
+  .watch-buy-modal-view-details:hover {
+    background: #000;
+    color: #fff;
+  }
+  .watch-buy-modal-view-details:active {
+    transform: scale(0.98);
+  }
+  .watch-buy-modal-success-msg {
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2e7d32;
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.2s;
+  }
+
+  @media screen and (max-width: 768px) {
+    .watch-buy-container {
+      padding: 0 15px;
+    }
+    .watch-buy-card {
+      width: 180px !important;
+      min-width: 180px !important;
+      max-width: 180px !important;
+      flex: 0 0 180px !important;
+    }
+    .watch-buy-arrow {
+      display: none;
+    }
+    .watch-buy-modal-content {
+      height: 95vh;
+      max-height: none;
+      border-radius: 16px;
+    }
+    .watch-buy-modal-body {
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .watch-buy-modal-video-pane {
+      flex: 0 0 300px;
+      width: 100%;
+    }
+    .watch-buy-modal-product-pane {
+      padding: 25px 20px;
+    }
+  }
+
+    .watch-buy-modal-video-pane {
+      flex: 1 1 auto;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .watch-buy-modal-product-pane {
+      display: none !important;
+    }
+  }
+
+  /* Mobile Modal Overlay Actions */
+  .watch-buy-modal-mobile-overlay-actions {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    gap: 10px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+  }
+  @media screen and (max-width: 768px) {
+    .watch-buy-modal-mobile-overlay-actions {
+      display: flex !important;
+    }
+  }
+  .watch-buy-mob-btn {
+    flex: 1;
+    padding: 12px 5px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .watch-buy-mob-atc {
+    background: #fff;
+    color: #000;
+  }
+  .watch-buy-mob-atc:active {
+    transform: scale(0.96);
+  }
+  .watch-buy-mob-details {
+    background: transparent;
+    border: 1.5px solid #fff;
+    color: #fff;
+    text-decoration: none;
+  }
+  .watch-buy-mob-details:active {
+    transform: scale(0.96);
+  }
+
+  /* Mobile Variant Drawer */
+  .watch-buy-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 100000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .watch-buy-drawer-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+  .watch-buy-drawer {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px 20px 0 0;
+    padding: 24px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+    transition: bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+  }
+  .watch-buy-drawer-overlay.active .watch-buy-drawer {
+    bottom: 0;
+  }
+  .watch-buy-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .watch-buy-drawer-title {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    color: #000;
+  }
+  .watch-buy-drawer-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+  }
+  .watch-buy-drawer-product-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .watch-buy-drawer-product-row img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #f8f8f8;
+  }
+  .watch-buy-drawer-prod-info h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+  }
+  .watch-buy-drawer-prod-info span {
+    font-size: 14px;
+    font-weight: 800;
+    color: #d12442;
+  }
+  .watch-buy-drawer-variants-container label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+{% endstyle %}
+
+<div class="watch-buy-section-{{ section.id }}">
+  <div class="watch-buy-header">
+    <h2>{{ section.settings.title }}</h2>
+  </div>
+  <div class="watch-buy-container">
+    <button class="watch-buy-arrow watch-buy-arrow-left" onclick="scrollWatchBuySlider('{{ section.id }}', -1)" aria-label="Previous">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    
+    <div class="watch-buy-slider" id="watch-buy-slider-{{ section.id }}">
+      {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product] %}
+        <div class="watch-buy-card" {{ block.shopify_attributes }}>
+          <div class="watch-buy-video-wrapper" onclick="openWatchBuyModal('{{ block.id }}')">
+            <div class="watch-buy-video-overlay-trigger"></div>
+            {% if block.settings.video_url != blank %}
+              <video autoplay loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover;">
+                {% if block.settings.video_url contains 'http' or block.settings.video_url contains '//' %}
+                  <source src="{{ block.settings.video_url }}" type="video/mp4">
+                {% else %}
+                  <source src="{{ block.settings.video_url | asset_url }}" type="video/mp4">
+                {% endif %}
+              </video>
+            {% else %}
+              <video autoplay loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover;">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+              </video>
+            {% endif %}
+          </div>
+          
+          <a href="{{ product.url | default: '#' }}" class="watch-buy-product-info">
+            {% if product != empty %}
+              <img class="watch-buy-product-thumb" src="{{ product.featured_image | img_url: '100x100', crop: 'center' }}" alt="{{ product.title }}">
+              <div class="watch-buy-details">
+                <h3>{{ product.title }}</h3>
+                {%- liquid
+                  assign max_price = product.price
+                  assign max_compare = product.compare_at_price
+                  for variant in product.variants
+                    if variant.price > max_price
+                      assign max_price = variant.price
+                      assign max_compare = variant.compare_at_price
+                    endif
+                  endfor
+                -%}
+                <div class="watch-buy-pricing">
+                  <span class="watch-buy-price">{{ max_price | money | remove: 'INR' | remove: 'inr' }}</span>
+                  {% if max_compare > max_price %}
+                    <span class="watch-buy-compare-price">{{ max_compare | money | remove: 'INR' | remove: 'inr' }}</span>
+                    {% assign discount = max_compare | minus: max_price | times: 100.0 | divided_by: max_compare | round %}
+                    <span class="watch-buy-badge">{{ discount }}% off</span>
+                  {% endif %}
+                </div>
+              </div>
+            {% else %}
+              <div class="watch-buy-product-thumb" style="background:#eee; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-bag-shopping" style="color:#aaa;"></i></div>
+              <div class="watch-buy-details">
+                <h3>Demo Product</h3>
+                <div class="watch-buy-pricing">
+                  <span class="watch-buy-price">Rs.499.00</span>
+                  <span class="watch-buy-badge">29% off</span>
+                </div>
+              </div>
+            {% endif %}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="watch-buy-arrow watch-buy-arrow-right" onclick="scrollWatchBuySlider('{{ section.id }}', 1)" aria-label="Next">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+
+<!-- PREMIUM POPUP MODAL -->
+<div id="watch-buy-modal" class="watch-buy-modal-overlay" onclick="closeWatchBuyModalOnOverlay(event)">
+  <div class="watch-buy-modal-content">
+    <button class="watch-buy-modal-close" onclick="closeWatchBuyModal()">&times;</button>
+    <div class="watch-buy-modal-body">
+      <div class="watch-buy-modal-video-pane">
+        <video id="watch-buy-modal-video" autoplay loop muted playsinline controls style="width:100%; height:100%; object-fit:cover;"></video>
+        <div class="watch-buy-modal-mobile-overlay-actions">
+          <button class="watch-buy-mob-btn watch-buy-mob-atc" id="watch-buy-modal-mob-atc-btn">Add to Cart</button>
+          <a class="watch-buy-mob-btn watch-buy-mob-details" id="watch-buy-modal-mob-details-btn" href="#">View Details</a>
+        </div>
+      </div>
+      <div class="watch-buy-modal-product-pane">
+        <h3 id="watch-buy-modal-title">Product Title</h3>
+        
+        <div class="watch-buy-modal-price-row">
+          <span id="watch-buy-modal-price" class="watch-buy-modal-price">Rs.0.00</span>
+          <span id="watch-buy-modal-compare-price" class="watch-buy-modal-compare-price">Rs.0.00</span>
+          <span id="watch-buy-modal-badge" class="watch-buy-modal-badge">0% off</span>
+        </div>
+
+        <div id="watch-buy-modal-variants-container" class="watch-buy-modal-variants">
+          <!-- Dynamically Injected -->
+        </div>
+
+        <form id="watch-buy-modal-cart-form">
+          <input type="hidden" name="id" id="watch-buy-modal-variant-id" value="">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" id="watch-buy-modal-submit" class="watch-buy-modal-add-to-cart">Add to Cart</button>
+          <a id="watch-buy-modal-view-product" href="#" class="watch-buy-modal-view-details">View Details</a>
+        </form>
+        <div id="watch-buy-modal-success" class="watch-buy-modal-success-msg">✓ Item added to cart!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE VARIANT SELECTION DRAWER -->
+<div id="watch-buy-drawer-overlay" class="watch-buy-drawer-overlay" onclick="closeWatchBuyDrawer()">
+  <div id="watch-buy-drawer" class="watch-buy-drawer" onclick="event.stopPropagation()">
+    <div class="watch-buy-drawer-header">
+      <h4 class="watch-buy-drawer-title">Select Option</h4>
+      <button class="watch-buy-drawer-close" onclick="closeWatchBuyDrawer()">&times;</button>
+    </div>
+    <div class="watch-buy-drawer-body">
+      <div class="watch-buy-drawer-product-row">
+        <img id="watch-buy-drawer-img" src="" alt="">
+        <div class="watch-buy-drawer-prod-info">
+          <h3 id="watch-buy-drawer-name">Product Name</h3>
+          <span id="watch-buy-drawer-price">Price</span>
+        </div>
+      </div>
+      
+      <div class="watch-buy-drawer-variants-container">
+        <label>Size / Option</label>
+        <div id="watch-buy-drawer-pills" class="watch-buy-modal-pills-container">
+          <!-- Injected pills -->
+        </div>
+      </div>
+      
+      <button id="watch-buy-drawer-submit" class="watch-buy-modal-add-to-cart" style="margin-top: 15px;">Add to Cart</button>
+      <div id="watch-buy-drawer-success" class="watch-buy-modal-success-msg">✓ Item added to cart!</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Dynamic block data injection
+  const watchBuyData = {
+    {% for block in section.blocks %}
+      {% assign product = all_products[block.settings.product] %}
+      "{{ block.id }}": {
+        videoUrl: "{% if block.settings.video_url contains 'http' or block.settings.video_url contains '//' %}{{ block.settings.video_url }}{% else %}{{ block.settings.video_url | asset_url }}{% endif %}",
+        productExists: {% if product != empty %}true{% else %}false{% endif %},
+        {% if product != empty %}
+          handle: {{ product.handle | json }},
+          featuredImage: "{{ product.featured_image | img_url: '200x200', crop: 'center' }}",
+          title: {{ product.title | json }},
+          price: "{{ product.price | money | strip_html | remove: 'INR' | remove: 'inr' }}",
+          comparePrice: "{{ product.compare_at_price | money | strip_html | remove: 'INR' | remove: 'inr' }}",
+          compareRaw: {{ product.compare_at_price | default: 0 }},
+          priceRaw: {{ product.price }},
+          variants: [
+            {% for variant in product.variants %}
+              {
+                id: "{{ variant.id }}",
+                title: {{ variant.title | json }},
+                price: "{{ variant.price | money | strip_html }}",
+                priceRaw: {{ variant.price }},
+                comparePrice: "{{ variant.compare_at_price | money | strip_html }}",
+                compareRaw: {{ variant.compare_at_price | default: 0 }},
+                available: {{ variant.available | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        {% endif %}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+
+  window.scrollWatchBuySlider = function(sectionId, direction) {
+    const slider = document.getElementById(`watch-buy-slider-${sectionId}`);
+    if (slider) {
+      const scrollAmount = direction * 270;
+      slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
+
+  window.openWatchBuyModal = function(blockId, event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    const data = watchBuyData[blockId];
+    if (!data) return;
+
+    // Sort variants descending by price so the highest valued variant is selected first
+    if (data.variants && data.variants.length > 0) {
+      data.variants.sort((a, b) => b.priceRaw - a.priceRaw);
+    }
+
+    // Bind mobile overlay buttons
+    const mobAtcBtn = document.getElementById('watch-buy-modal-mob-atc-btn');
+    const mobDetailsBtn = document.getElementById('watch-buy-modal-mob-details-btn');
+    if (mobAtcBtn) {
+      mobAtcBtn.onclick = function(e) {
+        handleMobileATC(blockId, e);
+      };
+    }
+    if (mobDetailsBtn) {
+      mobDetailsBtn.href = `/products/${data.handle}`;
+    }
+
+    const modal = document.getElementById('watch-buy-modal');
+    const video = document.getElementById('watch-buy-modal-video');
+    const titleEl = document.getElementById('watch-buy-modal-title');
+    const priceEl = document.getElementById('watch-buy-modal-price');
+    const compareEl = document.getElementById('watch-buy-modal-compare-price');
+    const badgeEl = document.getElementById('watch-buy-modal-badge');
+    const variantsContainer = document.getElementById('watch-buy-modal-variants-container');
+    const variantIdInput = document.getElementById('watch-buy-modal-variant-id');
+    const successMsg = document.getElementById('watch-buy-modal-success');
+
+    // Reset success state
+    successMsg.style.display = 'none';
+
+    // Set video source
+    video.src = data.videoUrl;
+    video.load();
+    video.muted = false; // Play with sound in popup
+    video.play().catch(e => {});
+
+    if (data.productExists) {
+      titleEl.innerText = data.title;
+      document.getElementById('watch-buy-modal-view-product').href = `/products/${data.handle}`;
+      document.getElementById('watch-buy-modal-view-product').style.display = 'block';
+      
+      // Setup variants
+      variantsContainer.innerHTML = '';
+      if (data.variants && data.variants.length > 0) {
+        if (data.variants.length === 1) {
+          // Single variant
+          variantIdInput.value = data.variants[0].id;
+          updatePriceDisplay(data.variants[0]);
+        } else {
+          // Multiple variants as clickable pills
+          const label = document.createElement('label');
+          label.innerText = 'Choose Option';
+          
+          const pillsContainer = document.createElement('div');
+          pillsContainer.className = 'watch-buy-modal-pills-container';
+          
+          data.variants.forEach((variant, vIdx) => {
+            const pill = document.createElement('div');
+            pill.className = 'watch-buy-modal-pill' + (vIdx === 0 ? ' active' : '') + (variant.available ? '' : ' sold-out');
+            pill.innerText = variant.title;
+            
+            if (variant.available) {
+              pill.addEventListener('click', function() {
+                pillsContainer.querySelectorAll('.watch-buy-modal-pill').forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                
+                variantIdInput.value = variant.id;
+                updatePriceDisplay(variant);
+              });
+            }
+            
+            pillsContainer.appendChild(pill);
+          });
+          
+          variantsContainer.appendChild(label);
+          variantsContainer.appendChild(pillsContainer);
+          
+          // Initialize with first variant
+          variantIdInput.value = data.variants[0].id;
+          updatePriceDisplay(data.variants[0]);
+        }
+      }
+    } else {
+      titleEl.innerText = 'Demo Product';
+      priceEl.innerText = 'Rs.499.00';
+      compareEl.style.display = 'none';
+      badgeEl.innerText = '29% off';
+      variantsContainer.innerHTML = '';
+      variantIdInput.value = '';
+    }
+
+    modal.style.display = 'flex';
+  };
+
+  function updatePriceDisplay(variant) {
+    const priceEl = document.getElementById('watch-buy-modal-price');
+    const compareEl = document.getElementById('watch-buy-modal-compare-price');
+    const badgeEl = document.getElementById('watch-buy-modal-badge');
+    const submitBtn = document.getElementById('watch-buy-modal-submit');
+
+    priceEl.innerText = variant.price;
+    if (variant.compareRaw > variant.priceRaw) {
+      compareEl.innerText = variant.comparePrice;
+      compareEl.style.display = 'inline';
+      
+      const pct = Math.round(((variant.compareRaw - variant.priceRaw) / variant.compareRaw) * 100);
+      badgeEl.innerText = pct + '% OFF';
+      badgeEl.style.display = 'inline';
+    } else {
+      compareEl.style.display = 'none';
+      badgeEl.style.display = 'none';
+    }
+
+    if (!variant.available) {
+      submitBtn.innerText = 'Sold Out';
+      submitBtn.disabled = true;
+      submitBtn.style.background = '#ccc';
+    } else {
+      submitBtn.innerText = 'Add to Cart';
+      submitBtn.disabled = false;
+      submitBtn.style.background = '#000';
+    }
+  }
+
+  window.closeWatchBuyModal = function() {
+    const modal = document.getElementById('watch-buy-modal');
+    const video = document.getElementById('watch-buy-modal-video');
+    video.pause();
+    video.src = '';
+    modal.style.display = 'none';
+  };
+
+  window.closeWatchBuyModalOnOverlay = function(event) {
+    if (event.target.id === 'watch-buy-modal') {
+      closeWatchBuyModal();
+    }
+  }
+
+  // --- MOBILE DRAWER ACTIONS ---
+  let selectedDrawerVariantId = null;
+
+  window.handleMobileATC = function(blockId, event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    const data = watchBuyData[blockId];
+    if (!data || !data.productExists) return;
+
+    document.getElementById('watch-buy-drawer-success').style.display = 'none';
+
+    if (data.variants && data.variants.length === 1) {
+      const variantId = data.variants[0].id;
+      addVariantToCartDirectly(variantId);
+      return;
+    }
+
+    const imgEl = document.getElementById('watch-buy-drawer-img');
+    imgEl.src = data.featuredImage || '';
+    document.getElementById('watch-buy-drawer-name').innerText = data.title;
+    document.getElementById('watch-buy-drawer-price').innerText = data.variants[0].price;
+
+    const pillsContainer = document.getElementById('watch-buy-drawer-pills');
+    pillsContainer.innerHTML = '';
+    selectedDrawerVariantId = data.variants[0].id;
+
+    data.variants.forEach((variant, vIdx) => {
+      const pill = document.createElement('div');
+      pill.className = 'watch-buy-modal-pill' + (vIdx === 0 ? ' active' : '') + (variant.available ? '' : ' sold-out');
+      pill.innerText = variant.title;
+
+      if (variant.available) {
+        pill.addEventListener('click', function() {
+          pillsContainer.querySelectorAll('.watch-buy-modal-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          selectedDrawerVariantId = variant.id;
+          document.getElementById('watch-buy-drawer-price').innerText = variant.price;
+        });
+      }
+      pillsContainer.appendChild(pill);
+    });
+
+    const submitBtn = document.getElementById('watch-buy-drawer-submit');
+    const newSubmitBtn = submitBtn.cloneNode(true);
+    submitBtn.parentNode.replaceChild(newSubmitBtn, submitBtn);
+
+    newSubmitBtn.addEventListener('click', function() {
+      if (!selectedDrawerVariantId) return;
+      newSubmitBtn.innerText = 'Adding...';
+      newSubmitBtn.disabled = true;
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: selectedDrawerVariantId, quantity: 1 })
+      })
+      .then(res => res.json())
+      .then(cart => {
+        newSubmitBtn.innerText = 'Add to Cart';
+        newSubmitBtn.disabled = false;
+        document.getElementById('watch-buy-drawer-success').style.display = 'block';
+        
+        document.dispatchEvent(new CustomEvent('cart:updated', { detail: { cart: cart } }));
+        document.dispatchEvent(new CustomEvent('ajaxProductAssociated'));
+        if (window.theme && window.theme.CartDrawer) window.theme.CartDrawer.open();
+
+        setTimeout(closeWatchBuyDrawer, 1200);
+      })
+      .catch(err => {
+        newSubmitBtn.innerText = 'Add to Cart';
+        newSubmitBtn.disabled = false;
+        console.error(err);
+      });
+    });
+
+    const overlay = document.getElementById('watch-buy-drawer-overlay');
+    overlay.style.display = 'block';
+    setTimeout(() => overlay.classList.add('active'), 10);
+  };
+
+  window.closeWatchBuyDrawer = function() {
+    const overlay = document.getElementById('watch-buy-drawer-overlay');
+    if(overlay) {
+      overlay.classList.remove('active');
+      setTimeout(() => overlay.style.display = 'none', 300);
+    }
+  };
+
+  function addVariantToCartDirectly(variantId) {
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity: 1 })
+    })
+    .then(res => res.json())
+    .then(cart => {
+      document.dispatchEvent(new CustomEvent('cart:updated', { detail: { cart: cart } }));
+      document.dispatchEvent(new CustomEvent('ajaxProductAssociated'));
+      if (window.theme && window.theme.CartDrawer) window.theme.CartDrawer.open();
+    })
+    .catch(err => console.error(err));
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Autoplay time loop within 3 seconds for card previews
+    const videos = document.querySelectorAll('.watch-buy-video-wrapper video');
+    videos.forEach(video => {
+      video.addEventListener('timeupdate', function() {
+        if (video.currentTime >= 3.0) {
+          video.currentTime = 0;
+          video.play().catch(e => {});
+        }
+      });
+    });
+
+    // AJAX form submission
+    const form = document.getElementById('watch-buy-modal-cart-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const variantId = document.getElementById('watch-buy-modal-variant-id').value;
+        if (!variantId) return;
+
+        const submitBtn = document.getElementById('watch-buy-modal-submit');
+        const successMsg = document.getElementById('watch-buy-modal-success');
+        
+        submitBtn.innerText = 'Adding...';
+        submitBtn.disabled = true;
+
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1
+          })
+        })
+        .then(res => res.json())
+        .then(cart => {
+          submitBtn.innerText = 'Add to Cart';
+          submitBtn.disabled = false;
+          successMsg.style.display = 'block';
+          
+          // Trigger Shopify standard theme updates
+          document.dispatchEvent(new CustomEvent('cart:updated', {
+            detail: { cart: cart }
+          }));
+          document.dispatchEvent(new CustomEvent('ajaxProductAssociated'));
+          
+          // Try to open mini-cart if exists
+          if (window.theme && window.theme.CartDrawer) {
+            window.theme.CartDrawer.open();
+          }
+        })
+        .catch(err => {
+          submitBtn.innerText = 'Add to Cart';
+          submitBtn.disabled = false;
+          console.error(err);
+        });
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Watch and Buy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Watch and Buy"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_product",
+      "name": "Video & Product Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Shopify Video URL",
+          "info": "Upload video under Settings > Files and paste the URL here."
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Linked Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Watch and Buy",
+      "blocks": [
+        { "type": "video_product" },
+        { "type": "video_product" },
+        { "type": "video_product" },
+        { "type": "video_product" }
+      ]
+    }
+  ]
+}
+{% endschema %}
