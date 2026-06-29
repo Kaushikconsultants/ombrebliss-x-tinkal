@@ -173,7 +173,8 @@
     {%- endif -%}
 
 {%- endif -%}
-    .section-block-{{ section.id }} .brands-block .slick-dotted {margin-bottom: 40px}
+    .section-block-{{ section.id }} .brands-block .slick-dotted {margin-bottom: 0px !important}
+    .section-block-{{ section.id }} { margin-bottom: 0 !important; padding-bottom: 0 !important; }
 {%- if section.blocks.size > 0 -%}
     .section-block-{{section.id}} .halo-item .text {display: block;text-align: center;margin-top: -5px;visibility: visible !important;font-size: {{ section.settings.fontsize_text | append: 'px' }};font-weight: {{ section.settings.font_weight_title }};margin-bottom: {{ section.settings.margin_bottom_title | append: 'px' }};font-style: var(--font-heading-style)}
     .section-block-{{section.id}} .halo-item:hover .text{text-decoration: underline;text-underline-offset: 0.3rem}
@@ -288,14 +289,14 @@
     .section-block-{{section.id}} .halo-item:hover .wrapper-image {transform: translateY(-10px);}
     {%- endif -%}
     }
-    @media (min-width: 768px) and (max-width: 1024px) {.section-block-{{section.id}} {padding-top: {{ section.settings.mg_top_tablet | append: 'px' }};padding-bottom: {{ section.settings.mg_bottom_tablet | append: 'px' }}}}
+    @media (min-width: 768px) and (max-width: 1024px) {.section-block-{{section.id}} {padding-top: {{ section.settings.mg_top_tablet | append: 'px' }};padding-bottom: 0 !important; margin-bottom: 0 !important;}}
     @media (min-width: 768px) and (max-width: 991px) {.section-block-{{section.id}} .brands-slider .md-column-3:not(.slick-slider) .halo-item:nth-child(n + 4) {display: none}}
     @media (min-width: 992px) and (max-width: 1024px) {
         .section-block-{{section.id}} .brands-slider .md-column-3:not(.slick-slider) .halo-item {width: 25%}
         .section-block-{{section.id}} .brands-slider .md-column-3:not(.slick-slider) .halo-item:nth-child(n + 4) {display: block}.section-block-{{section.id}} .brands-slider .md-column-3:not(.slick-slider) .halo-item:nth-child(n + 5) {display: none}
         {%- if section.settings.brand_layout == 'infinite' -%}.brand-slider .brand-layout--infinite.md-column-3 .halo-item {width: 25vw !important }{%- endif -%}
     }
-    @media (min-width: 1200px) {.section-block-{{section.id}} {padding-top: {{ section.settings.mg_top_desktop | append: 'px' }};padding-bottom: {{ section.settings.mg_bottom_desktop | append: 'px' }}}}
+    @media (min-width: 1200px) {.section-block-{{section.id}} {padding-top: {{ section.settings.mg_top_desktop | append: 'px' }};padding-bottom: 0 !important; margin-bottom: 0 !important;}}
     @media (max-width: 1024px) {
         {%- if section.settings.brand_layout == 'infinite' -%}.brand-slider .brand-layout--infinite.md-column-3 .halo-item {width: 33.3333vw !important }{%- endif -%}
         {%- unless section.settings.brands_block_style == 'style_3' -%}
@@ -360,7 +361,7 @@
     }
 
     @media (max-width: 767px) {
-        .section-block-{{section.id}} {padding-top: {{ section.settings.mg_top_mobile | append: 'px' }};padding-bottom: {{ section.settings.mg_bottom_mobile | append: 'px' }}}
+        .section-block-{{section.id}} {padding-top: {{ section.settings.mg_top_mobile | append: 'px' }};padding-bottom: 0 !important; margin-bottom: 0 !important;}
         .section-block-{{section.id}} .halo-block-header {flex-wrap: wrap}
         .section-block-{{section.id}} .halo-block-header .rte {margin-left: 0}
         {%- unless section.settings.brands_block_style == 'style_3' -%}
@@ -410,7 +411,129 @@
         {%- endif -%}
         .section-block-{{section.id}} .brands-slider .halo-item .wrapper-content.animate--slide-in {animation: var(--animation-slide-in);animation-delay: calc(var(--animation-order) * .1s);}
     }
+
+    /* Enhanced Product Grid Styles */
+    .brand-slider .halo-item .wrapper-image {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .brand-slider .halo-item:hover .wrapper-image {
+        transform: scale(1.03);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .brand-slider .halo-item:hover .wrapper-image {
+        transform: scale(1.03);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    .brand-slider .halo-item .text {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 12px !important;
+        margin-top: 15px !important;
+        transition: color 0.3s ease;
+        white-space: normal !important;
+        line-height: 1.3 !important;
+        display: block;
+        word-break: break-word;
+    }
+    
+    .product-price-tag {
+        font-size: 13px;
+        color: #777;
+        margin-top: 5px;
+        display: block;
+        text-align: center;
+        font-weight: 500;
+    }
+    
+    .star-rating {
+        display: flex;
+        justify-content: center;
+        gap: 2px;
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+        color: #eab308;
+        font-size: 12px;
+    }
+    
+    .quick-add-btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        background: #000;
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .quick-add-btn:hover {
+        background: #333;
+    }
+    
+    @media (max-width: 767px) {
+        .brand-slider .halo-item .text {
+            font-size: 10px !important;
+            letter-spacing: 0.5px;
+            margin-top: 8px !important;
+            margin-bottom: 5px !important;
+        }
+        /* Scroll snap overrides removed to enable smooth native Slick touch swiping */
+        .quick-add-btn {
+            display: none !important;
+        }
+    }
+
+    .sleek-add-btn {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #000;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        z-index: 10;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .brand-slider .halo-item:hover .sleek-add-btn {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .sleek-add-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+    .sleek-add-btn:hover {
+        background: #000;
+        color: #fff;
+        transform: scale(1.1);
+    }
+    
+    @media (max-width: 767px) {
+        .sleek-add-btn {
+            display: none !important;
+        }
+    }
 </style>
+
+
 {%- if section.blocks.size > 0 -%}
 <div class="brand-slider section-block-{{section.id}}" id="brands-{{section.id}}" {% if section.settings.brand_layout == 'slider' %}data-loader-script="{{ 'halo.slide-brand.js' | asset_url }}"{% endif %}>
     <div class="brands-block {% if section.settings.brand_layout == 'grid' %}brands-grid{% else %}brands-slider{% endif %}{% if section.settings.brands_block_style == 'style_2' %} brand_style_2{% elsif section.settings.brands_block_style == 'style_3' %} brand_style_3{% elsif section.settings.brands_block_style == 'style_4' %} brand_style_4{% endif %}{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
@@ -526,9 +649,21 @@
                                                 {%- assign preview_img = block.settings.image -%}
                                                 <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %}">
                                                     <a class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
-                                                        <img {% render 'lazyload', preview_img: preview_img  %} style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
+                                                        <img src="{{ preview_img | img_url: '600x' }}" loading="eager" style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
                                                         {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                                     </a>
+                                                    {%- if block.settings.link contains '/products/' -%}
+                                                        {% assign product_handle = block.settings.link | split: '/products/' | last %}
+                                                        {% assign product = all_products[product_handle] %}
+                                                        {% if product != empty and product.available %}
+                                                            <form method="post" action="/cart/add" class="sleek-add-form" onsubmit="window.location.href='/cart';">
+                                                                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                                                <button type="submit" class="sleek-add-btn" aria-label="Add to cart">
+                                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                                                                </button>
+                                                            </form>
+                                                        {% endif %}
+                                                    {%- endif -%}
                                                 </div>
                                             {%- else -%}
                                                 <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
@@ -542,9 +677,21 @@
                                             {%- if block.settings.title != blank -%}
                                                 <a class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</a>
                                             {%- endif -%}
-                                            {%- if block.settings.description != blank -%}
-                                                <a class="description"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.description }}</a>
-                                            {%- endif -%}
+                                      {%- if block.settings.link contains '/products/' -%}
+                                          {% assign product_handle = block.settings.link | split: '/products/' | last %}
+                                          {% assign product = all_products[product_handle] %}
+                                          {% if product != empty %}
+                                              {%- liquid
+                                                assign max_price = product.price
+                                                for variant in product.variants
+                                                  if variant.price > max_price
+                                                    assign max_price = variant.price
+                                                  endif
+                                                endfor
+                                              -%}
+                                              <span class="product-price-tag">{{ max_price | money | remove: 'INR' | remove: 'inr' }}</span>
+                                          {% endif %}
+                                      {%- endif -%}
                                         </div>
                                     </div>
                                 {%- endfor -%}
@@ -558,9 +705,21 @@
                                         {%- assign preview_img = block.settings.image -%}
                                         <div class="wrapper-image{% if section.settings.hover_effect == 'zoom' %} image-zoom{% elsif section.settings.hover_effect == 'fadeup' %} image-fadeInUp{% endif %}">
                                             <a class="{% if section.settings.brand_image_ratio == 'square' %} adaptive_height{% endif %}{% if section.settings.brands_block_style == 'style_2' %} pt-30 pb-15 w-100{% endif %}" title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}{{ preview_img.alt | escape }}{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}{% if section.settings.brand_image_ratio == 'square' %} style="padding-top: {{ 1 | divided_by: preview_img.aspect_ratio | times: 100 }}%;"{% endif %} aria-label="{{ preview_img.alt | default: shop.name | escape }}">
-                                                <img {% render 'lazyload', preview_img: preview_img  %} style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
+                                                <img src="{{ preview_img | img_url: '600x' }}" loading="eager" style="{% if section.settings.brand_image_ratio == 'adapt' %}width: {{block.settings.image.width}}px;{% else %}max-width: {{block.settings.image.width}}px;{% endif %} margin: 0 auto;height: auto"/>
                                                 {%- if settings.enable_lazyload -%}<span class="data-lazy-loading"></span>{%- endif -%}
                                             </a>
+                                            {%- if block.settings.link contains '/products/' -%}
+                                                {% assign product_handle = block.settings.link | split: '/products/' | last %}
+                                                {% assign product = all_products[product_handle] %}
+                                                {% if product != empty and product.available %}
+                                                    <form method="post" action="/cart/add" class="sleek-add-form" onsubmit="window.location.href='/cart';">
+                                                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                                                        <button type="submit" class="sleek-add-btn" aria-label="Add to cart">
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+                                                        </button>
+                                                    </form>
+                                                {% endif %}
+                                            {%- endif -%}
                                         </div>
                                     {%- else -%}
                                         <a title="{% if block.settings.title != blank %}{{ block.settings.title }}{% else %}Coming Soon{% endif %}"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>
@@ -574,6 +733,21 @@
                                     {%- if block.settings.title != blank -%}
                                         <a class="text" {% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.title }}</a>
                                     {%- endif -%}
+                                      {%- if block.settings.link contains '/products/' -%}
+                                          {% assign product_handle = block.settings.link | split: '/products/' | last %}
+                                          {% assign product = all_products[product_handle] %}
+                                          {% if product != empty %}
+                                              {%- liquid
+                                                assign max_price = product.price
+                                                for variant in product.variants
+                                                  if variant.price > max_price
+                                                    assign max_price = variant.price
+                                                  endif
+                                                endfor
+                                              -%}
+                                              <span class="product-price-tag">{{ max_price | money | remove: 'INR' | remove: 'inr' }}</span>
+                                          {% endif %}
+                                      {%- endif -%}
                                     {%- if block.settings.description != blank -%}
                                         <a class="description"{% if block.settings.link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.link }}"{% endif %}>{{ block.settings.description }}</a>
                                     {%- endif -%}
