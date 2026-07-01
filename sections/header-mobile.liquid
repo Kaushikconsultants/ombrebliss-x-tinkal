@@ -22,13 +22,11 @@
                             <style>.nav-menu-tab{background: {{ block.settings.menu_tab_bg }};}</style>
 
                         {%-  when 'search' -%}
-                            <details-modal class="header__iconItem header__search" style="--i-color: {{ block.settings.color }}">
-                                <details>
-                                    <summary class="header__icon header__icon--search header__icon--summary link link--text focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}" data-search-mobile>
-                                        <span>{% render 'icon-search', class: 'modal__toggle-open icon icon-search w-24 h-24' %}{% render 'icon-close', class: 'modal__toggle-close icon icon-close w-24 h-24' %}</span>
-                                    </summary>
-                                </details>
-                            </details-modal>
+                            <div class="header__iconItem header__search" style="--i-color: {{ block.settings.color }}">
+                                <button type="button" id="mobile-search-toggle-btn" class="header__icon header__icon--search header__icon--summary link link--text focus-inset" aria-label="{{ 'general.search.search' | t }}" data-search-mobile>
+                                    <span>{% render 'icon-search', class: 'icon icon-search w-24 h-24' %}</span>
+                                </button>
+                            </div>
 
                         {%-  when 'logo' -%}
                             <div class="header-mobile--icon" style="--logo-font-size: {{ block.settings.logo_font_size }}px; --logo-font-weight: {{ block.settings.logo_font_weight }}; --logo-color: {{ block.settings.logo_color }}">

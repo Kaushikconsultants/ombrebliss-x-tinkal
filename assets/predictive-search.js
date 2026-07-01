@@ -67,12 +67,14 @@ class PredictiveSearch extends HTMLElement {
   }
 
   onFocusOut() {
+    // Use 350ms delay so mobile virtual keyboard appearance (which briefly steals
+    // focus) doesn't incorrectly trigger close(). 0ms was too short for iOS/Android.
     setTimeout(() => {
       if (!this.contains(document.activeElement)) {
         this.close();
         // this.hideTrendingAndProducts();
       };
-    })
+    }, 350)
   }
   
   onKeyup(event) {
@@ -246,7 +248,12 @@ class PredictiveSearch extends HTMLElement {
   }
 
   onDocClick(e) {
-    const isInModal = this.contains(e.target), $target = e.target
+    const isInModal = this.contains(e.target), $target = e.target;
+
+    // On mobile, ignore clicks triggered by viewport resize (keyboard opening) or
+    // clicks inside the search sidebar container (#search-form-mobile)
+    const searchSidebar = document.getElementById('search-form-mobile');
+    if (searchSidebar && searchSidebar.contains(e.target)) return;
 
     if (!isInModal || $target.closest('.header-search-popup-close') || $target.matches('.header-search-popup-close') || $target.closest('.header-search-close') || $target.matches('.header-search-close')) {
       this.close();
