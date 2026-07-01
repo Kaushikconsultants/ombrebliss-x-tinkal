@@ -16,6 +16,9 @@ class PredictiveSearch extends HTMLElement {
     this.quickSearchTrending.forEach(element => {
       element.addEventListener('click', this.quickSearchTrendingClick.bind(this));
     });
+    
+    // Automatically display trending/recommendation products on initial layout load
+    this.showTrendingAndProducts();
   }
   
   setupEventListeners() {
