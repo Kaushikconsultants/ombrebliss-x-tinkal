@@ -509,10 +509,15 @@
                 searchDetails.attr('open','true');
                 $('[data-search-mobile]').on('click', (event) => {
                     event.preventDefault();
+                    event.stopPropagation();
                     $('body').addClass('open_search_mobile');
+                    setTimeout(() => {
+                        $('#search-form-mobile input[type="search"]').trigger('focus').focus();
+                    }, 300);
                 });
                 $('[data-search-close-sidebar], .background-overlay').on('click', (event) => {
                     event.preventDefault();
+                    event.stopPropagation();
                     $('body').removeClass('open_search_mobile');
                 });
             }else{
