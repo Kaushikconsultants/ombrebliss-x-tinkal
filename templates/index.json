@@ -1,198 +1,336 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "image_banner_jiTXzY": {
+      "type": "image-banner",
+      "blocks": {
+        "large_img_Q3K7rE": {
+          "type": "largeImg",
+          "settings": {
+            "image": "shopify://shop_images/3_4_e8f6b298-1d33-4d0e-81a4-35526f94e57c.png",
+            "mobile_image": "shopify://shop_images/3_4.webp",
+            "enable_max_width_image": false,
+            "custom_width_image": 1170,
+            "enable_scroll_down": false,
+            "enable_custom_image": false,
+            "image_behavior": "none",
+            "sub_title": "",
+            "border_sub_title": false,
+            "font_size_sub_title": 14,
+            "font_size_sub_title_mb": 14,
+            "margin_bottom_sub_title": 14,
+            "sub_heading_font": "font_1",
+            "font_weight_sub_title": "700",
+            "sub_title_position": "sub_title_above",
+            "color_sub_title": "#232323",
+            "color_sub_title_mb": "#fff",
+            "heading": "",
+            "letter_spacing_heading": "",
+            "enable_style_italic": false,
+            "font_size_heading": 40,
+            "font_size_heading_mb": 24,
+            "margin_bottom_heading": 20,
+            "font_weight_heading": "600",
+            "color_heading": "#232323",
+            "color_heading_mb": "#fff",
+            "border_title": "border_s1",
+            "border_color_title": "#232323",
+            "border_color_title_mobile": "#fff",
+            "text": "",
+            "font_size_des": 12,
+            "font_size_des_mb": 12,
+            "line_height_des": 26,
+            "margin_bottom_des": 35,
+            "color_des": "#232323",
+            "color_des_mb": "#fff",
+            "countdown": "",
+            "hide_countdown_fc": "countdown",
+            "countdown_style": "round",
+            "countdown_position": "countdown_below_desc",
+            "font_size_countdown_number": 30,
+            "font_size_countdown_text": 14,
+            "color_countdown": "#232323",
+            "color_countdown_mb": "#fff",
+            "countdown_margin_bottom": 35,
+            "content_width": 475,
+            "align": "center",
+            "align_items": "center",
+            "position": "left",
+            "custom_horizontal": "",
+            "custom_vertical": "",
+            "btn_text": "",
+            "link": "shopify://collections/premium-collection",
+            "btn_icon": "",
+            "button_1_width": 235,
+            "enable_button_custom_border": false,
+            "button_color": "#fff",
+            "button_border": "#232323",
+            "button_background": "#232323",
+            "button_background_gradient": "",
+            "button_color_hover": "#fff",
+            "button_border_hover": "#232323",
+            "button_background_hover": "#232323",
+            "button_background_gradient_hover": "",
+            "btn_text_2": "",
+            "link_2": "",
+            "btn_icon_2": "",
+            "button_color_2": "#fff",
+            "button_border_2": "#232323",
+            "button_background_2": "#232323",
+            "button_background_2_gradient": "",
+            "button_color_hover_2": "#fff",
+            "button_border_hover_2": "#232323",
+            "button_background_hover_2": "#232323",
+            "button_background_gradient_hover_2": "",
+            "video_link": "",
+            "adaptive_height_video": "56",
+            "icon_style": "style_1",
+            "color_icon": "#fff",
+            "bg_color_icon": "#000",
+            "enable_custom_video_icon_position": false,
+            "video_icon_horizontal_position": "",
+            "video_icon_vertical_position": "",
+            "video_icon_horizontal_position_mb": "",
+            "video_icon_vertical_position_mb": ""
+          }
+        }
+      },
+      "block_order": [
+        "large_img_Q3K7rE"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "id_section": "",
+        "container": "fullwidth",
+        "padding_full_width": 0,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 0,
+        "image_banner_title": "",
+        "enable_border_title": false,
+        "color_title": "#202020",
+        "fontsize_title": 24,
+        "fontsize_title_mb": 20,
+        "margin_bottom_title": 25,
+        "image_banner_des": "",
+        "color_des": "#202020",
+        "fontsize_des": 16,
+        "title_align": "center",
+        "style_bg": "none",
+        "bg_color": "",
+        "bg_color_gradient": "",
+        "display_type": "slide",
+        "list_gap": 0,
+        "enable_arrows": false,
+        "arrows_position": "",
+        "enable_dots": false,
+        "enable_autoplay": false
+      }
+    },
     "brand_slider_diyCHe": {
       "type": "brand-slider",
       "blocks": {
         "image_Ymxkfm": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_2.webp",
+            "image": "shopify://shop_images/1_2.webp",
             "title": "Amber Rose",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/amber-rose-unisex-perfume"
+            "link": "shopify://products/amber-rose-unisex-perfume"
           }
         },
         "image_MJzdUP": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3_2c02eb27-8f7e-46ff-a663-47a9ac4f630b.webp",
+            "image": "shopify://shop_images/3_2c02eb27-8f7e-46ff-a663-47a9ac4f630b.webp",
             "title": "Vanilla Kiss",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/vanilla-kiss-perfume"
+            "link": "shopify://products/vanilla-kiss-perfume"
           }
         },
         "image_iNjVym": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2_85119307-24ea-40bc-9c28-185c7e367869.webp",
+            "image": "shopify://shop_images/2_85119307-24ea-40bc-9c28-185c7e367869.webp",
             "title": "Classic Leather",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/classical-leather-perfume"
+            "link": "shopify://products/classical-leather-perfume"
           }
         },
         "image_4zxxPD": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4_427e3543-2559-4aac-af84-8af6905aa7ec.webp",
+            "image": "shopify://shop_images/4_427e3543-2559-4aac-af84-8af6905aa7ec.webp",
             "title": "Lush Candy",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/lush-candy-perfume"
+            "link": "shopify://products/lush-candy-perfume"
           }
         },
         "image_PfMLK8": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4_e4f6e736-39c9-42c9-a0a2-b4fc9c0040ef.webp",
+            "image": "shopify://shop_images/4_e4f6e736-39c9-42c9-a0a2-b4fc9c0040ef.webp",
             "title": "Angel",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/angel-perfume"
+            "link": "shopify://products/angel-perfume"
           }
         },
         "image_Thk6tK": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4_0033af96-5dbe-4417-962d-24206863b961.webp",
+            "image": "shopify://shop_images/4_0033af96-5dbe-4417-962d-24206863b961.webp",
             "title": "Nawab Oud",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/nawab-oud-perfume"
+            "link": "shopify://products/nawab-oud-perfume"
           }
         },
         "image_ATmdVH": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3_548b3dcf-d552-4a0d-a529-27ce06c4eb0c.webp",
+            "image": "shopify://shop_images/3_548b3dcf-d552-4a0d-a529-27ce06c4eb0c.webp",
             "title": "Ombre Blu",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/ombre-blu-perfume"
+            "link": "shopify://products/ombre-blu-perfume"
           }
         },
         "image_BAbefg": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3_4_f32bdf28-c6d3-4db4-812e-2e0dbdb1ffb4.png",
+            "image": "shopify://shop_images/3_4_f32bdf28-c6d3-4db4-812e-2e0dbdb1ffb4.png",
             "title": "Royale Tobacco",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/royale-tobacco-perfume"
+            "link": "shopify://products/royale-tobacco-perfume"
           }
         },
         "image_gHRPhF": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4_a6d4f28c-4de6-4f8e-8024-76a2cd2dab57.webp",
+            "image": "shopify://shop_images/4_a6d4f28c-4de6-4f8e-8024-76a2cd2dab57.webp",
             "title": "Pierce",
             "color_text": "#000000",
             "color_text_hover": "#000000",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/pierce-perfume-for-her"
+            "link": "shopify://products/pierce-perfume-for-her"
           }
         },
         "image_zmj6EN": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_eb1a0ae9-8c83-4db7-9bbe-c30461d0cdba.webp",
+            "image": "shopify://shop_images/1_eb1a0ae9-8c83-4db7-9bbe-c30461d0cdba.webp",
             "title": "Vicious",
             "color_text": "#000000",
             "color_text_hover": "#000000",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/vicious-perfume-for-him"
+            "link": "shopify://products/vicious-perfume-for-him"
           }
         },
         "image_WBKcTJ": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_9c430c63-7ccf-4f16-aa1e-0a1dfe612a47.webp",
+            "image": "shopify://shop_images/1_9c430c63-7ccf-4f16-aa1e-0a1dfe612a47.webp",
             "title": "Yakuza",
             "color_text": "#000000",
             "color_text_hover": "#000000",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/yazuka-perfume-for-him"
+            "link": "shopify://products/yazuka-perfume-for-him"
           }
         },
         "image_em6eTf": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_5849a13f-de89-4b7f-8198-fccd1d1492b9.webp",
+            "image": "shopify://shop_images/1_5849a13f-de89-4b7f-8198-fccd1d1492b9.webp",
             "title": "Marino",
             "color_text": "#000000",
             "color_text_hover": "#000000",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/marino-perfume-for-him"
+            "link": "shopify://products/marino-perfume-for-him"
           }
         },
         "image_TCzzRd": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_bdd62b74-45a7-46dc-a79e-1a4d85626dad.webp",
+            "image": "shopify://shop_images/1_bdd62b74-45a7-46dc-a79e-1a4d85626dad.webp",
             "title": "The Bouquet",
             "color_text": "#000000",
             "color_text_hover": "#000000",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/the-bouquet-perfume-for-her"
+            "link": "shopify://products/the-bouquet-perfume-for-her"
           }
         },
         "image_TCqMA8": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_2fdada79-d21a-4f69-8c9e-b886095d97f8.webp",
+            "image": "shopify://shop_images/1_2fdada79-d21a-4f69-8c9e-b886095d97f8.webp",
             "title": "Obsessed",
             "color_text": "#000000",
             "color_text_hover": "#000000",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/obsessed-perfume-for-her"
+            "link": "shopify://products/obsessed-perfume-for-her"
           }
         },
         "image_CDzYDB": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_a9737538-eb22-4856-ba06-53ae3696e729.webp",
+            "image": "shopify://shop_images/1_a9737538-eb22-4856-ba06-53ae3696e729.webp",
             "title": "Honour",
             "color_text": "#000000",
             "color_text_hover": "#000000",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/honour-perfume-for-him"
+            "link": "shopify://products/honour-perfume-for-him"
           }
         },
         "image_Y49gbB": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_007f32cc-4aa2-48bd-9f81-9a458695716a.webp",
+            "image": "shopify://shop_images/1_007f32cc-4aa2-48bd-9f81-9a458695716a.webp",
             "title": "Luna",
             "color_text": "#000000",
             "color_text_hover": "#000000",
             "description": "",
             "color_des": "#3c3c3c",
-            "link": "shopify:\/\/products\/luna-perfume-for-her"
+            "link": "shopify://products/luna-perfume-for-her"
           }
         }
       },
@@ -281,7 +419,7 @@
         "fontsize_text": 15,
         "fontsize_text_mb": 15,
         "font_weight_title": "400",
-        "margin_bottom_title": 10,
+        "margin_bottom_title": 50,
         "mg_top_desktop": 30,
         "mg_top_tablet": 30,
         "mg_top_mobile": 30,
@@ -296,7 +434,7 @@
         "image_F9P8WC": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2_2_25595cfb-a7a6-44a3-8eef-a1390bd26b94.png",
+            "image": "shopify://shop_images/2_2_25595cfb-a7a6-44a3-8eef-a1390bd26b94.png",
             "title": "",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
@@ -308,7 +446,7 @@
         "image_rCRGaq": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3_1.png",
+            "image": "shopify://shop_images/3_1.png",
             "title": "",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
@@ -320,7 +458,7 @@
         "image_CKzy3f": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/4_1_66c8efd1-98c0-4609-9818-2fdbda5d0614.png",
+            "image": "shopify://shop_images/4_1_66c8efd1-98c0-4609-9818-2fdbda5d0614.png",
             "title": "",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
@@ -332,7 +470,7 @@
         "image_je6Kpb": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/5_1_eda17aab-0203-474b-9f43-0994bc5527af.png",
+            "image": "shopify://shop_images/5_1_eda17aab-0203-474b-9f43-0994bc5527af.png",
             "title": "",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
@@ -344,7 +482,7 @@
         "image_nQdFNU": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/6_1.png",
+            "image": "shopify://shop_images/6_1.png",
             "title": "",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
@@ -356,7 +494,7 @@
         "image_tCTKb7": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/8_1_92dab9bb-009a-43d8-8ee8-7b661d73b0b9.png",
+            "image": "shopify://shop_images/8_1_92dab9bb-009a-43d8-8ee8-7b661d73b0b9.png",
             "title": "",
             "color_text": "#000000",
             "color_text_hover": "#3e8cc4",
@@ -442,8 +580,8 @@
         "fontsize_text_mb": 13,
         "font_weight_title": "400",
         "margin_bottom_title": 0,
-        "mg_top_desktop": 60,
-        "mg_top_tablet": 45,
+        "mg_top_desktop": 20,
+        "mg_top_tablet": 20,
         "mg_top_mobile": 0,
         "mg_bottom_desktop": 20,
         "mg_bottom_tablet": 20,
@@ -451,82 +589,39 @@
       }
     },
     "marquee_HeTqbn": {
-      "type": "11fit-marquee1",
+      "type": "marquee",
       "blocks": {
-        "block_1": {
-          "type": "announcement",
+        "marquee_RXQfxY": {
+          "type": "marquee",
           "settings": {
-            "text": "Products Up To 30% Off On Top Sellers",
-            "icon": "fa-solid fa-bolt"
-          }
-        },
-        "block_2": {
-          "type": "announcement",
-          "settings": {
-            "text": "Pure Ingredients",
-            "icon": "fa-solid fa-leaf"
-          }
-        },
-        "block_3": {
-          "type": "announcement",
-          "settings": {
-            "text": "Clean Fragrance",
-            "icon": "fa-solid fa-wind"
+            "text": "<p>Up To 30% Off On Top Selling Products</p>",
+            "color": "#232323",
+            "color_mb": "#232323",
+            "enable_border_bottom": false
           }
         }
       },
       "block_order": [
-        "block_1",
-        "block_2",
-        "block_3"
+        "marquee_RXQfxY"
       ],
+      "custom_css": [],
       "settings": {
-        "bg_color": "#f3e6da",
-        "text_color": "#232323",
-        "font_size_desktop": 14,
-        "font_size_mobile": 12,
-        "text_bold": true,
-        "text_uppercase": true,
-        "speed": 20,
-        "direction": "normal",
-        "padding_y": 12
-      }
-    },
-    "watch_and_buy": {
-      "type": "watch-and-buy",
-      "blocks": {
-        "watchbuy_1782747456020": {
-          "type": "video_product",
-          "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0694\/0478\/6914\/files\/whatmore_1080p_dcff8bff-0758-49c6-b56d-3a6a049adc2d.mp4?v=1782704756",
-            "product": "smoky-rum"
-          }
-        },
-        "watchbuy_1782747476373": {
-          "type": "video_product",
-          "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/854cac005241406f9d8b966e6724eb52.mp4",
-            "product": "vanilla-kiss-perfume"
-          }
-        },
-        "watchbuy_1782747495241": {
-          "type": "video_product",
-          "settings": {
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8f5785cb2944459ab3f5a277c72464ea.mp4",
-            "product": "amber-rose-unisex-perfume"
-          }
-        }
-      },
-      "block_order": [
-        "watchbuy_1782747456020",
-        "watchbuy_1782747476373",
-        "watchbuy_1782747495241"
-      ],
-      "settings": {
-        "title": "Watch and Buy",
-        "bg_color": "#ffffff",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "mq_background": "#f3e6da",
+        "mq_gradient": "",
+        "type_tab_font": "font_1",
+        "text_size": 20,
+        "text_font_weight": "400",
+        "gap_blocks": 15,
+        "border": "none",
+        "border_color": "#000000",
+        "icon": "none",
+        "icon_color": "#000000",
+        "text_size_mb": 18,
+        "border_color_mb": "#000000",
+        "icon_color_mb": "#000000",
+        "padding_top": 13,
+        "padding_bottom": 13,
+        "minus_spacing_top": 0
       }
     },
     "product_tab_block_mAVk8f": {
@@ -729,58 +824,15 @@
         "@media (max-width: 767px) {.availability-slider .instamart-logo {min-width: 120px; height: 40px; } .availability-slider .instamart-logo span {font-size: 21px; }}"
       ],
       "settings": {
-        "custom_liquid": "<section class=\"availability-section\">\n  <h2>NOW ALSO AVAILABLE<\/h2>\n  <p>Shop our premium products online with ease. Fast delivery & exclusive deals await!<\/p>\n\n  <div class=\"scroll-hint\">\n    ← Swipe \/ Scroll →\n  <\/div>\n\n  <div class=\"availability-slider\">\n\n    <a href=\"https:\/\/www.amazon.in\/Marino-Collection-occasions-valentine-Boyfriend\/dp\/B0DTLGQC24\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0694\/0478\/6914\/files\/amazon-ombrebliss.svg?v=1782286302\" alt=\"Amazon\" loading=\"lazy\">\n    <\/a>\n\n    <a href=\"https:\/\/www.flipkart.com\/search?q=Ombre+bliss&marketplace=FLIPKART&as-show=on&pageUID=1740047749140\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0694\/0478\/6914\/files\/Flipkart-ombrebliss.svg?v=1782286302\" alt=\"Flipkart\" loading=\"lazy\">\n    <\/a>\n\n    <a href=\"https:\/\/www.myntra.com\/ombre-bliss?rawQuery=ombre%20bliss\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0694\/0478\/6914\/files\/myntra-ombrebliss.svg?v=1782286302\" alt=\"Myntra\" loading=\"lazy\">\n    <\/a>\n\n    <a href=\"https:\/\/www.ajio.com\/search\/?text=ombre%20bliss\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0694\/0478\/6914\/files\/ajio-logo-brandlogos.net_vzrwvgzda.svg?v=1782286302\" alt=\"AJIO\" loading=\"lazy\">\n    <\/a>\n\n    <a href=\"https:\/\/blinkit.com\/prn\/ombre-bliss-marino-eau-de-parfum-ozonic\/prid\/652393?srsltid=AfmBOoopwOqI1wJl4KuB7uW3x4N4HwAy9j5lh15UdBqlxw0OR53BpzZy\" target=\"_blank\" rel=\"noopener\" class=\"marketplace-logo\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0694\/0478\/6914\/files\/blinkit-logo-app-icon-transparent-background-free-png_1.webp?v=1782286303\" alt=\"Blinkit\" loading=\"lazy\">\n    <\/a>\n\n    <a href=\"https:\/\/www.firstcry.com\/search?q=ombre%20bliss%20perfume&ref2=q_ombre%20bliss%20perfume\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0694\/0478\/6914\/files\/firstcry.webp?v=1782286302\" alt=\"FirstCry\" loading=\"lazy\">\n    <\/a>\n\n    <a href=\"https:\/\/www.swiggy.com\/stores\/instamart\/collection-listing?collectionId=106463&custom_back=true&brand=Ombre%20Bliss\" target=\"_blank\" rel=\"noopener\" class=\"marketplace-logo\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0694\/0478\/6914\/files\/instamart_logo.jpg?v=1782286302\" alt=\"Instamart\" loading=\"lazy\">\n    <\/a>\n\n  <\/div>\n<\/section>\n\n<style>\n  .availability-section {\n    text-align: center;\n    margin: 60px auto;\n    overflow: hidden;\n    width: 100%;\n  }\n\n  .availability-section h2 {\n    font-size: 28px;\n    font-weight: 700;\n    margin: 0;\n  }\n\n  .availability-section p {\n    margin-top: 10px;\n    color: #666;\n    font-size: 15px;\n  }\n\n  .scroll-hint {\n    margin-top: 22px;\n    font-size: 14px;\n    color: #888;\n    font-weight: 500;\n    animation: swipeAnim 1.5s infinite;\n  }\n\n  @keyframes swipeAnim {\n    0% { transform: translateX(0px); }\n    50% { transform: translateX(8px); }\n    100% { transform: translateX(0px); }\n  }\n\n  .availability-slider {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 50px;\n    padding: 38px 30px 15px;\n    max-width: 1200px;\n    margin: 0 auto;\n    overflow-x: visible;\n    scrollbar-width: none;\n  }\n\n  .availability-slider::-webkit-scrollbar {\n    display: none;\n  }\n\n  .availability-slider a {\n    width: 130px;\n    height: 55px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n  }\n\n  .availability-slider img {\n    max-width: 130px;\n    max-height: 55px;\n    width: auto;\n    height: auto;\n    object-fit: contain;\n    display: block;\n    transition: transform 0.3s ease;\n  }\n\n  .availability-slider .marketplace-logo {\n    width: 150px;\n    height: 60px;\n  }\n\n  .availability-slider .marketplace-logo img {\n    max-width: 150px;\n    max-height: 60px;\n  }\n\n  .availability-slider a:hover img {\n    transform: scale(1.06);\n  }\n\n  @media (max-width: 1024px) {\n    .availability-slider {\n      justify-content: flex-start;\n      overflow-x: auto;\n      gap: 40px;\n      padding-left: 24px;\n      padding-right: 24px;\n    }\n  }\n\n  @media (max-width: 767px) {\n    .availability-section {\n      margin: 45px auto;\n    }\n\n    .availability-section h2 {\n      font-size: 22px;\n    }\n\n    .availability-section p {\n      font-size: 13px;\n      padding: 0 18px;\n    }\n\n    .scroll-hint {\n      font-size: 12px;\n      margin-top: 16px;\n    }\n\n    .availability-slider {\n      justify-content: flex-start;\n      overflow-x: auto;\n      gap: 28px;\n      padding: 28px 16px 12px;\n    }\n\n    .availability-slider a {\n      width: 105px;\n      height: 42px;\n    }\n\n    .availability-slider img {\n      max-width: 105px;\n      max-height: 42px;\n    }\n\n    .availability-slider .marketplace-logo {\n      width: 125px;\n      height: 50px;\n    }\n\n    .availability-slider .marketplace-logo img {\n      max-width: 125px;\n      max-height: 50px;\n    }\n  }\n<\/style>"
-      }
-    },
-    "slide_show_hero": {
-      "type": "slide-show",
-      "blocks": {
-        "slide_1": {
-          "type": "image",
-          "settings": {
-            "image_asset_name": "",
-            "image_asset_name_mb": "",
-            "image_slide": "shopify:\/\/shop_images\/3_4_e8f6b298-1d33-4d0e-81a4-35526f94e57c.png",
-            "image_slide_mb": "",
-            "link": ""
-          }
-        },
-        "slide_2": {
-          "type": "image",
-          "settings": {
-            "image_asset_name": "",
-            "image_asset_name_mb": "",
-            "image_slide": "shopify:\/\/shop_images\/3_4_e8f6b298-1d33-4d0e-81a4-35526f94e57c.png",
-            "image_slide_mb": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_1",
-        "slide_2"
-      ],
-      "settings": {
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0,
-        "autoplay": true,
-        "slideshow_speed": "1000",
-        "slideshow_transition": "true",
-        "dots": "shape",
-        "arrow_active": true
+        "custom_liquid": "<section class=\"availability-section\">\n  <h2>NOW ALSO AVAILABLE</h2>\n  <p>Shop our premium products online with ease. Fast delivery & exclusive deals await!</p>\n\n  <div class=\"scroll-hint\">\n    ← Swipe / Scroll →\n  </div>\n\n  <div class=\"availability-slider\">\n\n    <a href=\"https://www.amazon.in/Marino-Collection-occasions-valentine-Boyfriend/dp/B0DTLGQC24\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0694/0478/6914/files/amazon-ombrebliss.svg?v=1782286302\" alt=\"Amazon\" loading=\"lazy\">\n    </a>\n\n    <a href=\"https://www.flipkart.com/search?q=Ombre+bliss&marketplace=FLIPKART&as-show=on&pageUID=1740047749140\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0694/0478/6914/files/Flipkart-ombrebliss.svg?v=1782286302\" alt=\"Flipkart\" loading=\"lazy\">\n    </a>\n\n    <a href=\"https://www.myntra.com/ombre-bliss?rawQuery=ombre%20bliss\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0694/0478/6914/files/myntra-ombrebliss.svg?v=1782286302\" alt=\"Myntra\" loading=\"lazy\">\n    </a>\n\n    <a href=\"https://www.ajio.com/search/?text=ombre%20bliss\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0694/0478/6914/files/ajio-logo-brandlogos.net_vzrwvgzda.svg?v=1782286302\" alt=\"AJIO\" loading=\"lazy\">\n    </a>\n\n    <a href=\"https://blinkit.com/prn/ombre-bliss-marino-eau-de-parfum-ozonic/prid/652393?srsltid=AfmBOoopwOqI1wJl4KuB7uW3x4N4HwAy9j5lh15UdBqlxw0OR53BpzZy\" target=\"_blank\" rel=\"noopener\" class=\"marketplace-logo\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0694/0478/6914/files/blinkit-logo-app-icon-transparent-background-free-png_1.webp?v=1782286303\" alt=\"Blinkit\" loading=\"lazy\">\n    </a>\n\n    <a href=\"https://www.firstcry.com/search?q=ombre%20bliss%20perfume&ref2=q_ombre%20bliss%20perfume\" target=\"_blank\" rel=\"noopener\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0694/0478/6914/files/firstcry.webp?v=1782286302\" alt=\"FirstCry\" loading=\"lazy\">\n    </a>\n\n    <a href=\"https://www.swiggy.com/stores/instamart/collection-listing?collectionId=106463&custom_back=true&brand=Ombre%20Bliss\" target=\"_blank\" rel=\"noopener\" class=\"marketplace-logo\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0694/0478/6914/files/instamart_logo.jpg?v=1782286302\" alt=\"Instamart\" loading=\"lazy\">\n    </a>\n\n  </div>\n</section>\n\n<style>\n  .availability-section {\n    text-align: center;\n    margin: 60px auto;\n    overflow: hidden;\n    width: 100%;\n  }\n\n  .availability-section h2 {\n    font-size: 28px;\n    font-weight: 700;\n    margin: 0;\n  }\n\n  .availability-section p {\n    margin-top: 10px;\n    color: #666;\n    font-size: 15px;\n  }\n\n  .scroll-hint {\n    margin-top: 22px;\n    font-size: 14px;\n    color: #888;\n    font-weight: 500;\n    animation: swipeAnim 1.5s infinite;\n  }\n\n  @keyframes swipeAnim {\n    0% { transform: translateX(0px); }\n    50% { transform: translateX(8px); }\n    100% { transform: translateX(0px); }\n  }\n\n  .availability-slider {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    gap: 50px;\n    padding: 38px 30px 15px;\n    max-width: 1200px;\n    margin: 0 auto;\n    overflow-x: visible;\n    scrollbar-width: none;\n  }\n\n  .availability-slider::-webkit-scrollbar {\n    display: none;\n  }\n\n  .availability-slider a {\n    width: 130px;\n    height: 55px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-shrink: 0;\n  }\n\n  .availability-slider img {\n    max-width: 130px;\n    max-height: 55px;\n    width: auto;\n    height: auto;\n    object-fit: contain;\n    display: block;\n    transition: transform 0.3s ease;\n  }\n\n  .availability-slider .marketplace-logo {\n    width: 150px;\n    height: 60px;\n  }\n\n  .availability-slider .marketplace-logo img {\n    max-width: 150px;\n    max-height: 60px;\n  }\n\n  .availability-slider a:hover img {\n    transform: scale(1.06);\n  }\n\n  @media (max-width: 1024px) {\n    .availability-slider {\n      justify-content: flex-start;\n      overflow-x: auto;\n      gap: 40px;\n      padding-left: 24px;\n      padding-right: 24px;\n    }\n  }\n\n  @media (max-width: 767px) {\n    .availability-section {\n      margin: 45px auto;\n    }\n\n    .availability-section h2 {\n      font-size: 22px;\n    }\n\n    .availability-section p {\n      font-size: 13px;\n      padding: 0 18px;\n    }\n\n    .scroll-hint {\n      font-size: 12px;\n      margin-top: 16px;\n    }\n\n    .availability-slider {\n      justify-content: flex-start;\n      overflow-x: auto;\n      gap: 28px;\n      padding: 28px 16px 12px;\n    }\n\n    .availability-slider a {\n      width: 105px;\n      height: 42px;\n    }\n\n    .availability-slider img {\n      max-width: 105px;\n      max-height: 42px;\n    }\n\n    .availability-slider .marketplace-logo {\n      width: 125px;\n      height: 50px;\n    }\n\n    .availability-slider .marketplace-logo img {\n      max-width: 125px;\n      max-height: 50px;\n    }\n  }\n</style>"
       }
     }
   },
   "order": [
-    "slide_show_hero",
+    "image_banner_jiTXzY",
     "brand_slider_diyCHe",
     "brand_slider_H8FRXk",
     "marquee_HeTqbn",
-    "watch_and_buy",
     "product_tab_block_mAVk8f",
     "featured_blog_iKWhTj",
     "custom_liquid_YEFt3e"
