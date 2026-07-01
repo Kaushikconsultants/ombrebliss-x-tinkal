@@ -16,7 +16,7 @@
                                 product_card_product: product,
                                 portrait_aspect_ratio: '125',
                                 serial: forloop.index,
-                                sectionId: sectionId,
+                                sectionId: section.id,
                                 media_size: image_ratio,
                                 hasCountdown: hasCountdown,
                                 loading: true
@@ -25,7 +25,7 @@
                     {%- endfor -%}
                     </div>      
                     <div id="predictive-search-option-search-keywords" class="predictive-search__list-item productViewAll" role="option">
-                        <a href="{{ routes.search_url }}?q=*type=product" class="predictive-search__item predictive-search__item--term link link--text h5 animate-arrow button button-view-all" tabindex="-1" data-qs-view-all-link>
+                        <a href="{{ routes.search_url }}?q={{ predictive_search.terms }}&type=product" class="predictive-search__item predictive-search__item--term link link--text h5 animate-arrow button button-view-all" tabindex="-1" data-qs-view-all-link>
                             {%- if search.results_count == 0 -%}
                                 {{ 'templates.search.no_results' | t: terms: predictive_search.terms }}
                             {%- else -%}
@@ -58,3 +58,9 @@
         </div>
     </div>
 {%- endif -%}
+
+{% schema %}
+{
+  "name": "Predictive search"
+}
+{% endschema %}

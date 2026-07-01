@@ -4399,6 +4399,10 @@
                 sliderFor = $scope.find('.productView-for:not(".mobile")'),
                 sliderForMobile = $scope.find('.productView-for.mobile');
 
+            // Destroy any stale slick instances before re-init (fixes refresh race condition)
+            if(sliderFor.hasClass('slick-initialized')) { try { sliderFor.slick('unslick'); } catch(e) {} }
+            if(sliderForMobile.hasClass('slick-initialized')) { try { sliderForMobile.slick('unslick'); } catch(e) {} }
+            if(sliderNav.hasClass('slick-initialized')) { try { sliderNav.slick('unslick'); } catch(e) {} }
             if(!sliderFor.hasClass('slick-initialized') && !sliderNav.hasClass('slick-initialized')) {
                 const navArrowsDesk = sliderNav.data('arrows-desk'),
                     navArrowsMobi = sliderNav.data('arrows-mobi'),
@@ -4531,12 +4535,15 @@
                 } else {
                     if (!sliderNav.is('.style-2, .style-3') || window.innerWidth < 768) {
                         sliderNav.slick({
-                            fade: true,
+                            fade: false,
                             dots: false,
                             arrows: navArrowsDesk,
                             infinite: true,
                             slidesToShow: 1,
                             slidesToScroll: 1,
+                            swipe: true,
+                            touch: true,
+                            touchThreshold: 5,
                             asNavFor: checkFor,
                             nextArrow: window.arrows.icon_next,
                             prevArrow: window.arrows.icon_prev,
@@ -4545,7 +4552,10 @@
                                 {
                                     breakpoint: 768,
                                     settings: {
-                                        arrows: navArrowsMobi
+                                        arrows: navArrowsMobi,
+                                        swipe: true,
+                                        touch: true,
+                                        touchThreshold: 5
                                     }
                                 }
                             ]
@@ -4574,6 +4584,9 @@
                         vertical: true,
                         verticalSwiping: true,
                         infinite: true,
+                        swipe: true,
+                        touch: true,
+                        touchThreshold: 5,
                         nextArrow: window.arrows.icon_next,
                         prevArrow: window.arrows.icon_prev,
                         responsive: [
@@ -4589,7 +4602,10 @@
                                 settings: {
                                     vertical: false,
                                     verticalSwiping: false,
-                                    rtl: window.rtl_slick,
+                                    swipe: true,
+                                    touch: true,
+                                    touchThreshold: 5,
+                                    rtl: window.rtl_slick
                                 }
                             },
                             {
@@ -4599,7 +4615,10 @@
                                     slidesToScroll: 1,
                                     vertical: false,
                                     verticalSwiping: false,
-                                    rtl: window.rtl_slick,
+                                    swipe: true,
+                                    touch: true,
+                                    touchThreshold: 5,
+                                    rtl: window.rtl_slick
                                 }
                             }
                         ]
@@ -4644,7 +4663,7 @@
                 });
 
                 sliderForMobile.slick({
-                    slidesToShow:  parseInt(sliderForMobile.data('max-thumbnail-to-show')),
+                    slidesToShow: parseInt(sliderForMobile.data('max-thumbnail-to-show')) || 3,
                     slidesToScroll: 1,
                     asNavFor: checkNav,
                     arrows: true,
@@ -4652,8 +4671,11 @@
                     draggable: false,
                     adaptiveHeight: false,
                     focusOnSelect: true,
-                    vertical: true,
-                    verticalSwiping: true,
+                    swipe: true,
+                    touch: true,
+                    touchThreshold: 5,
+                    vertical: false,
+                    verticalSwiping: false,
                     infinite: true,
                     nextArrow: window.arrows.icon_next,
                     prevArrow: window.arrows.icon_prev,
@@ -4670,16 +4692,22 @@
                             breakpoint: 1280,
                             settings: {
                                 vertical: false,
-                                verticalSwiping: false
+                                verticalSwiping: false,
+                                swipe: true,
+                                touch: true,
+                                touchThreshold: 5
                             }
                         },
                         {
                             breakpoint: 767,
                             settings: {
-                                slidesToShow: 2.2,
+                                slidesToShow: 3,
                                 slidesToScroll: 1,
                                 vertical: false,
-                                verticalSwiping: false
+                                verticalSwiping: false,
+                                swipe: true,
+                                touch: true,
+                                touchThreshold: 5
                             }
                         }
                     ]

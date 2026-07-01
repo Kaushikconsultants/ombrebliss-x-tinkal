@@ -1,0 +1,434 @@
+﻿{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb_ob": {
+          "type": "breadcrumb",
+          "settings": {
+            "breadcrumb_layout": "full",
+            "breadcrumb_alignment": "left",
+            "breadcrumb_bg": "#ffffff",
+            "breadcrumb_gradient": "",
+            "breadcrumb_bg_mb": "#ffffff",
+            "breadcrumb_gradient_mb": "",
+            "breadcrumb_mg_top_desktop": 20,
+            "breadcrumb_mg_top_mobile": 20,
+            "breadcrumb_mg_bottom_desktop": 20,
+            "breadcrumb_mg_bottom_mobile": 20
+          }
+        },
+        "title_ob": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 30,
+            "fontsize_text_mb": 22,
+            "color_title": "#232323",
+            "spacing_top": 10,
+            "spacing_bottom": 0
+          }
+        },
+        "reviews_badge_ob": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "fragrance_extras_ob": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'ob-product-extras' %}"
+          }
+        },
+        "price_ob": {
+          "type": "price",
+          "settings": {
+            "fontsize_text": 23,
+            "spacing_top": 20,
+            "spacing_bottom": 0
+          }
+        },
+        "tax_text_ob": {
+          "type": "product_text",
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "Inclusive of all taxes",
+            "fontsize_text": 12,
+            "content_spacing": 0,
+            "custom_block_align": "left",
+            "color_title": "#232323",
+            "background_color_block": "#ffffff",
+            "background_gradient_color_block": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "bought_count_ob": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"freq-contatiner\"><div class=\"freq-text\">7k+ people bought in the past month</div></div><style>.freq-text{text-align:center;font-size:12px;font-weight:600;}.freq-contatiner{justify-content:center;width:100%;}</style>"
+          }
+        },
+        "variant_picker_ob": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_image_group": false,
+            "enable_border_top": false,
+            "enable_border_bottom": false,
+            "color_border": "#e6e6e6",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        },
+        "qty_ob": {
+          "type": "quantity_selector",
+          "settings": {
+            "qty_style": "1",
+            "qty_layout": "2",
+            "spacing_top": 20,
+            "spacing_bottom": 0
+          }
+        },
+        "atc_ob": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "spacing_top": 0,
+            "spacing_bottom": 15,
+            "atc_animation": "tilt-shaking",
+            "atc_color": "#f5f2f2",
+            "atc_border_color": "#232323",
+            "atc_bg_color": "#232323",
+            "atc_bg_color_gradient": "",
+            "atc_color_hover": "#232323",
+            "atc_border_color_hover": "#232323",
+            "atc_bg_color_hover": "#ffffff",
+            "atc_bg_color_gradient_hover": "",
+            "bin_color": "#232323",
+            "bin_border_color": "#acacac",
+            "bin_bg_color": "#ffffff",
+            "bin_bg_color_gradient": "",
+            "bin_color_hover": "#ffffff",
+            "bin_border_color_hover": "#232323",
+            "bin_bg_color_hover": "#232323",
+            "bin_bg_color_hover_gradient": ""
+          }
+        },
+        "key_benefits_ob": {
+          "type": "product_text",
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "<li>Affordable Luxury. / Long-lasting Luxury\n</li><li>Conscious Crafting / Transparent Formulation\n</li><li>Upto 25% Fragrance Concentration</li>",
+            "fontsize_text": 14,
+            "content_spacing": 0,
+            "custom_block_align": "left",
+            "color_title": "#232323",
+            "background_color_block": "rgba(0,0,0,0)",
+            "background_gradient_color_block": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "trust_ob": {
+          "type": "trust_image",
+          "settings": {
+            "show_trust_image": true,
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "shipping_banner_ob": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"background-color: #dfffd9; border-radius: 10px; padding: 10px; display: flex; align-items: center;\"><img src=\"https://www.svgrepo.com/show/438069/unlocked.svg\" alt=\"Free Shipping\" style=\"width: 20px; height: 20px; margin-right: 10px;\"><span>You've unlocked Free Shipping</span></div>"
+          }
+        },
+        "description_ob": {
+          "type": "description",
+          "settings": {
+            "open_tab_mobile": true,
+            "title": "Description",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "about_ob": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "About",
+            "type": "metafield",
+            "content": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 2000,
+            "product_custom_source": "key_text",
+            "product_tab_key_metafield": "reasons_to_love"
+          }
+        },
+        "legal_ob": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Legal Information",
+            "type": "all",
+            "content": "MRP (Inclusive of all taxes)<br><br>\n\n<b>MANUFACTURED BY:</b>\nSTELLA INDUSTRIES LIMITED<br>\nOld Khandsa Road, Sector- 37,<br>\nHSIIDC, Gurugram-122004<br>\nHaryana, India<br>\nM.L. No.: M.123-Cos-(H)<br>\nPermit No. L-42-A\n\n<br><br>\n\n<b>MARKETED &amp; CUSTOMER CARE BY:</b>\nABEER ESSENCE PRIVATE LIMITED<br>\n\n<b>Country of Origin:</b> India\n<br><br>\n\n<b>Customer Care:</b> <br>\nCall: 8595501121, 9266359767<br>\nEmail: support@ombrebliss.com\n\n<br><br>\n\n*<i>Above images are product display images only. For Manufacturer code, Mfg. Date, Exp. Date, Batch No. please refer to the back of the Perfume box only.</i>",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300,
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": ""
+          }
+        },
+        "share_ob": {
+          "type": "share",
+          "settings": {
+            "show_share": true,
+            "share_layout": "2",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "faqs_ob": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "FAQs",
+            "type": "all",
+            "content": "<p><strong>Are these fragrances long lasting?</strong><br>They are designed to be very long lasting, just like designer fragrances, in some cases even longer, depending on the composition.</p><p><strong>Unsure about something? Ask us!</strong><br><a href=\"mailto:support@ombrebliss.com\">support@ombrebliss.com</a></p>",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300,
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": ""
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb_ob",
+        "title_ob",
+        "reviews_badge_ob",
+        "fragrance_extras_ob",
+        "price_ob",
+        "tax_text_ob",
+        "bought_count_ob",
+        "variant_picker_ob",
+        "qty_ob",
+        "atc_ob",
+        "key_benefits_ob",
+        "trust_ob",
+        "shipping_banner_ob",
+        "description_ob",
+        "about_ob",
+        "legal_ob",
+        "share_ob",
+        "faqs_ob"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "show_sticky_info": true,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "main_image_arrows_desktop": false,
+        "main_image_arrows_mobile": true,
+        "main_image_counter_mobile": true,
+        "main_image_enable_parallax_mb": false,
+        "main_image_show_zoom_icon_mb": true,
+        "main_image_position": "left",
+        "main_image_layout": "1",
+        "main_image_show_custom_cursor": true,
+        "count_color": "#191919",
+        "icon_color": "#000000",
+        "show_thumbnail_mobile": true,
+        "thumnail_layout": "1",
+        "thumbnail_to_show": 4,
+        "show_sidebar": false,
+        "sidebar_collapse": "collapse",
+        "enable_sticky": false,
+        "product_image_ratio": "adapt",
+        "portrait_aspect_ratio": 134,
+        "zoomed_image": true,
+        "media_fit": "unset",
+        "product_image_popup": "fancybox",
+        "video_layout": "popup",
+        "show_badge": false,
+        "show_qty": true,
+        "show_subtotal": false,
+        "subtotal_style": "2",
+        "show_sticky_add_to_cart": true,
+        "enable_sticky_add_to_cart_always_mobile": false,
+        "show_sticky_vendor": false,
+        "sticky_atc_layout": "1",
+        "show_tab": true,
+        "tab_layout": "vertical",
+        "tab_layout_mobile": "vertical",
+        "icon_style_layout": "style_1",
+        "title_font_size": 18,
+        "title_font_size_mb": 16,
+        "font_weight_title": "600",
+        "title_text_transform": "none",
+        "title_padding_top_bottom": 15,
+        "tab_border_color": "#000000",
+        "show_product_bundle": true,
+        "background_color": "#f8f8f8",
+        "padding_top": 30,
+        "padding_top_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom": 70,
+        "padding_bottom_tablet": 40,
+        "padding_bottom_mobile": 30,
+        "block_title": "Frequently Bought Together",
+        "block_title_align": "center",
+        "block_dots": false,
+        "block_arrows": true,
+        "product_style": "3",
+        "block_image_ratio": "adapt",
+        "bundle_discount": true,
+        "bundle_discount_text": "Get a [discount]% discount buying these products together",
+        "bundle_discount_text_color": "#232323",
+        "total_btn_color": "#ffffff",
+        "total_btn_border": "#232323",
+        "total_btn_bg": "#232323",
+        "total_btn_bg_gradient": "",
+        "total_btn_color_hover": "#232323",
+        "total_btn_border_hover": "#232323",
+        "total_btn_bg_hover": "#ffffff",
+        "total_btn_bg_gradient_hover": ""
+      }
+    },
+    "product_recommendations_ob": {
+      "type": "product-recommendations",
+      "settings": {
+        "display_product_block": true,
+        "product_block_container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": true,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 40,
+        "mg_top_tablet": 35,
+        "mg_top_mobile": 35,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "product_block_layout": "grid",
+        "product_bg": "#ffffff",
+        "style_block_header": "style1",
+        "product_block_title": "You Might Love",
+        "enable_border_title": true,
+        "mg_top_title": 27,
+        "mg_bottom_title": 3,
+        "fontsize_title": 20,
+        "fontsize_title_mb": 18,
+        "color_title": "#232323",
+        "border_color_title": "#232323",
+        "product_block_title_align": "center",
+        "product_block_limit": 8,
+        "grid_gap": 30,
+        "product_block_per_row": "4",
+        "product_block_swipe_on_mobile": true,
+        "product_block_dots": false,
+        "product_block_dots_mb": true,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": false,
+        "product_block_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_hover_drag_icon": true,
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    },
+    "reviews_widget_ob": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_ob": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": ["judge_me_reviews_ob"],
+      "settings": { "include_margins": false }
+    },
+    "recently_viewed_ob": {
+      "type": "product-recently-viewed",
+      "settings": {
+        "display_product_recently_viewed": true,
+        "product_recently_viewed_container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": true,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 40,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "product_recently_viewed_layout": "slider",
+        "product_bg": "#ffffff",
+        "product_bg_gradient": "",
+        "style_block_header": "style1",
+        "product_recently_viewed_title": "Recently Viewed",
+        "enable_border_title": false,
+        "mg_top_title": 27,
+        "mg_bottom_title": 3,
+        "fontsize_title": 18,
+        "fontsize_title_mb": 18,
+        "border_color_title": "#232323",
+        "color_title": "#232323",
+        "product_recently_viewed_title_align": "center",
+        "product_recently_viewed_limit": 10,
+        "product_recently_viewed_image_ratio": "adapt",
+        "grid_gap": 30,
+        "product_recently_viewed_per_row": "4",
+        "product_recently_viewed_swipe_on_mobile": true,
+        "product_recently_viewed_dots": false,
+        "product_recently_viewed_dots_mb": true,
+        "product_recently_viewed_arrows": true,
+        "product_recently_viewed_arrows_mb": false,
+        "product_recently_viewed_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_hover_drag_icon": false,
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_recommendations_ob",
+    "reviews_widget_ob",
+    "recently_viewed_ob"
+  ]
+}

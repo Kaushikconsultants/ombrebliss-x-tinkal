@@ -1,0 +1,280 @@
+﻿{% comment %}
+  OmbreBliss Fragrance Details Section
+  Reads from product metafields (custom namespace):
+    - custom.scent_family         → string
+    - custom.scent_notes_top      → string
+    - custom.scent_notes_middle   → string
+    - custom.scent_notes_base     → string
+    - custom.ingredients_text     → string (INCI paragraph)
+    - custom.ingredients_list     → json  ([{name, imageUrl}])
+    - custom.best_layered_with    → string (comma-separated handles)
+{% endcomment %}
+
+{%- liquid
+  assign scent_family    = product.metafields.custom.scent_family.value | default: ""
+  assign notes_top       = product.metafields.custom.scent_notes_top.value | default: ""
+  assign notes_middle    = product.metafields.custom.scent_notes_middle.value | default: ""
+  assign notes_base      = product.metafields.custom.scent_notes_base.value | default: ""
+  assign ingredients_txt = product.metafields.custom.ingredients_text.value | default: ""
+  assign ingredients_raw = product.metafields.custom.ingredients_list.value
+  assign layered_raw     = product.metafields.custom.best_layered_with.value | default: ""
+
+  assign has_scent_family   = false
+  assign has_notes          = false
+  assign has_ingredients    = false
+  assign has_layered        = false
+
+  if scent_family != ""
+    assign has_scent_family = true
+  endif
+  if notes_top != "" or notes_middle != "" or notes_base != ""
+    assign has_notes = true
+  endif
+  if ingredients_raw != blank and ingredients_raw != "[]"
+    assign has_ingredients = true
+  endif
+  if layered_raw != ""
+    assign has_layered = true
+  endif
+
+  assign show_section = false
+  if has_scent_family or has_notes or has_ingredients or has_layered
+    assign show_section = true
+  endif
+-%}
+
+{% if show_section %}
+<style>
+.ob-extras { font-family: inherit; margin: 32px 0; }
+
+.ob-scent-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; border: 1.5px solid;
+  letter-spacing: 0.02em; cursor: default; transition: transform 0.2s ease;
+}
+.ob-scent-badge:hover { transform: scale(1.04); }
+.ob-scent-badge--warm     { background:#92400e; color:#fef3c7; border-color:#d97706; }
+.ob-scent-badge--floral   { background:#831843; color:#fdf2f8; border-color:#ec4899; }
+.ob-scent-badge--fresh    { background:#065f46; color:#d1fae5; border-color:#10b981; }
+.ob-scent-badge--woody    { background:#44403c; color:#fafaf9; border-color:#a8a29e; }
+.ob-scent-badge--citrus   { background:#7c2d12; color:#fff7ed; border-color:#f97316; }
+.ob-scent-badge--aquatic  { background:#1e3a5f; color:#e0f2fe; border-color:#38bdf8; }
+.ob-scent-badge--spicy    { background:#5b21b6; color:#f5f3ff; border-color:#a78bfa; }
+.ob-scent-badge--gourmand { background:#5c2d0a; color:#fff7ed; border-color:#d97706; }
+.ob-scent-badge--musky    { background:#374151; color:#f9fafb; border-color:#9ca3af; }
+.ob-scent-badge--oriental { background:#7c1d1d; color:#fff1f2; border-color:#f87171; }
+.ob-scent-badge--default  { background:#1e293b; color:#f1f5f9; border-color:#475569; }
+
+.ob-accordion { border-top: 1px solid #e5e7eb; margin-top: 24px; }
+.ob-accordion-item { border-bottom: 1px solid #e5e7eb; }
+.ob-accordion-trigger {
+  width: 100%; background: none; border: none; padding: 16px 0;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 15px; font-weight: 700; cursor: pointer; color: inherit; text-align: left;
+}
+.ob-accordion-trigger svg { flex-shrink: 0; transition: transform 0.3s ease; }
+.ob-accordion-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+.ob-accordion-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.35s ease; }
+.ob-accordion-body.open { grid-template-rows: 1fr; }
+.ob-accordion-inner { overflow: hidden; padding-bottom: 16px; }
+
+.ob-notes-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+.ob-note-row { display: flex; align-items: flex-start; gap: 12px; }
+.ob-note-icon {
+  width: 36px; height: 36px; border-radius: 8px; background: #f3f4f6;
+  display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;
+}
+.ob-note-label { font-size: 12px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+.ob-note-sub { font-size: 11px; color: #9ca3af; margin-bottom: 3px; }
+.ob-note-value { font-size: 14px; color: #1f2937; font-weight: 500; line-height: 1.4; }
+
+.ob-ing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 12px; margin-top: 4px; }
+.ob-ing-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+.ob-ing-img { width: 72px; height: 72px; border-radius: 12px; object-fit: cover; background: #f3f4f6; border: 1px solid #e5e7eb; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.ob-ing-card:hover .ob-ing-img { transform: scale(1.08); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+.ob-ing-img-placeholder { width: 72px; height: 72px; border-radius: 12px; background: #f3f4f6; border: 1px dashed #d1d5db; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.ob-ing-name { font-size: 11px; font-weight: 600; color: #374151; line-height: 1.3; max-width: 80px; }
+.ob-inci-text { margin-top: 14px; font-size: 12px; color: #6b7280; line-height: 1.7; }
+.ob-inci-label { font-weight: 700; color: #374151; }
+
+.ob-layered-row { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
+.ob-layered-row::-webkit-scrollbar { display: none; }
+.ob-layered-card { flex: 0 0 160px; display: flex; flex-direction: column; text-decoration: none; color: inherit; border-radius: 14px; overflow: hidden; border: 1px solid #e5e7eb; background: #fff; transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; scroll-snap-align: start; }
+.ob-layered-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); border-color: #d1d5db; }
+.ob-layered-img-wrap { aspect-ratio: 3/4; overflow: hidden; background: #f9fafb; }
+.ob-layered-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.ob-layered-card:hover .ob-layered-img { transform: scale(1.06); }
+.ob-layered-info { padding: 10px; }
+.ob-layered-title { font-size: 12px; font-weight: 700; color: #111; margin-bottom: 4px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ob-layered-price { font-size: 13px; font-weight: 800; color: #111; }
+.ob-layered-atc { display: block; width: 100%; margin-top: 8px; padding: 8px; background: #111; color: #fff; font-size: 11px; font-weight: 700; text-align: center; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; transition: background 0.2s ease; letter-spacing: 0.04em; text-transform: uppercase; }
+.ob-layered-atc:hover { background: #374151; }
+
+@media (min-width: 768px) { .ob-layered-card { flex: 0 0 180px; } .ob-ing-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); } }
+@media (max-width: 480px) { .ob-ing-img, .ob-ing-img-placeholder { width: 64px; height: 64px; } .ob-layered-card { flex: 0 0 140px; } }
+</style>
+
+<div class="ob-extras">
+
+  {% if has_scent_family %}
+    {%- liquid
+      assign sf_lower = scent_family | downcase
+      assign sf_class = "default"
+      assign known_families = "warm,floral,fresh,woody,citrus,aquatic,spicy,gourmand,musky,oriental"
+      assign kf_arr = known_families | split: ","
+      for fam in kf_arr
+        if sf_lower == fam
+          assign sf_class = fam
+          break
+        endif
+      endfor
+    -%}
+    <div style="margin-bottom:16px;">
+      <span class="ob-scent-badge ob-scent-badge--{{ sf_class }}">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+        Scent Family: {{ scent_family }}
+      </span>
+    </div>
+  {% endif %}
+
+  <div class="ob-accordion">
+
+    {% if has_notes %}
+    <div class="ob-accordion-item">
+      <button class="ob-accordion-trigger" aria-expanded="true" data-ob-accordion>
+        Scent Notes
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+      <div class="ob-accordion-body open" data-ob-body>
+        <div class="ob-accordion-inner">
+          <div class="ob-notes-grid">
+            {% if notes_top != "" %}
+            <div class="ob-note-row">
+              <div class="ob-note-icon">🔼</div>
+              <div>
+                <div class="ob-note-label">Top Notes</div>
+                <div class="ob-note-sub">The first notes you smell</div>
+                <div class="ob-note-value">{{ notes_top }}</div>
+              </div>
+            </div>
+            {% endif %}
+            {% if notes_middle != "" %}
+            <div class="ob-note-row">
+              <div class="ob-note-icon">⬛</div>
+              <div>
+                <div class="ob-note-label">Middle Notes</div>
+                <div class="ob-note-sub">The heart of the perfume</div>
+                <div class="ob-note-value">{{ notes_middle }}</div>
+              </div>
+            </div>
+            {% endif %}
+            {% if notes_base != "" %}
+            <div class="ob-note-row">
+              <div class="ob-note-icon">🔽</div>
+              <div>
+                <div class="ob-note-label">Base Notes</div>
+                <div class="ob-note-sub">The notes that linger all day</div>
+                <div class="ob-note-value">{{ notes_base }}</div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if has_ingredients %}
+    <div class="ob-accordion-item">
+      <button class="ob-accordion-trigger" aria-expanded="false" data-ob-accordion>
+        Ingredients
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+      <div class="ob-accordion-body" data-ob-body>
+        <div class="ob-accordion-inner">
+          {% if ingredients_raw != blank %}
+            {%- assign ing_list = ingredients_raw | parse_json -%}
+            {% if ing_list.size > 0 %}
+            <div class="ob-ing-grid">
+              {% for ing in ing_list %}
+                <div class="ob-ing-card">
+                  {% if ing.imageUrl != blank %}
+                    <img class="ob-ing-img" src="{{ ing.imageUrl }}" alt="{{ ing.name | escape }}" loading="lazy" width="72" height="72">
+                  {% else %}
+                    <div class="ob-ing-img-placeholder">🌿</div>
+                  {% endif %}
+                  {% if ing.name != blank %}
+                    <span class="ob-ing-name">{{ ing.name }}</span>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+          {% endif %}
+          {% if ingredients_txt != "" %}
+          <div class="ob-inci-text">
+            <span class="ob-inci-label">Full Ingredients:</span> {{ ingredients_txt }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+
+  {% if has_layered %}
+    {%- assign layered_handles = layered_raw | split: "," -%}
+    {%- assign layered_products = "" | split: "" -%}
+    {%- for raw_handle in layered_handles -%}
+      {%- assign h = raw_handle | strip -%}
+      {%- if h != "" -%}
+        {%- assign layered_prod = all_products[h] -%}
+        {%- if layered_prod != blank -%}
+          {%- assign layered_products = layered_products | concat: layered_prod -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {% if layered_products.size > 0 %}
+    <div style="margin-top:32px;">
+      <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;letter-spacing:-0.01em;">Best Layered With</h3>
+      <div class="ob-layered-row">
+        {% for lp in layered_products %}
+          <a href="{{ lp.url }}" class="ob-layered-card">
+            <div class="ob-layered-img-wrap">
+              {% if lp.featured_image %}
+                <img class="ob-layered-img" src="{{ lp.featured_image | img_url: '400x' }}" alt="{{ lp.featured_image.alt | default: lp.title | escape }}" loading="lazy" width="300" height="400">
+              {% else %}
+                <div style="width:100%;height:100%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-size:40px;">🌸</div>
+              {% endif %}
+            </div>
+            <div class="ob-layered-info">
+              <div class="ob-layered-title">{{ lp.title }}</div>
+              <div class="ob-layered-price">{{ lp.price | money }}</div>
+              <span class="ob-layered-atc">View →</span>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  {% endif %}
+
+</div>
+
+<script>
+(function() {
+  var triggers = document.querySelectorAll("[data-ob-accordion]");
+  triggers.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      var expanded = this.getAttribute("aria-expanded") === "true";
+      var body = this.nextElementSibling;
+      this.setAttribute("aria-expanded", !expanded);
+      body.classList.toggle("open", !expanded);
+    });
+  });
+})();
+</script>
+{% endif %}

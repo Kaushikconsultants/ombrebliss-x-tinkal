@@ -568,6 +568,71 @@
     </div>
 </product-tabs-section>
 
+<script>
+    (function() {
+        function initAutoSwitch() {
+            setTimeout(() => {
+                const sectionId = "{{ section.id }}";
+                const tabBlock = document.getElementById(`halo-product-block-${sectionId}`);
+                if (!tabBlock) return;
+
+                let autoSwitchInterval;
+                
+                function startInterval() {
+                    autoSwitchInterval = setInterval(() => {
+                        const activeTabContent = tabBlock.querySelector('.tab-content.active');
+                        if (!activeTabContent) return;
+
+                        const $slider = $(activeTabContent).find('.slick-slider');
+                        if ($slider.length && $slider.hasClass('slick-initialized')) {
+                            const slickObj = $slider.slick('getSlick');
+                            const currentSlide = slickObj.currentSlide;
+                            const slideCount = slickObj.slideCount;
+                            const slidesToShow = slickObj.options.slidesToShow || 1;
+                            
+                            if (currentSlide >= (slideCount - slidesToShow)) {
+                                switchToNextTab();
+                            } else {
+                                $slider.slick('slickNext');
+                            }
+                        } else {
+                            switchToNextTab();
+                        }
+                    }, 4000);
+                }
+
+                function switchToNextTab() {
+                    const $activeLink = $(tabBlock).find('.list-product-tabs .tab-links.active');
+                    let $nextLi = $activeLink.parent().next();
+                    if ($nextLi.hasClass('separation')) {
+                        $nextLi = $nextLi.next();
+                    }
+                    if (!$nextLi.length || !$nextLi.find('[data-product-tabTop]').length) {
+                        $nextLi = $(tabBlock).find('.list-product-tabs li').first();
+                    }
+                    const $btn = $nextLi.find('[data-product-tabTop]');
+                    if ($btn.length) {
+                        $btn.trigger('click');
+                    }
+                }
+
+                startInterval();
+
+                $(tabBlock).on('click', '[data-product-tabTop]', () => {
+                    clearInterval(autoSwitchInterval);
+                    startInterval();
+                });
+            }, 3000);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initAutoSwitch);
+        } else {
+            initAutoSwitch();
+        }
+    })();
+</script>
+
 {%- if layout == 'scroll' and section.settings.enable_hover_drag_icon -%}
     <script src="{{ 'gsap.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}

@@ -21,6 +21,21 @@
     assign price = target.price | default: 1999
     assign available = target.available | default: false
 
+    if product.variants.size > 1
+      assign max_variant_price = 0
+      assign max_variant_compare_at_price = 0
+      for variant in product.variants
+        if variant.price > max_variant_price
+          assign max_variant_price = variant.price
+          assign max_variant_compare_at_price = variant.compare_at_price
+        endif
+      endfor
+      if max_variant_price > 0
+        assign price = max_variant_price
+        assign compare_at_price = max_variant_compare_at_price
+      endif
+    endif
+
     if settings.currency_format_enable
         assign money_price = price | money_with_currency
     else
